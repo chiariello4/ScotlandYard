@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://neeky3ixufpl"]
+
+[ext_resource type="Script" uid="uid://cxjwdlwhjekh2" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="Texture2D" uid="uid://juyiakbr5h4p" path="res://art/SYFull2.jpg" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://nsgo2y4ta4db" path="res://map_location.gd" id="3_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://cd8035qoqv8o0" path="res://art/blue piece.png" id="3_h2yge"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_h2yge")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SyFull2" type="Sprite2D" parent="."]
+position = Vector2(1000, 750)
+texture = ExtResource("1_ig7tw")
+
+[node name="MapLocation" type="Node" parent="."]
+
+[node name="MapLocation000" type="Marker2D" parent="MapLocation"]
+script = ExtResource("3_1bvp3")
+
+[node name="MapLocation001" type="Marker2D" parent="MapLocation"]
+position = Vector2(288, 88)
+script = ExtResource("3_1bvp3")
+
+[node name="MapLocation002" type="Marker2D" parent="MapLocation"]
+script = ExtResource("3_1bvp3")
+
+[node name="MapLocation003" type="Marker2D" parent="MapLocation"]
+script = ExtResource("3_1bvp3")
+
+[node name="MapLocation004" type="Marker2D" parent="MapLocation"]
+script = ExtResource("3_1bvp3")
+
+[node name="MapLocation005" type="Marker2D" parent="MapLocation"]
+script = ExtResource("3_1bvp3")
+
+[node name="MapLocation006" type="Marker2D" parent="MapLocation"]
+script = ExtResource("3_1bvp3")
+
+[node name="MapLocation007" type="Marker2D" parent="MapLocation"]
+script = ExtResource("3_1bvp3")
+
+[node name="MapLocation008" type="Marker2D" parent="MapLocation"]
+position = Vector2(216, 160)
+script = ExtResource("3_1bvp3")
+
+[node name="MapLocation009" type="Marker2D" parent="MapLocation"]
+position = Vector2(352, 168)
+script = ExtResource("3_1bvp3")
+
+[node name="Cop" type="Sprite2D" parent="."]
+position = Vector2(520, 160)
+scale = Vector2(1.875, 1.6875)
+texture = ExtResource("3_h2yge")

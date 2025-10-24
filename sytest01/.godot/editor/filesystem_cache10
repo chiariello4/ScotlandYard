@@ -1,0 +1,10 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1761346023
+icon.svg::CompressedTexture2D/CompressedTexture2D::8927544100278864949::1749590826::1749590838::1::::<><><>0<>0<>9ad60f5ed4802f21d8a3545be3d83d0c<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+main.gd::GDScript::6407105914142854593::1761339616::0::1::::<>Node2D<><>0<>0<><>::
+main.tscn::PackedScene::920974508430713517::1761343865::0::1::::<><><>0<>0<><>::uid://cxjwdlwhjekh2::::res://main.gd<>uid://juyiakbr5h4p::::res://art/SYFull2.jpg<>uid://nsgo2y4ta4db::::res://map_location.gd<>uid://cd8035qoqv8o0::::res://art/blue piece.png
+map_location.gd::GDScript::950004526487575467::1761343865::0::1::::MapLocation<>Marker2D<><>0<>0<><>::
+::res://art/::1761333386
+blue piece.png::CompressedTexture2D/CompressedTexture2D::5053101892308486881::1761333385::1761333386::1::::<><><>0<>0<>f459313e70c5dd12449970b7b147c47a<>res://.godot/imported/blue piece.png-b6cab46a43c0262d8eb3e60edba64bee.ctex::
+pink piece.png::CompressedTexture2D/CompressedTexture2D::5262232698188490157::1761333380::1761333381::1::::<><><>0<>0<>dddcd16e02b06a487d7c3593a5783350<>res://.godot/imported/pink piece.png-42bab0160d52f1884c4ced50b7aa7d19.ctex::
+SYFull2.jpg::CompressedTexture2D/CompressedTexture2D::674458657518506789::1761333133::1761333134::1::::<><><>0<>0<>c18f85e26de12ba132e22b720f4cdbff<>res://.godot/imported/SYFull2.jpg-1829820c5b3b58d516e5113d72b1b5e5.ctex::
