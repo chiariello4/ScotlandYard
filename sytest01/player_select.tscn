@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://b84cix5vh8bav"]
+
+[ext_resource type="Theme" uid="uid://bjowy0ujxwwvw" path="res://DefaultTheme.tres" id="1_yh01e"]
+[ext_resource type="Texture2D" uid="uid://hij66bn4r46v" path="res://art/player_sprites/blue32.png" id="2_oklmx"]
+[ext_resource type="Script" uid="uid://chyrdcqa4k8r2" path="res://player_select.gd" id="2_t65hm"]
+[ext_resource type="Texture2D" uid="uid://dg31gthhbm4ch" path="res://art/player_sprites/green32.png" id="3_t65hm"]
+[ext_resource type="Texture2D" uid="uid://cbpd12oc2gypd" path="res://art/player_sprites/pink32.png" id="4_txjbq"]
+[ext_resource type="Texture2D" uid="uid://5ub80yqfrqaf" path="res://art/player_sprites/purple32.png" id="5_wpnqb"]
+[ext_resource type="Texture2D" uid="uid://cctpap1adnavh" path="res://art/player_sprites/white32.png" id="6_bda05"]
+[ext_resource type="Texture2D" uid="uid://b0h8dlje46rbg" path="res://art/player_sprites/yellow32.png" id="7_ykvvb"]
+
+[node name="PlayerSelect" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_yh01e")
+script = ExtResource("2_t65hm")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 176.0
+offset_bottom = 136.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 11
+theme_override_constants/margin_bottom = 0
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Select a Player"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="PlayerSelectButton01" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("2_oklmx")
+
+[node name="PlayerSelectButton02" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("3_t65hm")
+
+[node name="PlayerSelectButton03" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("4_txjbq")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="PlayerSelectButton04" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+icon = ExtResource("5_wpnqb")
+
+[node name="PlayerSelectButton05" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+icon = ExtResource("6_bda05")
+icon_alignment = 1
+
+[node name="PlayerSelectButton06" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+icon = ExtResource("7_ykvvb")
+icon_alignment = 1
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/PlayerSelectButton01" to="." method="_on_player_select_button_01_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/PlayerSelectButton02" to="." method="_on_player_select_button_02_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/PlayerSelectButton03" to="." method="_on_player_select_button_03_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer2/PlayerSelectButton04" to="." method="_on_player_select_button_04_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer2/PlayerSelectButton05" to="." method="_on_player_select_button_05_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer2/PlayerSelectButton06" to="." method="_on_player_select_button_06_pressed"]

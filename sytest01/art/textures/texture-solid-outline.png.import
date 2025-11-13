@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cd8035qoqv8o0"
-path="res://.godot/imported/blue piece.png-b6cab46a43c0262d8eb3e60edba64bee.ctex"
+uid="uid://bvbwoju8s1yxw"
+path="res://.godot/imported/texture-solid-outline.png-cd0dc9b841e58d7c31f93d0924a5af51.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/blue piece.png"
-dest_files=["res://.godot/imported/blue piece.png-b6cab46a43c0262d8eb3e60edba64bee.ctex"]
+source_file="res://art/textures/texture-solid-outline.png"
+dest_files=["res://.godot/imported/texture-solid-outline.png-cd0dc9b841e58d7c31f93d0924a5af51.ctex"]
 
 [params]
 

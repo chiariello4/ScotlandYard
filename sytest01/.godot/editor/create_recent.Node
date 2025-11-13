@@ -1,4 +1,14 @@
-Sprite2D
-Marker2D
+MarginContainer
+Button
+HBoxContainer
+Label
+VBoxContainer
+PanelContainer
+Control
 Node
+TileMapLayer
+TileMap
+TextureRect
+Sprite2D
+Line2D
 CanvasLayer

@@ -1,0 +1,5 @@
+res://main.tscn
+res://DefaultTheme.tres
+res://player_panel.gd
+res://player_panel.tscn
+res://player_select.tscn

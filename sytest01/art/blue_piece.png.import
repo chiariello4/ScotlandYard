@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg8cg6q527230"
-path="res://.godot/imported/pink piece.png-42bab0160d52f1884c4ced50b7aa7d19.ctex"
+uid="uid://cd8035qoqv8o0"
+path="res://.godot/imported/blue_piece.png-fdd58b03a3a38c83881282f39f57626f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/pink piece.png"
-dest_files=["res://.godot/imported/pink piece.png-42bab0160d52f1884c4ced50b7aa7d19.ctex"]
+source_file="res://art/blue_piece.png"
+dest_files=["res://.godot/imported/blue_piece.png-fdd58b03a3a38c83881282f39f57626f.ctex"]
 
 [params]
 

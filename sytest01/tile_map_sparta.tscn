@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp65lbajcqf25"]
+
+[sub_resource type="TileSet" id="TileSet_tebwg"]
+
+[node name="TileMap-Sparta" type="TileMap"]
+tile_set = SubResource("TileSet_tebwg")
+format = 2
+layer_0/name = "Layer1"
