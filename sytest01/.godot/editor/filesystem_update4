@@ -1,8 +1,5 @@
-res://main.gd
 res://main.tscn
 res://DefaultTheme.tres
-res://player_panel.gd
-res://player_select.gd
 res://player_panel.tscn
 res://player_select.tscn
-res://player_start.gd
+res://main.gd
