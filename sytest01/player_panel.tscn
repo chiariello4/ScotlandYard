@@ -161,6 +161,7 @@ text = "Complete Setup"
 [connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer_Agent01/VBoxContainer_Agent01/HBoxContainer_Agent01/ButtonIcon_Agent01" to="." method="_on_button_icon_agent_01_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer_Agent01/VBoxContainer_Agent01/HBoxContainer_Agent01/ButtonStart_Agent01" to="." method="_on_button_start_agent_01_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer_Agent01/VBoxContainer_Agent01/HBoxContainer_Agent02/ButtonIcon_Agent02" to="." method="_on_button_icon_agent_02_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer_Agent01/VBoxContainer_Agent01/HBoxContainer_Agent02/ButtonStart_Agent02" to="." method="_on_button_start_agent_01_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer_Agent01/VBoxContainer_Agent01/HBoxContainer_Agent02/ButtonStart_Agent02" to="." method="_on_button_start_agent_02_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer_Agent01/VBoxContainer_Agent01/HBoxContainer_Agent03/ButtonIcon_Agent03" to="." method="_on_button_icon_agent_03_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer_Agent01/VBoxContainer_Agent01/HBoxContainer_Agent03/ButtonStart_Agent03" to="." method="_on_button_start_agent_01_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer_Agent01/VBoxContainer_Agent01/HBoxContainer_Agent03/ButtonStart_Agent03" to="." method="_on_button_start_agent_03_pressed"]

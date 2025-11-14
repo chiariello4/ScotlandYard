@@ -1,11 +1,11 @@
-MarginContainer
 Button
+Node
+MarginContainer
 HBoxContainer
 Label
 VBoxContainer
 PanelContainer
 Control
-Node
 TileMapLayer
 TileMap
 TextureRect

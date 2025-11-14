@@ -8,10 +8,6 @@ var start_loc_selected : int
 signal location_selected(location_choice)
 signal icon_selected(icon_choice)
 
-# Set the default values
-func _ready() -> void:
-	pass
-
 # Set the player type
 func _on_button_player_type_01_pressed() -> void:
 	label_player_selected.text = "Blue"
