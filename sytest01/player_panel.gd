@@ -21,9 +21,10 @@ var texture_select_yellow = preload("res://art/player_sprites/yellow32.png")
 #OTHER VARIABLES
 var button_change : Button
 var player : Sprite2D
+var player_number : int
 
 # For the player start location, emit a signal when a player is selected
-signal set_start_location(player)
+signal set_start_location(player,player_number)
 
 #When an agent button is selected, show the player select window and set the focus to that agent.
 func _on_button_icon_agent_01_pressed() -> void:
@@ -39,7 +40,7 @@ func _on_button_icon_agent_03_pressed() -> void:
 	button_change = button_icon_agent_03
 	player = agent_03
 
-# When an icon is selected (signal), set the button and player textures to that icon, and hide
+# When an icon is selected (receiving the signal), set the button and player textures to that icon, and hide
 func _on_player_select_set_player(selection: Variant) -> void:
 	match selection:
 		"blue":
@@ -62,13 +63,16 @@ func _on_player_select_set_player(selection: Variant) -> void:
 			player.texture = texture_select_yellow
 	get_node("PlayerSelect").visible = false
 
-# Code for setting the location
+# Code for setting the player being moved
 func _on_button_start_agent_01_pressed() -> void:
 	player = agent_01
-	emit_signal("set_start_location",player)
+	player_number = 1
+	emit_signal("set_start_location",player,player_number)
 func _on_button_start_agent_02_pressed() -> void:
 	player = agent_02
-	emit_signal("set_start_location",player)
+	player_number = 2
+	emit_signal("set_start_location",player,player_number)
 func _on_button_start_agent_03_pressed() -> void:
 	player = agent_03
-	emit_signal("set_start_location",player)
+	player_number = 3
+	emit_signal("set_start_location",player,player_number)

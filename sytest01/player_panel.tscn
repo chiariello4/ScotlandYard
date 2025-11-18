@@ -156,6 +156,7 @@ theme_override_constants/margin_top = 10
 
 [node name="Button_SetupDone" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Done"]
 layout_mode = 2
+disabled = true
 text = "Complete Setup"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer_Agent01/VBoxContainer_Agent01/HBoxContainer_Agent01/ButtonIcon_Agent01" to="." method="_on_button_icon_agent_01_pressed"]

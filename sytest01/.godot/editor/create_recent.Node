@@ -1,5 +1,7 @@
-Button
+Marker2D
 Node
+Camera2D
+Button
 MarginContainer
 HBoxContainer
 Label
@@ -10,5 +12,3 @@ TileMapLayer
 TileMap
 TextureRect
 Sprite2D
-Line2D
-CanvasLayer

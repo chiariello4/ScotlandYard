@@ -1,5 +1,4 @@
 res://main.tscn
 res://DefaultTheme.tres
+res://camera_2d.gd
 res://player_panel.tscn
-res://player_select.tscn
-res://main.gd
