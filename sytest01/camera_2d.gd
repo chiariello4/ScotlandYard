@@ -32,11 +32,12 @@ func _input(event: InputEvent) -> void:
 	# Fix this later by limiting the vector to the map size
 	if event.is_action_pressed("MOUSE_BUTTON_WHEEL_UP"):
 		if get_zoom() < Vector2(zoom_upper_limit,zoom_upper_limit):
-			zoom_target = get_zoom() + Vector2(0.05,0.05)
+			zoom_target = get_zoom() + Vector2(zoom_gradiient,zoom_gradiient)
+			zoom = zoom.slerp(zoom_target,zoom_weight)
 	if event.is_action_pressed("MOUSE_BUTTON_WHEEL_DOWN"):
 		if get_zoom() > Vector2(zoom_lower_limit,zoom_lower_limit):
 			zoom_target = get_zoom() - Vector2(zoom_gradiient,zoom_gradiient)
-	zoom = zoom.slerp(zoom_target,zoom_weight)
+			zoom = zoom.slerp(zoom_target,zoom_weight)
 
 # Pan
 func _process(delta):

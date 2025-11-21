@@ -713,7 +713,7 @@ sources/2 = SubResource("TileSetAtlasSource_ycdy4")
 position = Vector2(0, 9)
 script = ExtResource("1_h2yge")
 agent_location = Array[int]([0, 0, 0, 0])
-start_locations = [NodePath("LocationButtons/LocButton001"), NodePath("LocationButtons/LocButton002"), NodePath("LocationButtons/LocButton004")]
+start_locations = [NodePath("LocationButtons/LocButton002"), NodePath("LocationButtons/LocButton004"), NodePath("LocationButtons/LocButton001")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(0, -10)

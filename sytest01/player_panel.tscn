@@ -82,6 +82,11 @@ theme = ExtResource("1_4mj0i")
 theme_override_font_sizes/font_size = 12
 text = "Select Start"
 
+[node name="ButtonMove_Agent01" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agent01/VBoxContainer_Agent01/HBoxContainer_Agent01"]
+visible = false
+layout_mode = 2
+text = "Move"
+
 [node name="MarginContainer_LabelAgent02" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agent01/VBoxContainer_Agent01"]
 layout_mode = 2
 theme_override_constants/margin_top = 2
@@ -115,6 +120,11 @@ layout_mode = 2
 theme = ExtResource("1_4mj0i")
 theme_override_font_sizes/font_size = 12
 text = "Select Start"
+
+[node name="ButtonMove_Agent02" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agent01/VBoxContainer_Agent01/HBoxContainer_Agent02"]
+visible = false
+layout_mode = 2
+text = "Move"
 
 [node name="MarginContainer_LabelAgent03" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agent01/VBoxContainer_Agent01"]
 layout_mode = 2
@@ -150,6 +160,11 @@ theme = ExtResource("1_4mj0i")
 theme_override_font_sizes/font_size = 12
 text = "Select Start"
 
+[node name="ButtonMove_Agent03" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agent01/VBoxContainer_Agent01/HBoxContainer_Agent03"]
+visible = false
+layout_mode = 2
+text = "Move"
+
 [node name="MarginContainer_Done" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 10
@@ -164,5 +179,4 @@ text = "Complete Setup"
 [connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer_Agent01/VBoxContainer_Agent01/HBoxContainer_Agent02/ButtonIcon_Agent02" to="." method="_on_button_icon_agent_02_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer_Agent01/VBoxContainer_Agent01/HBoxContainer_Agent02/ButtonStart_Agent02" to="." method="_on_button_start_agent_02_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer_Agent01/VBoxContainer_Agent01/HBoxContainer_Agent03/ButtonIcon_Agent03" to="." method="_on_button_icon_agent_03_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer_Agent01/VBoxContainer_Agent01/HBoxContainer_Agent03/ButtonStart_Agent03" to="." method="_on_button_start_agent_01_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer_Agent01/VBoxContainer_Agent01/HBoxContainer_Agent03/ButtonStart_Agent03" to="." method="_on_button_start_agent_03_pressed"]
