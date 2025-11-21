@@ -709,10 +709,11 @@ sources/2 = SubResource("TileSetAtlasSource_ycdy4")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_getpj"]
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("start_locations")]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("agent_location_button", "start_locations")]
 position = Vector2(0, 9)
 script = ExtResource("1_h2yge")
 agent_location = Array[int]([0, 0, 0, 0])
+agent_location_button = [null, null, null, null]
 start_locations = [NodePath("LocationButtons/LocButton002"), NodePath("LocationButtons/LocButton004"), NodePath("LocationButtons/LocButton001")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]

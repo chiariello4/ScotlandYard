@@ -22,6 +22,7 @@ extends Node2D
 # Create arrays
 @export var map_locations : Array[Node] # Set up the map locations - NOT USING YET
 @export var agent_location : Array[int] # Array of current player locations
+@export var agent_location_button : Array[Button] # Holds the current player location button
 @export var start_locations : Array[Button] # Holds all the start location buttons
 
 # Set other variables
@@ -33,6 +34,7 @@ var location_number : int # Inteer number of the location button
 
 func _onready() -> void:
 	agent_location.resize(4) # Set the initial size of the array
+	agent_location.resize(4) # Set the initial size of the array
 	start_locations.resize(3) # Set the number of start locations
 
 # When a signal is received that a player wants to set the start location,
@@ -42,22 +44,24 @@ func _on_player_panel_set_start_location(player: Variant, player_number: Variant
 	button_go_back.visible = true
 	player_turn = player # Set from the signal
 	player_turn_number = player_number # Set from the signal
-	#_enable_start_locations()
+	_enable_start_locations()
 
 # Common code to enable/disable start locations, stored in the array
-#func _enable_start_locations() -> void:
-	#for n in range(start_locations.size()):
-		## If an agent is on that location, disable it
-		#print("n=",n," - ",agent_location[0],",",agent_location[1],",",agent_location[2],",",agent_location[3])
-		#if agent_location.has(n+1): # Agent location 0 is the start, so off-set by one
-			#start_locations[n+1].disabled = true
-			#print("disabled")
-		#else:
-			#start_locations[n+1].disabled = false
-			#print("nothing")
-#func _disable_start_locations() -> void:
-	#for n in range(start_locations.size()):
-		#start_locations[n].disabled = true
+func _enable_start_locations() -> void:
+	for n in range(start_locations.size()):
+			start_locations[n].disabled = false
+	_disable_occupied_locations()
+
+func _disable_occupied_locations() -> void:
+	for n in range(start_locations.size()):
+		if agent_location_button[n] == null:
+			n = n
+		else:
+			agent_location_button[n].disabled = true
+
+func _disable_start_locations():
+	for n in range(start_locations.size()):
+		start_locations[n].disabled = true
 
 # When a location button (signal) is received, move the player to that location
 # and record the location of that player in the agent location array
@@ -80,20 +84,20 @@ func _on_loc_button_006_pressed() -> void:
 	button_select = loc_button_006
 	_location_selection()
 func _location_selection() -> void:
-	button_select.disabled = true
 	_move_player()
 	agent_location[player_turn_number] = int(button_select.text)
 	player_panel.visible = true
 	button_go_back.visible = false
-	#_disable_start_locations()
+	_disable_start_locations()
 
 # Move the player and set the location of the player in the location array
 func _move_player() -> void: # modify so it works for start and regular game play
 	var move_player = create_tween()
 	move_player.tween_property(player_turn, "position", button_select.position,1)
 	agent_location[player_turn_number] = location_number
+	agent_location_button[player_turn_number] = button_select
 
 func _on_button_go_back_pressed() -> void:
-	#_disable_start_locations()
+	_disable_start_locations()
 	player_panel.visible = true
 	button_go_back.visible = false
