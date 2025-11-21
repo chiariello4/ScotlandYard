@@ -19,6 +19,8 @@ anchors_preset = 0
 offset_right = 128.0
 offset_bottom = 512.0
 script = ExtResource("1_86pc1")
+player_icon_ready = Array[bool]([false, false, false, false])
+player_location_ready = Array[bool]([false, false, false, false])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0

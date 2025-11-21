@@ -21,9 +21,12 @@ extends Node2D
 
 # Create arrays
 @export var map_locations : Array[Node] # Set up the map locations - NOT USING YET
-@export var agent_location : Array[int] # Array of current player locations
+@export var agent_location : Array[int] # Array of current player locations, MAY NOT NEED
 @export var agent_location_button : Array[Button] # Holds the current player location button
 @export var start_locations : Array[Button] # Holds all the start location buttons
+
+# Signals
+signal location_selected(player_number)
 
 # Set other variables
 var setting_start : bool = false # to determine if the user is setting the start location
@@ -32,7 +35,7 @@ var player_turn_number : int # Identify the player (number) who has the focus
 var button_select = Button # Identify the button with the focus
 var location_number : int # Inteer number of the location button
 
-func _onready() -> void:
+func _ready() -> void:
 	agent_location.resize(4) # Set the initial size of the array
 	agent_location.resize(4) # Set the initial size of the array
 	start_locations.resize(3) # Set the number of start locations
@@ -86,6 +89,7 @@ func _on_loc_button_006_pressed() -> void:
 func _location_selection() -> void:
 	_move_player()
 	agent_location[player_turn_number] = int(button_select.text)
+	emit_signal("location_selected",player_turn_number)
 	player_panel.visible = true
 	button_go_back.visible = false
 	_disable_start_locations()
@@ -94,7 +98,7 @@ func _location_selection() -> void:
 func _move_player() -> void: # modify so it works for start and regular game play
 	var move_player = create_tween()
 	move_player.tween_property(player_turn, "position", button_select.position,1)
-	agent_location[player_turn_number] = location_number
+	agent_location[player_turn_number] = location_number # MAY NOT NEED
 	agent_location_button[player_turn_number] = button_select
 
 func _on_button_go_back_pressed() -> void:

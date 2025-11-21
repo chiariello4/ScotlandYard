@@ -3,3 +3,4 @@ res://DefaultTheme.tres
 res://main.gd
 res://player_panel.tscn
 res://player_select.tscn
+res://player_panel.gd

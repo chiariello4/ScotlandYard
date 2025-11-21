@@ -1000,6 +1000,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_efxa6")
 disabled = true
 text = "8"
 
+[connection signal="location_selected" from="." to="CanvasLayer/PlayerPanel" method="_on_main_location_selected"]
 [connection signal="pressed" from="CanvasLayer/ButtonGoBack" to="." method="_on_button_go_back_pressed"]
 [connection signal="set_start_location" from="CanvasLayer/PlayerPanel" to="." method="_on_player_panel_set_start_location"]
 [connection signal="set_player" from="CanvasLayer/PlayerPanel/PlayerSelect" to="CanvasLayer/PlayerPanel" method="_on_player_select_set_player"]

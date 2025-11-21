@@ -10,6 +10,9 @@ extends Control
 @onready var button_icon_agent_02: Button = $PanelContainer/VBoxContainer/MarginContainer_Agent01/VBoxContainer_Agent01/HBoxContainer_Agent02/ButtonIcon_Agent02
 @onready var button_icon_agent_03: Button = $PanelContainer/VBoxContainer/MarginContainer_Agent01/VBoxContainer_Agent01/HBoxContainer_Agent03/ButtonIcon_Agent03
 
+# Button for setup done
+@onready var button_setup_done: Button = $PanelContainer/VBoxContainer/MarginContainer_Done/Button_SetupDone
+
 # Load icon textures
 var texture_select_blue = preload("res://art/player_sprites/blue32.png")
 var texture_select_green = preload("res://art/player_sprites/green32.png")
@@ -23,34 +26,44 @@ var button_change : Button
 var player : Sprite2D
 var player_number : int
 
-# Player start status
-@export var player_ready : Array[String]
+# Player start status arrays, ignore array 0 
+@export var player_icon_ready : Array[bool]
+@export var player_location_ready : Array[bool]
 
 # For the player start location, emit a signal when a player is selected
 signal set_start_location(player,player_number)
 
-func _onready() -> void:
-	player_ready.resize(4) # Set the initial size of the array
+func _ready() -> void:
+	player_icon_ready.resize(4) # Set the initial size of the array
+	player_location_ready.resize(4) # Set the initial size of the array
+	# Set array 0 to true just to get it out of the way
+	player_icon_ready[0] = true
+	player_location_ready[0] = true
 
 #When an agent button is selected, show the player select window and set the focus to that agent.
 func _on_button_icon_agent_01_pressed() -> void:
 	get_node("PlayerSelect").visible = true
 	button_change = button_icon_agent_01
 	player = agent_01
+	player_number = 1
 func _on_button_icon_agent_02_pressed() -> void:
 	get_node("PlayerSelect").visible = true
 	button_change = button_icon_agent_02
 	player = agent_02
+	player_number = 2
 func _on_button_icon_agent_03_pressed() -> void:
 	get_node("PlayerSelect").visible = true
 	button_change = button_icon_agent_03
 	player = agent_03
+	player_number = 3
 
 # When an icon is selected from player_select (receiving the signal),
 # set the button and player textures to that icon, and hide
 func _on_player_select_set_player(selection: Variant) -> void:
 	button_change.icon = selection
 	player.texture = selection
+	player_icon_ready[player_number] = true
+	_enable_setup_done()
 	get_node("PlayerSelect").visible = false
 
 # Code for setting the player being moved
@@ -66,3 +79,16 @@ func _on_button_start_agent_03_pressed() -> void:
 	player = agent_03
 	player_number = 3
 	emit_signal("set_start_location",player,player_number)
+
+func _on_main_location_selected(player_number: Variant) -> void:
+	player_location_ready[player_number] = true
+	_enable_setup_done()
+
+func _enable_setup_done():
+	if player_location_ready.has(false):
+		button_setup_done.disabled = true
+	else:
+		if player_icon_ready.has(false):
+			button_setup_done.disabled = true
+		else:
+			button_setup_done.disabled = false
