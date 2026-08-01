@@ -1,0 +1,8 @@
+~ taunt
+{{GlobalVars.sus_name}}: [[Try and catch me!|You're going to need a team twice that size to track me down!|Sparta's a big place; I can hide here all day.]]
+=> END
+
+~ location
+{{GlobalVars.sus_name}}: [[Wouldn't you like to know where I am?|Come and get me.|Give up yet?]]
+Dispatcher: We don't yet have a location for {{GlobalVars.sus_name}}. [if GlobalVars.sus_last_location_description == ""]The suspect has not yet been spotted anywhere in Sparta.[/if] [if GlobalVars.sus_last_location_description != ""]The suspect was last seen at location {{GlobalVars.sus_last_location_description}}.[/if] Since then, we have tracked movements by {{GlobalVars.sus_mode_since_reveal}}.
+=> END

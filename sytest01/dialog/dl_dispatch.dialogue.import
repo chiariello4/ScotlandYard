@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://drnlsgxsyou34"
+path="res://.godot/imported/dl_dispatch.dialogue-467480bfaee17165fbff1d16e35d2a48.tres"
+
+[deps]
+
+source_file="res://dialog/dl_dispatch.dialogue"
+dest_files=["res://.godot/imported/dl_dispatch.dialogue-467480bfaee17165fbff1d16e35d2a48.tres"]
+
+[params]
+
+defaults=true

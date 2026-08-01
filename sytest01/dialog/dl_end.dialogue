@@ -1,0 +1,40 @@
+~ capture
+{{GlobalVars.agent_name[GlobalVars.captured_by]}}: [[There you are, {{GlobalVars.sus_name}}!|Stop right there, {{GlobalVars.sus_name}}!]] You're coming with me.
+{{GlobalVars.sus_name}}: Alright, you got me.
+Dispatcher: I heard from our field agent {{GlobalVars.agent_name[GlobalVars.captured_by]}} that {{GlobalVars.sus_name}} is now in custody.
+Chief: Your team did well to bring in our suspect. Give agent {{GlobalVars.agent_name[GlobalVars.captured_by]}} a special thank you from the Sparta PD. If you have time, we could use your help with others.
+- Yes, what can I do? (Play again)
+	Chief: Great!
+	do GlobalVars.play_again.emit()
+- Quit
+	Chief: [[I understand. Thanks, again.|Fine, I'm sure you have a lot of important stuff to do, like play video games.|You were a big help today. Maybe next time.]]
+	=> END
+# TO DO: END GAME AFTER QUIT
+=> END
+
+~ surrounded
+{{GlobalVars.agent_name[GlobalVars.closest_agent]}}: We have you now, {{GlobalVars.sus_name}}. [[You're out of options.|We have you surrounded.]] It's time to surrender.
+{{GlobalVars.sus_name}}: Alright, I surrender.
+Dispatcher: I heard from field agent {{GlobalVars.agent_name[GlobalVars.closest_agent]}} that the suspect is now in custody.
+Chief: Your team did well to bring in our suspect. If you have time, we could use your help with others.
+- Yes, what can I do? (Play again)
+	do GlobalVars.play_again.emit()
+	Chief: Great!
+- Quit
+	Chief: [[I understand. Thanks, again.|Fine, I'm sure you have a lot of important stuff to do, like play video games.|You were a big help today. Maybe next time.]]
+	=> END
+# TO DO: END GAME AFTER QUIT
+=> END
+
+~ suswins
+{{GlobalVars.sus_name}}: Fools! I knew you couldn't catch me.
+Dispatcher: I have reports the suspect has fled Sparta.
+Chief: I'm afraid we're going to have to call it quits here. Your team was just no match for {{GlobalVars.sus_name}}
+Chief: Would you like to try again?
+- Yes, what can I do? (Play again)
+	do GlobalVars.play_again.emit()
+	Chief: Great!
+- Quit
+	Chief: [[I understand. Thanks, again.|Fine, I'm sure you have a lot of important stuff to do, like play video games.|You were a big help today. Maybe next time.]]
+	=> END
+=> END

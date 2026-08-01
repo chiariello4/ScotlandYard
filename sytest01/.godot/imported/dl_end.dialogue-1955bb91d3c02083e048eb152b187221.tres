@@ -1,0 +1,667 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_fgr6j"]
+
+[resource]
+script = ExtResource("1_fgr6j")
+using_states = PackedStringArray()
+titles = {
+"capture": "1",
+"surrounded": "15",
+"suswins": "29"
+}
+character_names = PackedStringArray("{{GlobalVars.agent_name[GlobalVars.captured_by]}}", "{{GlobalVars.sus_name}}", "Dispatcher", "Chief", "{{GlobalVars.agent_name[GlobalVars.closest_agent]}}")
+first_title = "0"
+lines = {
+"0": {
+&"id": "0",
+&"next_id": "1",
+&"type": "title"
+},
+"1": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.captured_by]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 2,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 12,
+&"type": &"dot"
+}, {
+&"i": 13,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 24,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 34,
+&"type": &"dot"
+}, {
+&"i": 35,
+&"type": &"variable",
+&"value": "captured_by"
+}, {
+&"i": 46,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.captured_by]}}"
+}]),
+&"id": "1",
+&"next_id": "2",
+&"text": "[[There you are, {{GlobalVars.sus_name}}!|Stop right there, {{GlobalVars.sus_name}}!]] You're coming with me.",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 70,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 80,
+&"type": &"dot"
+}, {
+&"i": 81,
+&"type": &"variable",
+&"value": "sus_name"
+}]),
+&"value_in_text": "{{GlobalVars.sus_name}}"
+}, {
+&"expression": Array[Dictionary]([{
+&"i": 113,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 123,
+&"type": &"dot"
+}, {
+&"i": 124,
+&"type": &"variable",
+&"value": "sus_name"
+}]),
+&"value_in_text": "{{GlobalVars.sus_name}}"
+}]),
+&"type": "dialogue"
+},
+"10": {
+&"id": "10",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"11": {
+&"id": "11",
+&"next_id": "12",
+&"type": ""
+},
+"12": {
+&"id": "12",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"13": {
+&"id": "13",
+&"next_id": "14",
+&"type": ""
+},
+"14": {
+&"id": "14",
+&"next_id": "15",
+&"type": "title"
+},
+"15": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.closest_agent]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 2,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 12,
+&"type": &"dot"
+}, {
+&"i": 13,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 24,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 34,
+&"type": &"dot"
+}, {
+&"i": 35,
+&"type": &"variable",
+&"value": "closest_agent"
+}, {
+&"i": 48,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.closest_agent]}}"
+}]),
+&"id": "15",
+&"next_id": "16",
+&"text": "We have you now, {{GlobalVars.sus_name}}. [[You're out of options.|We have you surrounded.]] It's time to surrender.",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 72,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 82,
+&"type": &"dot"
+}, {
+&"i": 83,
+&"type": &"variable",
+&"value": "sus_name"
+}]),
+&"value_in_text": "{{GlobalVars.sus_name}}"
+}]),
+&"type": "dialogue"
+},
+"16": {
+&"character": "{{GlobalVars.sus_name}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 2,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 12,
+&"type": &"dot"
+}, {
+&"i": 13,
+&"type": &"variable",
+&"value": "sus_name"
+}]),
+&"value_in_text": "{{GlobalVars.sus_name}}"
+}]),
+&"id": "16",
+&"next_id": "17",
+&"text": "Alright, I surrender.",
+&"type": "dialogue"
+},
+"17": {
+&"character": "Dispatcher",
+&"id": "17",
+&"next_id": "18",
+&"text": "I heard from field agent {{GlobalVars.agent_name[GlobalVars.closest_agent]}} that the suspect is now in custody.",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 39,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 49,
+&"type": &"dot"
+}, {
+&"i": 50,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 61,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 71,
+&"type": &"dot"
+}, {
+&"i": 72,
+&"type": &"variable",
+&"value": "closest_agent"
+}, {
+&"i": 85,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.closest_agent]}}"
+}]),
+&"type": "dialogue"
+},
+"18": {
+&"character": "Chief",
+&"id": "18",
+&"next_id": "19",
+&"text": "Your team did well to bring in our suspect. If you have time, we could use your help with others.",
+&"type": "dialogue"
+},
+"19": {
+&"id": "19",
+&"next_id": "20",
+&"responses": PackedStringArray("19", "22"),
+&"text": "Yes, what can I do? (Play again)",
+&"type": "response"
+},
+"2": {
+&"character": "{{GlobalVars.sus_name}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 2,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 12,
+&"type": &"dot"
+}, {
+&"i": 13,
+&"type": &"variable",
+&"value": "sus_name"
+}]),
+&"value_in_text": "{{GlobalVars.sus_name}}"
+}]),
+&"id": "2",
+&"next_id": "3",
+&"text": "Alright, you got me.",
+&"type": "dialogue"
+},
+"20": {
+&"id": "20",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"variable",
+&"value": "play_again"
+}, {
+&"i": 24,
+&"type": &"dot"
+}, {
+&"function": "emit",
+&"i": 25,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 30,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "21",
+&"type": "mutation"
+},
+"21": {
+&"character": "Chief",
+&"id": "21",
+&"next_id": "26",
+&"text": "Great!",
+&"type": "dialogue"
+},
+"22": {
+&"id": "22",
+&"next_id": "23",
+&"text": "Quit",
+&"type": "response"
+},
+"23": {
+&"character": "Chief",
+&"id": "23",
+&"next_id": "24",
+&"text": "[[I understand. Thanks, again.|Fine, I'm sure you have a lot of important stuff to do, like play video games.|You were a big help today. Maybe next time.]]",
+&"type": "dialogue"
+},
+"24": {
+&"id": "24",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"25": {
+&"id": "25",
+&"next_id": "26",
+&"type": ""
+},
+"26": {
+&"id": "26",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"27": {
+&"id": "27",
+&"next_id": "28",
+&"type": ""
+},
+"28": {
+&"id": "28",
+&"next_id": "29",
+&"type": "title"
+},
+"29": {
+&"character": "{{GlobalVars.sus_name}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 2,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 12,
+&"type": &"dot"
+}, {
+&"i": 13,
+&"type": &"variable",
+&"value": "sus_name"
+}]),
+&"value_in_text": "{{GlobalVars.sus_name}}"
+}]),
+&"id": "29",
+&"next_id": "30",
+&"text": "Fools! I knew you couldn't catch me.",
+&"type": "dialogue"
+},
+"3": {
+&"character": "Dispatcher",
+&"id": "3",
+&"next_id": "4",
+&"text": "I heard from our field agent {{GlobalVars.agent_name[GlobalVars.captured_by]}} that {{GlobalVars.sus_name}} is now in custody.",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 43,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 53,
+&"type": &"dot"
+}, {
+&"i": 54,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 65,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 75,
+&"type": &"dot"
+}, {
+&"i": 76,
+&"type": &"variable",
+&"value": "captured_by"
+}, {
+&"i": 87,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.captured_by]}}"
+}, {
+&"expression": Array[Dictionary]([{
+&"i": 98,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 108,
+&"type": &"dot"
+}, {
+&"i": 109,
+&"type": &"variable",
+&"value": "sus_name"
+}]),
+&"value_in_text": "{{GlobalVars.sus_name}}"
+}]),
+&"type": "dialogue"
+},
+"30": {
+&"character": "Dispatcher",
+&"id": "30",
+&"next_id": "31",
+&"text": "I have reports the suspect has fled Sparta.",
+&"type": "dialogue"
+},
+"31": {
+&"character": "Chief",
+&"id": "31",
+&"next_id": "32",
+&"text": "I'm afraid we're going to have to call it quits here. Your team was just no match for {{GlobalVars.sus_name}}",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 95,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 105,
+&"type": &"dot"
+}, {
+&"i": 106,
+&"type": &"variable",
+&"value": "sus_name"
+}]),
+&"value_in_text": "{{GlobalVars.sus_name}}"
+}]),
+&"type": "dialogue"
+},
+"32": {
+&"character": "Chief",
+&"id": "32",
+&"next_id": "33",
+&"text": "Would you like to try again?",
+&"type": "dialogue"
+},
+"33": {
+&"id": "33",
+&"next_id": "34",
+&"responses": PackedStringArray("33", "36"),
+&"text": "Yes, what can I do? (Play again)",
+&"type": "response"
+},
+"34": {
+&"id": "34",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"variable",
+&"value": "play_again"
+}, {
+&"i": 24,
+&"type": &"dot"
+}, {
+&"function": "emit",
+&"i": 25,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 30,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "35",
+&"type": "mutation"
+},
+"35": {
+&"character": "Chief",
+&"id": "35",
+&"next_id": "39",
+&"text": "Great!",
+&"type": "dialogue"
+},
+"36": {
+&"id": "36",
+&"next_id": "37",
+&"text": "Quit",
+&"type": "response"
+},
+"37": {
+&"character": "Chief",
+&"id": "37",
+&"next_id": "38",
+&"text": "[[I understand. Thanks, again.|Fine, I'm sure you have a lot of important stuff to do, like play video games.|You were a big help today. Maybe next time.]]",
+&"type": "dialogue"
+},
+"38": {
+&"id": "38",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"39": {
+&"id": "39",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"4": {
+&"character": "Chief",
+&"id": "4",
+&"next_id": "5",
+&"text": "Your team did well to bring in our suspect. Give agent {{GlobalVars.agent_name[GlobalVars.captured_by]}} a special thank you from the Sparta PD. If you have time, we could use your help with others.",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 64,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 74,
+&"type": &"dot"
+}, {
+&"i": 75,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 86,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 96,
+&"type": &"dot"
+}, {
+&"i": 97,
+&"type": &"variable",
+&"value": "captured_by"
+}, {
+&"i": 108,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.captured_by]}}"
+}]),
+&"type": "dialogue"
+},
+"40": {
+&"id": "40",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"5": {
+&"id": "5",
+&"next_id": "6",
+&"responses": PackedStringArray("5", "8"),
+&"text": "Yes, what can I do? (Play again)",
+&"type": "response"
+},
+"6": {
+&"character": "Chief",
+&"id": "6",
+&"next_id": "7",
+&"text": "Great!",
+&"type": "dialogue"
+},
+"7": {
+&"id": "7",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"variable",
+&"value": "play_again"
+}, {
+&"i": 24,
+&"type": &"dot"
+}, {
+&"function": "emit",
+&"i": 25,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 30,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "12",
+&"type": "mutation"
+},
+"8": {
+&"id": "8",
+&"next_id": "9",
+&"text": "Quit",
+&"type": "response"
+},
+"9": {
+&"character": "Chief",
+&"id": "9",
+&"next_id": "10",
+&"text": "[[I understand. Thanks, again.|Fine, I'm sure you have a lot of important stuff to do, like play video games.|You were a big help today. Maybe next time.]]",
+&"type": "dialogue"
+}
+}
+raw_text = "~ capture
+{{GlobalVars.agent_name[GlobalVars.captured_by]}}: [[There you are, {{GlobalVars.sus_name}}!|Stop right there, {{GlobalVars.sus_name}}!]] You're coming with me.
+{{GlobalVars.sus_name}}: Alright, you got me.
+Dispatcher: I heard from our field agent {{GlobalVars.agent_name[GlobalVars.captured_by]}} that {{GlobalVars.sus_name}} is now in custody.
+Chief: Your team did well to bring in our suspect. Give agent {{GlobalVars.agent_name[GlobalVars.captured_by]}} a special thank you from the Sparta PD. If you have time, we could use your help with others.
+- Yes, what can I do? (Play again)
+	Chief: Great!
+	do GlobalVars.play_again.emit()
+- Quit
+	Chief: [[I understand. Thanks, again.|Fine, I'm sure you have a lot of important stuff to do, like play video games.|You were a big help today. Maybe next time.]]
+	=> END
+# TO DO: END GAME AFTER QUIT
+=> END
+
+~ surrounded
+{{GlobalVars.agent_name[GlobalVars.closest_agent]}}: We have you now, {{GlobalVars.sus_name}}. [[You're out of options.|We have you surrounded.]] It's time to surrender.
+{{GlobalVars.sus_name}}: Alright, I surrender.
+Dispatcher: I heard from field agent {{GlobalVars.agent_name[GlobalVars.closest_agent]}} that the suspect is now in custody.
+Chief: Your team did well to bring in our suspect. If you have time, we could use your help with others.
+- Yes, what can I do? (Play again)
+	do GlobalVars.play_again.emit()
+	Chief: Great!
+- Quit
+	Chief: [[I understand. Thanks, again.|Fine, I'm sure you have a lot of important stuff to do, like play video games.|You were a big help today. Maybe next time.]]
+	=> END
+# TO DO: END GAME AFTER QUIT
+=> END
+
+~ suswins
+{{GlobalVars.sus_name}}: Fools! I knew you couldn't catch me.
+Dispatcher: I have reports the suspect has fled Sparta.
+Chief: I'm afraid we're going to have to call it quits here. Your team was just no match for {{GlobalVars.sus_name}}
+Chief: Would you like to try again?
+- Yes, what can I do? (Play again)
+	do GlobalVars.play_again.emit()
+	Chief: Great!
+- Quit
+	Chief: [[I understand. Thanks, again.|Fine, I'm sure you have a lot of important stuff to do, like play video games.|You were a big help today. Maybe next time.]]
+	=> END
+=> END"
+metadata/dialogue_manager_version = "3.10.4"

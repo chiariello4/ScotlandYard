@@ -1,0 +1,24 @@
+~ setup
+Dispatcher: I'm the dispatcher in Sparta. I'll be your primary contact while you track down the suspect.
+Dispatcher: Now that you've deployed your agents, I will inform you of anything we learn about the suspect's movements.
+do GlobalVars.sus_moves_first.emit()
+=> END
+
+~ susmovefirst
+Dispatcher: We have a report that {{GlobalVars.sus_name}} is on the move. We don't know the suspect's location, but we know it was by {{GlobalVars.sus_last_move_type}}.
+Dispatcher: I am sure we will get the suspect's location from time to time. When that happens, I'll share that with you. Until then, move your agents to best locate the suspect.
+=> END
+
+~ susmove
+Dispatcher: [[The suspect has moved|{{GlobalVars.sus_name}} is on the move]], traveling by {{GlobalVars.sus_last_move_type}}.
+=> END
+
+~ susreveal
+Dispatcher: [[We have located {{GlobalVars.sus_name}}.|{{GlobalVars.sus_name}} has been spotted.|We have the suspect's location.]]  [[Move your agents in quickly to intercept.|We won't have {{GlobalVars.sus_name}} in our sights for long.]]
+#do GlobalVars.sub_viewport_container.visible = false
+#do GlobalVars.button_view_close.visible = false
+=> END
+
+~ suslost
+Dispatcher: [[The suspect has vanished.|{{GlobalVars.sus_name}} has slipped away.|We lost track of {{GlobalVars.sus_name}}.]]
+=> END

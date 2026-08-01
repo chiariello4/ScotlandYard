@@ -1,0 +1,2943 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_l1a50"]
+
+[resource]
+script = ExtResource("1_l1a50")
+using_states = PackedStringArray()
+titles = {
+"AgentList": "46",
+"AgentListIntro": "43",
+"StartGame": "163",
+"SuspectList": "9",
+"start": "1"
+}
+character_names = PackedStringArray("Chief", "Keith", "Patti", "Mo", "Arthur", "Bertha", "Cristobal", "Dolly", "Edouard", "Fay", "Gonzalo", "Hanna")
+first_title = "0"
+lines = {
+"0": {
+&"id": "0",
+&"next_id": "1",
+&"type": "title"
+},
+"1": {
+&"character": "Chief",
+&"id": "1",
+&"next_id": "2",
+&"text": "Hi. Welcome to Sparta, New Jersey. I'm the police chief. We can use your help. Are you interested?",
+&"type": "dialogue"
+},
+"10": {
+&"id": "10",
+&"next_id": "11",
+&"responses": PackedStringArray("10", "19", "28", "37"),
+&"text": "Keith (easy)",
+&"type": "response"
+},
+"100": {
+&"id": "100",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 14,
+&"type": &"dot"
+}, {
+&"i": 15,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 25,
+&"type": &"dot"
+}, {
+&"function": "append",
+&"i": 26,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 33,
+&"type": &"string",
+&"value": "Dolly"
+}, {
+&"i": 40,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "101",
+&"type": "mutation"
+},
+"101": {
+&"id": "101",
+&"is_snippet": false,
+&"next_id": "46",
+&"next_id_after": "",
+&"type": "goto"
+},
+"102": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 18,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 28,
+&"type": &"dot"
+}, {
+&"i": 29,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 39,
+&"type": &"dot"
+}, {
+&"function": "has",
+&"i": 40,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 44,
+&"type": &"string",
+&"value": "Dolly"
+}, {
+&"i": 51,
+&"type": &"parens_close"
+}])])
+}])
+},
+&"condition_as_text": "GlobalVars.agent_name.has(\"Dolly\")",
+&"id": "102",
+&"next_id": "103",
+&"text": "Remove Dolly",
+&"type": "response"
+},
+"103": {
+&"character": "Chief",
+&"id": "103",
+&"next_id": "104",
+&"text": "We'll remove Dolly from the team.",
+&"type": "dialogue"
+},
+"104": {
+&"id": "104",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 14,
+&"type": &"dot"
+}, {
+&"i": 15,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 25,
+&"type": &"dot"
+}, {
+&"function": "erase",
+&"i": 26,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 32,
+&"type": &"string",
+&"value": "Dolly"
+}, {
+&"i": 39,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "105",
+&"type": "mutation"
+},
+"105": {
+&"id": "105",
+&"is_snippet": false,
+&"next_id": "46",
+&"next_id_after": "",
+&"type": "goto"
+},
+"106": {
+&"id": "106",
+&"next_id": "107",
+&"text": "Let me see the list again",
+&"type": "response"
+},
+"107": {
+&"id": "107",
+&"is_snippet": false,
+&"next_id": "46",
+&"next_id_after": "",
+&"type": "goto"
+},
+"108": {
+&"id": "108",
+&"next_id": "109",
+&"text": "Edouard",
+&"type": "response"
+},
+"109": {
+&"character": "Edouard",
+&"id": "109",
+&"next_id": "110",
+&"text": "Edouard's special ability is unknown. [if not GlobalVars.agent_name.has(\"Edouard\")]Would you like to add Edouard to the team?[/if] [if GlobalVars.agent_name.has(\"Edouard\")]Edouard is already selected. Would you like remove Edouard?[/if]",
+&"type": "dialogue"
+},
+"11": {
+&"character": "Keith",
+&"id": "11",
+&"next_id": "12",
+&"text": "Keith should be easy to catch. He's not too bright and doesn't have any particular skills.",
+&"type": "dialogue"
+},
+"110": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 18,
+&"type": &"not"
+}, {
+&"i": 22,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 32,
+&"type": &"dot"
+}, {
+&"i": 33,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 43,
+&"type": &"dot"
+}, {
+&"function": "has",
+&"i": 44,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 48,
+&"type": &"string",
+&"value": "Edouard"
+}, {
+&"i": 57,
+&"type": &"parens_close"
+}])])
+}])
+},
+&"condition_as_text": "not GlobalVars.agent_name.has(\"Edouard\")",
+&"id": "110",
+&"next_id": "111",
+&"responses": PackedStringArray("110", "114", "118"),
+&"text": "Pick Edouard",
+&"type": "response"
+},
+"111": {
+&"character": "Chief",
+&"id": "111",
+&"next_id": "112",
+&"text": "We'll add Edouard to the team.",
+&"type": "dialogue"
+},
+"112": {
+&"id": "112",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 14,
+&"type": &"dot"
+}, {
+&"i": 15,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 25,
+&"type": &"dot"
+}, {
+&"function": "append",
+&"i": 26,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 33,
+&"type": &"string",
+&"value": "Edouard"
+}, {
+&"i": 42,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "113",
+&"type": "mutation"
+},
+"113": {
+&"id": "113",
+&"is_snippet": false,
+&"next_id": "46",
+&"next_id_after": "",
+&"type": "goto"
+},
+"114": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 20,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 30,
+&"type": &"dot"
+}, {
+&"i": 31,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 41,
+&"type": &"dot"
+}, {
+&"function": "has",
+&"i": 42,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 46,
+&"type": &"string",
+&"value": "Edouard"
+}, {
+&"i": 55,
+&"type": &"parens_close"
+}])])
+}])
+},
+&"condition_as_text": "GlobalVars.agent_name.has(\"Edouard\")",
+&"id": "114",
+&"next_id": "115",
+&"text": "Remove Edouard",
+&"type": "response"
+},
+"115": {
+&"character": "Chief",
+&"id": "115",
+&"next_id": "116",
+&"text": "We'll remove Edouard from the team.",
+&"type": "dialogue"
+},
+"116": {
+&"id": "116",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 14,
+&"type": &"dot"
+}, {
+&"i": 15,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 25,
+&"type": &"dot"
+}, {
+&"function": "erase",
+&"i": 26,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 32,
+&"type": &"string",
+&"value": "Edouard"
+}, {
+&"i": 41,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "117",
+&"type": "mutation"
+},
+"117": {
+&"id": "117",
+&"is_snippet": false,
+&"next_id": "46",
+&"next_id_after": "",
+&"type": "goto"
+},
+"118": {
+&"id": "118",
+&"next_id": "119",
+&"text": "Let me see the list again",
+&"type": "response"
+},
+"119": {
+&"id": "119",
+&"is_snippet": false,
+&"next_id": "46",
+&"next_id_after": "",
+&"type": "goto"
+},
+"12": {
+&"id": "12",
+&"next_id": "13",
+&"responses": PackedStringArray("12", "17"),
+&"text": "Pick Keith",
+&"type": "response"
+},
+"120": {
+&"id": "120",
+&"next_id": "121",
+&"text": "Fay",
+&"type": "response"
+},
+"121": {
+&"character": "Fay",
+&"id": "121",
+&"next_id": "122",
+&"text": "Fay's special ability is unknown. [if not GlobalVars.agent_name.has(\"Fay\")]Would you like to add Fay to the team?[/if] [if GlobalVars.agent_name.has(\"Fay\")]Fay is already selected. Would you like remove Fay?[/if]",
+&"type": "dialogue"
+},
+"122": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 14,
+&"type": &"not"
+}, {
+&"i": 18,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 28,
+&"type": &"dot"
+}, {
+&"i": 29,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 39,
+&"type": &"dot"
+}, {
+&"function": "has",
+&"i": 40,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 44,
+&"type": &"string",
+&"value": "Fay"
+}, {
+&"i": 49,
+&"type": &"parens_close"
+}])])
+}])
+},
+&"condition_as_text": "not GlobalVars.agent_name.has(\"Fay\")",
+&"id": "122",
+&"next_id": "123",
+&"responses": PackedStringArray("122", "126", "130"),
+&"text": "Pick Fay",
+&"type": "response"
+},
+"123": {
+&"character": "Chief",
+&"id": "123",
+&"next_id": "124",
+&"text": "We'll add Fay to the team.",
+&"type": "dialogue"
+},
+"124": {
+&"id": "124",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 14,
+&"type": &"dot"
+}, {
+&"i": 15,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 25,
+&"type": &"dot"
+}, {
+&"function": "append",
+&"i": 26,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 33,
+&"type": &"string",
+&"value": "Fay"
+}, {
+&"i": 38,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "125",
+&"type": "mutation"
+},
+"125": {
+&"id": "125",
+&"is_snippet": false,
+&"next_id": "46",
+&"next_id_after": "",
+&"type": "goto"
+},
+"126": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 16,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 26,
+&"type": &"dot"
+}, {
+&"i": 27,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 37,
+&"type": &"dot"
+}, {
+&"function": "has",
+&"i": 38,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 42,
+&"type": &"string",
+&"value": "Fay"
+}, {
+&"i": 47,
+&"type": &"parens_close"
+}])])
+}])
+},
+&"condition_as_text": "GlobalVars.agent_name.has(\"Fay\")",
+&"id": "126",
+&"next_id": "127",
+&"text": "Remove Fay",
+&"type": "response"
+},
+"127": {
+&"character": "Chief",
+&"id": "127",
+&"next_id": "128",
+&"text": "We'll remove Fay from the team.",
+&"type": "dialogue"
+},
+"128": {
+&"id": "128",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 14,
+&"type": &"dot"
+}, {
+&"i": 15,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 25,
+&"type": &"dot"
+}, {
+&"function": "erase",
+&"i": 26,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 32,
+&"type": &"string",
+&"value": "Fay"
+}, {
+&"i": 37,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "129",
+&"type": "mutation"
+},
+"129": {
+&"id": "129",
+&"is_snippet": false,
+&"next_id": "46",
+&"next_id_after": "",
+&"type": "goto"
+},
+"13": {
+&"character": "Chief",
+&"id": "13",
+&"next_id": "15",
+&"text": "He shouldn't give you much of a problem. Good luck bringing Keith in.",
+&"type": "dialogue"
+},
+"130": {
+&"id": "130",
+&"next_id": "131",
+&"text": "Let me see the list again",
+&"type": "response"
+},
+"131": {
+&"id": "131",
+&"is_snippet": false,
+&"next_id": "46",
+&"next_id_after": "",
+&"type": "goto"
+},
+"132": {
+&"id": "132",
+&"next_id": "133",
+&"text": "Gonzalo",
+&"type": "response"
+},
+"133": {
+&"character": "Gonzalo",
+&"id": "133",
+&"next_id": "134",
+&"text": "Gonzalo's special ability is unknown. [if not GlobalVars.agent_name.has(\"Gonzalo\")]Would you like to add Gonzalo to the team?[/if] [if GlobalVars.agent_name.has(\"Gonzalo\")]Gonzalo is already selected. Would you like remove Gonzalo?[/if]",
+&"type": "dialogue"
+},
+"134": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 18,
+&"type": &"not"
+}, {
+&"i": 22,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 32,
+&"type": &"dot"
+}, {
+&"i": 33,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 43,
+&"type": &"dot"
+}, {
+&"function": "has",
+&"i": 44,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 48,
+&"type": &"string",
+&"value": "Gonzalo"
+}, {
+&"i": 57,
+&"type": &"parens_close"
+}])])
+}])
+},
+&"condition_as_text": "not GlobalVars.agent_name.has(\"Gonzalo\")",
+&"id": "134",
+&"next_id": "135",
+&"responses": PackedStringArray("134", "138", "142"),
+&"text": "Pick Gonzalo",
+&"type": "response"
+},
+"135": {
+&"character": "Chief",
+&"id": "135",
+&"next_id": "136",
+&"text": "We'll add Gonzalo to the team.",
+&"type": "dialogue"
+},
+"136": {
+&"id": "136",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 14,
+&"type": &"dot"
+}, {
+&"i": 15,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 25,
+&"type": &"dot"
+}, {
+&"function": "append",
+&"i": 26,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 33,
+&"type": &"string",
+&"value": "Gonzalo"
+}, {
+&"i": 42,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "137",
+&"type": "mutation"
+},
+"137": {
+&"id": "137",
+&"is_snippet": false,
+&"next_id": "46",
+&"next_id_after": "",
+&"type": "goto"
+},
+"138": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 20,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 30,
+&"type": &"dot"
+}, {
+&"i": 31,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 41,
+&"type": &"dot"
+}, {
+&"function": "has",
+&"i": 42,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 46,
+&"type": &"string",
+&"value": "Gonzalo"
+}, {
+&"i": 55,
+&"type": &"parens_close"
+}])])
+}])
+},
+&"condition_as_text": "GlobalVars.agent_name.has(\"Gonzalo\")",
+&"id": "138",
+&"next_id": "139",
+&"text": "Remove Gonzalo",
+&"type": "response"
+},
+"139": {
+&"character": "Chief",
+&"id": "139",
+&"next_id": "140",
+&"text": "We'll remove Gonzalo from the team.",
+&"type": "dialogue"
+},
+"14": {
+&"id": "14",
+&"next_id": "15",
+&"type": ""
+},
+"140": {
+&"id": "140",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 14,
+&"type": &"dot"
+}, {
+&"i": 15,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 25,
+&"type": &"dot"
+}, {
+&"function": "erase",
+&"i": 26,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 32,
+&"type": &"string",
+&"value": "Gonzalo"
+}, {
+&"i": 41,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "141",
+&"type": "mutation"
+},
+"141": {
+&"id": "141",
+&"is_snippet": false,
+&"next_id": "46",
+&"next_id_after": "",
+&"type": "goto"
+},
+"142": {
+&"id": "142",
+&"next_id": "143",
+&"text": "Let me see the list again",
+&"type": "response"
+},
+"143": {
+&"id": "143",
+&"is_snippet": false,
+&"next_id": "46",
+&"next_id_after": "",
+&"type": "goto"
+},
+"144": {
+&"id": "144",
+&"next_id": "145",
+&"text": "Hanna",
+&"type": "response"
+},
+"145": {
+&"character": "Hanna",
+&"id": "145",
+&"next_id": "146",
+&"text": "Hanna is able to summon a sixth agent to help. [if not GlobalVars.agent_name.has(\"Hanna\")]Would you like to add Hanna to the team?[/if] [if GlobalVars.agent_name.has(\"Hanna\")]Hanna is already selected. Would you like remove Hanna?[/if]",
+&"type": "dialogue"
+},
+"146": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 16,
+&"type": &"not"
+}, {
+&"i": 20,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 30,
+&"type": &"dot"
+}, {
+&"i": 31,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 41,
+&"type": &"dot"
+}, {
+&"function": "has",
+&"i": 42,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 46,
+&"type": &"string",
+&"value": "Hanna"
+}, {
+&"i": 53,
+&"type": &"parens_close"
+}])])
+}])
+},
+&"condition_as_text": "not GlobalVars.agent_name.has(\"Hanna\")",
+&"id": "146",
+&"next_id": "147",
+&"responses": PackedStringArray("146", "150", "154"),
+&"text": "Pick Hanna",
+&"type": "response"
+},
+"147": {
+&"character": "Chief",
+&"id": "147",
+&"next_id": "148",
+&"text": "We'll add Hanna to the team.",
+&"type": "dialogue"
+},
+"148": {
+&"id": "148",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 14,
+&"type": &"dot"
+}, {
+&"i": 15,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 25,
+&"type": &"dot"
+}, {
+&"function": "append",
+&"i": 26,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 33,
+&"type": &"string",
+&"value": "Hanna"
+}, {
+&"i": 40,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "149",
+&"type": "mutation"
+},
+"149": {
+&"id": "149",
+&"is_snippet": false,
+&"next_id": "46",
+&"next_id_after": "",
+&"type": "goto"
+},
+"15": {
+&"id": "15",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 14,
+&"type": &"dot"
+}, {
+&"i": 15,
+&"type": &"variable",
+&"value": "sus_name"
+}, {
+&"i": 24,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"i": 26,
+&"type": &"string",
+&"value": "Keith"
+}]),
+&"is_blocking": true
+},
+&"next_id": "16",
+&"type": "mutation"
+},
+"150": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 18,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 28,
+&"type": &"dot"
+}, {
+&"i": 29,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 39,
+&"type": &"dot"
+}, {
+&"function": "has",
+&"i": 40,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 44,
+&"type": &"string",
+&"value": "Hanna"
+}, {
+&"i": 51,
+&"type": &"parens_close"
+}])])
+}])
+},
+&"condition_as_text": "GlobalVars.agent_name.has(\"Hanna\")",
+&"id": "150",
+&"next_id": "151",
+&"text": "Remove Hanna",
+&"type": "response"
+},
+"151": {
+&"character": "Chief",
+&"id": "151",
+&"next_id": "152",
+&"text": "We'll remove Hanna from the team.",
+&"type": "dialogue"
+},
+"152": {
+&"id": "152",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 14,
+&"type": &"dot"
+}, {
+&"i": 15,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 25,
+&"type": &"dot"
+}, {
+&"function": "erase",
+&"i": 26,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 32,
+&"type": &"string",
+&"value": "Hanna"
+}, {
+&"i": 39,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "153",
+&"type": "mutation"
+},
+"153": {
+&"id": "153",
+&"is_snippet": false,
+&"next_id": "46",
+&"next_id_after": "",
+&"type": "goto"
+},
+"154": {
+&"id": "154",
+&"next_id": "155",
+&"text": "Let me see the list again.",
+&"type": "response"
+},
+"155": {
+&"id": "155",
+&"is_snippet": false,
+&"next_id": "46",
+&"next_id_after": "",
+&"type": "goto"
+},
+"156": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 45,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 55,
+&"type": &"dot"
+}, {
+&"i": 56,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 66,
+&"type": &"dot"
+}, {
+&"function": "size",
+&"i": 67,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 72,
+&"type": &"parens_close"
+}])])
+}, {
+&"i": 74,
+&"type": &"comparison",
+&"value": "=="
+}, {
+&"i": 77,
+&"type": &"number",
+&"value": 5
+}])
+},
+&"condition_as_text": "GlobalVars.agent_name.size() == 5",
+&"id": "156",
+&"next_id": "162",
+&"text": "My team is complete. Let's get started!",
+&"type": "response"
+},
+"157": {
+&"id": "157",
+&"next_id": "158",
+&"text": "I changed my mind. I have better things to do.",
+&"type": "response"
+},
+"158": {
+&"character": "Chief",
+&"id": "158",
+&"next_id": "159",
+&"text": "[[I understand. See ya around.|Cupcake|Fine, we didn't need your help anyway.]]",
+&"type": "dialogue"
+},
+"159": {
+&"id": "159",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"variable",
+&"value": "quit"
+}, {
+&"i": 18,
+&"type": &"dot"
+}, {
+&"function": "emit",
+&"i": 19,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 24,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "160",
+&"type": "mutation"
+},
+"16": {
+&"id": "16",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 14,
+&"type": &"dot"
+}, {
+&"i": 15,
+&"type": &"variable",
+&"value": "sus_threat_profile"
+}, {
+&"i": 34,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"i": 36,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 46,
+&"type": &"dot"
+}, {
+&"i": 47,
+&"type": &"variable",
+&"value": "threat_profile_a"
+}]),
+&"is_blocking": true
+},
+&"next_id": "42",
+&"type": "mutation"
+},
+"160": {
+&"id": "160",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"161": {
+&"id": "161",
+&"next_id": "162",
+&"type": ""
+},
+"162": {
+&"id": "162",
+&"next_id": "163",
+&"type": "title"
+},
+"163": {
+&"character": "Chief",
+&"id": "163",
+&"next_id": "164",
+&"text": "Now that the team is in place, you must deploy them around Sparta. You can place them on a few key intersections around town. After all five agents are in place we can start our pursuit.",
+&"type": "dialogue"
+},
+"164": {
+&"id": "164",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 24,
+&"type": &"dot"
+}, {
+&"function": "insert",
+&"i": 25,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 32,
+&"type": &"number",
+&"value": 0
+}]), Array[Dictionary]([{
+&"i": 34,
+&"type": &"string",
+&"value": "IGNORE"
+}, {
+&"i": 42,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "165",
+&"type": "mutation"
+},
+"165": {
+&"id": "165",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"variable",
+&"value": "team_selected_from_dialogue"
+}, {
+&"i": 41,
+&"type": &"dot"
+}, {
+&"function": "emit",
+&"i": 42,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 47,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "166",
+&"type": "mutation"
+},
+"166": {
+&"id": "166",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"167": {
+&"id": "167",
+&"next_id": "168",
+&"type": ""
+},
+"168": {
+&"id": "168",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"17": {
+&"id": "17",
+&"next_id": "18",
+&"text": "Pick someone else",
+&"type": "response"
+},
+"18": {
+&"id": "18",
+&"is_snippet": false,
+&"next_id": "9",
+&"next_id_after": "",
+&"type": "goto"
+},
+"19": {
+&"id": "19",
+&"next_id": "20",
+&"text": "Patti (medium)",
+&"type": "response"
+},
+"2": {
+&"id": "2",
+&"next_id": "8",
+&"responses": PackedStringArray("2", "3"),
+&"text": "Yes, what can I do?",
+&"type": "response"
+},
+"20": {
+&"character": "Patti",
+&"id": "20",
+&"next_id": "21",
+&"text": "Patti is a bit tricky. She is good at avoiding capture but she does take risks. She has a few tricks up her sleave.",
+&"type": "dialogue"
+},
+"21": {
+&"id": "21",
+&"next_id": "22",
+&"responses": PackedStringArray("21", "26"),
+&"text": "Pick Patti",
+&"type": "response"
+},
+"22": {
+&"character": "Chief",
+&"id": "22",
+&"next_id": "24",
+&"text": "Patti will give you a challenge. Good luck bringing in Patti.",
+&"type": "dialogue"
+},
+"23": {
+&"id": "23",
+&"next_id": "24",
+&"type": ""
+},
+"24": {
+&"id": "24",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 14,
+&"type": &"dot"
+}, {
+&"i": 15,
+&"type": &"variable",
+&"value": "sus_name"
+}, {
+&"i": 24,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"i": 26,
+&"type": &"string",
+&"value": "Patti"
+}]),
+&"is_blocking": true
+},
+&"next_id": "25",
+&"type": "mutation"
+},
+"25": {
+&"id": "25",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 14,
+&"type": &"dot"
+}, {
+&"i": 15,
+&"type": &"variable",
+&"value": "sus_threat_profile"
+}, {
+&"i": 34,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"i": 36,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 46,
+&"type": &"dot"
+}, {
+&"i": 47,
+&"type": &"variable",
+&"value": "threat_profile_b"
+}]),
+&"is_blocking": true
+},
+&"next_id": "42",
+&"type": "mutation"
+},
+"26": {
+&"id": "26",
+&"next_id": "27",
+&"text": "Pick someone else",
+&"type": "response"
+},
+"27": {
+&"id": "27",
+&"is_snippet": false,
+&"next_id": "9",
+&"next_id_after": "",
+&"type": "goto"
+},
+"28": {
+&"id": "28",
+&"next_id": "29",
+&"text": "Mo (hard)",
+&"type": "response"
+},
+"29": {
+&"character": "Mo",
+&"id": "29",
+&"next_id": "30",
+&"text": "Capturing Mo won't be easy. He is very cautious and has a few skills that will make him hard to capture.",
+&"type": "dialogue"
+},
+"3": {
+&"id": "3",
+&"next_id": "4",
+&"text": "Quit",
+&"type": "response"
+},
+"30": {
+&"id": "30",
+&"next_id": "31",
+&"responses": PackedStringArray("30", "35"),
+&"text": "Pick Mo",
+&"type": "response"
+},
+"31": {
+&"character": "Chief",
+&"id": "31",
+&"next_id": "33",
+&"text": "He will be tough. Good luck bringing in Mo.",
+&"type": "dialogue"
+},
+"32": {
+&"id": "32",
+&"next_id": "33",
+&"type": ""
+},
+"33": {
+&"id": "33",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 14,
+&"type": &"dot"
+}, {
+&"i": 15,
+&"type": &"variable",
+&"value": "sus_name"
+}, {
+&"i": 24,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"i": 26,
+&"type": &"string",
+&"value": "Mo"
+}]),
+&"is_blocking": true
+},
+&"next_id": "34",
+&"type": "mutation"
+},
+"34": {
+&"id": "34",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 14,
+&"type": &"dot"
+}, {
+&"i": 15,
+&"type": &"variable",
+&"value": "sus_threat_profile"
+}, {
+&"i": 34,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"i": 36,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 46,
+&"type": &"dot"
+}, {
+&"i": 47,
+&"type": &"variable",
+&"value": "threat_profile_c"
+}]),
+&"is_blocking": true
+},
+&"next_id": "42",
+&"type": "mutation"
+},
+"35": {
+&"id": "35",
+&"next_id": "36",
+&"text": "Pick someone else",
+&"type": "response"
+},
+"36": {
+&"id": "36",
+&"is_snippet": false,
+&"next_id": "9",
+&"next_id_after": "",
+&"type": "goto"
+},
+"37": {
+&"id": "37",
+&"next_id": "38",
+&"text": "I changed my mind. I have better things to do.",
+&"type": "response"
+},
+"38": {
+&"character": "Chief",
+&"id": "38",
+&"next_id": "39",
+&"text": "[[I understand. See ya around.|Cupcake|Fine, we didn't need your help anyway.]]",
+&"type": "dialogue"
+},
+"39": {
+&"id": "39",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"variable",
+&"value": "quit"
+}, {
+&"i": 18,
+&"type": &"dot"
+}, {
+&"function": "emit",
+&"i": 19,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 24,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "40",
+&"type": "mutation"
+},
+"4": {
+&"character": "Chief",
+&"id": "4",
+&"next_id": "5",
+&"text": "[[I knew you weren't up to it.|Fine, stop wasting my time, then.|Okay, maybe next time.]]",
+&"type": "dialogue"
+},
+"40": {
+&"id": "40",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"41": {
+&"id": "41",
+&"next_id": "42",
+&"type": ""
+},
+"42": {
+&"id": "42",
+&"next_id": "43",
+&"type": "title"
+},
+"43": {
+&"character": "Chief",
+&"id": "43",
+&"next_id": "44",
+&"text": "Now you need to assemble your team. We work in teams of five. Select five agents from this list. Each agent has a unique skill that will be useful for you in your mission.",
+&"type": "dialogue"
+},
+"44": {
+&"id": "44",
+&"next_id": "46",
+&"type": "title"
+},
+"45": {
+&"id": "45",
+&"next_id": "46",
+&"type": ""
+},
+"46": {
+&"cases": Array[Dictionary]([{
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 6,
+&"type": &"number",
+&"value": 0
+}])
+},
+&"next_id": "48"
+}, {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 6,
+&"type": &"number",
+&"value": 1
+}])
+},
+&"next_id": "50"
+}, {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 6,
+&"type": &"number",
+&"value": 2
+}])
+},
+&"next_id": "52"
+}, {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 6,
+&"type": &"number",
+&"value": 3
+}])
+},
+&"next_id": "54"
+}, {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 6,
+&"type": &"number",
+&"value": 4
+}])
+},
+&"next_id": "56"
+}, {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 6,
+&"type": &"number",
+&"value": 5
+}])
+},
+&"next_id": "58"
+}]),
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 6,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 16,
+&"type": &"dot"
+}, {
+&"i": 17,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 27,
+&"type": &"dot"
+}, {
+&"function": "size",
+&"i": 28,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 33,
+&"type": &"parens_close"
+}])])
+}])
+},
+&"id": "46",
+&"next_id": "47",
+&"next_id_after": "60",
+&"type": "match"
+},
+"48": {
+&"character": "Chief",
+&"id": "48",
+&"next_id": "60",
+&"text": "Here is the list:",
+&"type": "dialogue"
+},
+"5": {
+&"id": "5",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"variable",
+&"value": "quit"
+}, {
+&"i": 18,
+&"type": &"dot"
+}, {
+&"function": "emit",
+&"i": 19,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 24,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "6",
+&"type": "mutation"
+},
+"50": {
+&"character": "Chief",
+&"id": "50",
+&"next_id": "60",
+&"text": "So far, only {{GlobalVars.agent_name[0]}} is on the team. Pick four more.",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 24,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 34,
+&"type": &"dot"
+}, {
+&"i": 35,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 46,
+&"type": &"number",
+&"value": 0
+}, {
+&"i": 47,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[0]}}"
+}]),
+&"type": "dialogue"
+},
+"52": {
+&"character": "Chief",
+&"id": "52",
+&"next_id": "60",
+&"text": "So far we have {{GlobalVars.agent_name[0]}} and {{GlobalVars.agent_name[1]}}. Pick three more.",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 26,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 36,
+&"type": &"dot"
+}, {
+&"i": 37,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 48,
+&"type": &"number",
+&"value": 0
+}, {
+&"i": 49,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[0]}}"
+}, {
+&"expression": Array[Dictionary]([{
+&"i": 59,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 69,
+&"type": &"dot"
+}, {
+&"i": 70,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 81,
+&"type": &"number",
+&"value": 1
+}, {
+&"i": 82,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[1]}}"
+}]),
+&"type": "dialogue"
+},
+"54": {
+&"character": "Chief",
+&"id": "54",
+&"next_id": "60",
+&"text": "So far we have {{GlobalVars.agent_name[0]}}, {{GlobalVars.agent_name[1]}}, and {{GlobalVars.agent_name[2]}}. Pick two more.",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 26,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 36,
+&"type": &"dot"
+}, {
+&"i": 37,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 48,
+&"type": &"number",
+&"value": 0
+}, {
+&"i": 49,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[0]}}"
+}, {
+&"expression": Array[Dictionary]([{
+&"i": 56,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 66,
+&"type": &"dot"
+}, {
+&"i": 67,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 78,
+&"type": &"number",
+&"value": 1
+}, {
+&"i": 79,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[1]}}"
+}, {
+&"expression": Array[Dictionary]([{
+&"i": 90,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 100,
+&"type": &"dot"
+}, {
+&"i": 101,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 112,
+&"type": &"number",
+&"value": 2
+}, {
+&"i": 113,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[2]}}"
+}]),
+&"type": "dialogue"
+},
+"56": {
+&"character": "Chief",
+&"id": "56",
+&"next_id": "60",
+&"text": "So far we have {{GlobalVars.agent_name[0]}}, {{GlobalVars.agent_name[1]}}, {{GlobalVars.agent_name[2]}}, and {{GlobalVars.agent_name[3]}}. Almost there. Pick one more.",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 26,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 36,
+&"type": &"dot"
+}, {
+&"i": 37,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 48,
+&"type": &"number",
+&"value": 0
+}, {
+&"i": 49,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[0]}}"
+}, {
+&"expression": Array[Dictionary]([{
+&"i": 56,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 66,
+&"type": &"dot"
+}, {
+&"i": 67,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 78,
+&"type": &"number",
+&"value": 1
+}, {
+&"i": 79,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[1]}}"
+}, {
+&"expression": Array[Dictionary]([{
+&"i": 86,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 96,
+&"type": &"dot"
+}, {
+&"i": 97,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 108,
+&"type": &"number",
+&"value": 2
+}, {
+&"i": 109,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[2]}}"
+}, {
+&"expression": Array[Dictionary]([{
+&"i": 120,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 130,
+&"type": &"dot"
+}, {
+&"i": 131,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 142,
+&"type": &"number",
+&"value": 3
+}, {
+&"i": 143,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[3]}}"
+}]),
+&"type": "dialogue"
+},
+"58": {
+&"character": "Chief",
+&"id": "58",
+&"next_id": "60",
+&"text": "We have our team: {{GlobalVars.agent_name[0]}}, {{GlobalVars.agent_name[1]}}, {{GlobalVars.agent_name[2]}}, {{GlobalVars.agent_name[3]}}, and {{GlobalVars.agent_name[4]}}. If you're satisfied we can start deploying them, or you can go back and keep editing the list.",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 29,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 39,
+&"type": &"dot"
+}, {
+&"i": 40,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 51,
+&"type": &"number",
+&"value": 0
+}, {
+&"i": 52,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[0]}}"
+}, {
+&"expression": Array[Dictionary]([{
+&"i": 59,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 69,
+&"type": &"dot"
+}, {
+&"i": 70,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 81,
+&"type": &"number",
+&"value": 1
+}, {
+&"i": 82,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[1]}}"
+}, {
+&"expression": Array[Dictionary]([{
+&"i": 89,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 99,
+&"type": &"dot"
+}, {
+&"i": 100,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 111,
+&"type": &"number",
+&"value": 2
+}, {
+&"i": 112,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[2]}}"
+}, {
+&"expression": Array[Dictionary]([{
+&"i": 119,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 129,
+&"type": &"dot"
+}, {
+&"i": 130,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 141,
+&"type": &"number",
+&"value": 3
+}, {
+&"i": 142,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[3]}}"
+}, {
+&"expression": Array[Dictionary]([{
+&"i": 153,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 163,
+&"type": &"dot"
+}, {
+&"i": 164,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 175,
+&"type": &"number",
+&"value": 4
+}, {
+&"i": 176,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[4]}}"
+}]),
+&"type": "dialogue"
+},
+"59": {
+&"id": "59",
+&"next_id": "60",
+&"type": ""
+},
+"6": {
+&"id": "6",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"60": {
+&"id": "60",
+&"next_id": "61",
+&"responses": PackedStringArray("60", "72", "84", "96", "108", "120", "132", "144", "156", "157"),
+&"text": "Arthur",
+&"type": "response"
+},
+"61": {
+&"character": "Arthur",
+&"id": "61",
+&"next_id": "62",
+&"text": "Arthur is able to use the water pathways. [if not GlobalVars.agent_name.has(\"Arthur\")]Would you like to add Arthur to the team?[/if] [if GlobalVars.agent_name.has(\"Arthur\")]Arthur is already selected. Would you like remove Arthur?[/if]",
+&"type": "dialogue"
+},
+"62": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 17,
+&"type": &"not"
+}, {
+&"i": 21,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 31,
+&"type": &"dot"
+}, {
+&"i": 32,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 42,
+&"type": &"dot"
+}, {
+&"function": "has",
+&"i": 43,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 47,
+&"type": &"string",
+&"value": "Arthur"
+}, {
+&"i": 55,
+&"type": &"parens_close"
+}])])
+}])
+},
+&"condition_as_text": "not GlobalVars.agent_name.has(\"Arthur\")",
+&"id": "62",
+&"next_id": "63",
+&"responses": PackedStringArray("62", "66", "70"),
+&"text": "Pick Arthur",
+&"type": "response"
+},
+"63": {
+&"character": "Chief",
+&"id": "63",
+&"next_id": "64",
+&"text": "We'll add Arthur to the team.",
+&"type": "dialogue"
+},
+"64": {
+&"id": "64",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 14,
+&"type": &"dot"
+}, {
+&"i": 15,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 25,
+&"type": &"dot"
+}, {
+&"function": "append",
+&"i": 26,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 33,
+&"type": &"string",
+&"value": "Arthur"
+}, {
+&"i": 41,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "65",
+&"type": "mutation"
+},
+"65": {
+&"id": "65",
+&"is_snippet": false,
+&"next_id": "46",
+&"next_id_after": "",
+&"type": "goto"
+},
+"66": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 19,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 29,
+&"type": &"dot"
+}, {
+&"i": 30,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 40,
+&"type": &"dot"
+}, {
+&"function": "has",
+&"i": 41,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 45,
+&"type": &"string",
+&"value": "Arthur"
+}, {
+&"i": 53,
+&"type": &"parens_close"
+}])])
+}])
+},
+&"condition_as_text": "GlobalVars.agent_name.has(\"Arthur\")",
+&"id": "66",
+&"next_id": "67",
+&"text": "Remove Arthur",
+&"type": "response"
+},
+"67": {
+&"character": "Chief",
+&"id": "67",
+&"next_id": "68",
+&"text": "We'll remove Arthur from the team.",
+&"type": "dialogue"
+},
+"68": {
+&"id": "68",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 14,
+&"type": &"dot"
+}, {
+&"i": 15,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 25,
+&"type": &"dot"
+}, {
+&"function": "erase",
+&"i": 26,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 32,
+&"type": &"string",
+&"value": "Arthur"
+}, {
+&"i": 40,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "69",
+&"type": "mutation"
+},
+"69": {
+&"id": "69",
+&"is_snippet": false,
+&"next_id": "46",
+&"next_id_after": "",
+&"type": "goto"
+},
+"7": {
+&"id": "7",
+&"next_id": "8",
+&"type": ""
+},
+"70": {
+&"id": "70",
+&"next_id": "71",
+&"text": "Let me see the list again",
+&"type": "response"
+},
+"71": {
+&"id": "71",
+&"is_snippet": false,
+&"next_id": "46",
+&"next_id_after": "",
+&"type": "goto"
+},
+"72": {
+&"id": "72",
+&"next_id": "73",
+&"text": "Bertha",
+&"type": "response"
+},
+"73": {
+&"character": "Bertha",
+&"id": "73",
+&"next_id": "74",
+&"text": "Bertha has some psychic abilities and is able to sense the suspect's tension. [if not GlobalVars.agent_name.has(\"Bertha\")]Would you like to add Bertha to the team?[/if] [if GlobalVars.agent_name.has(\"Bertha\")]Bertha is already selected. Would you like remove Bertha?[/if]",
+&"type": "dialogue"
+},
+"74": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 17,
+&"type": &"not"
+}, {
+&"i": 21,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 31,
+&"type": &"dot"
+}, {
+&"i": 32,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 42,
+&"type": &"dot"
+}, {
+&"function": "has",
+&"i": 43,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 47,
+&"type": &"string",
+&"value": "Bertha"
+}, {
+&"i": 55,
+&"type": &"parens_close"
+}])])
+}])
+},
+&"condition_as_text": "not GlobalVars.agent_name.has(\"Bertha\")",
+&"id": "74",
+&"next_id": "75",
+&"responses": PackedStringArray("74", "78", "82"),
+&"text": "Pick Bertha",
+&"type": "response"
+},
+"75": {
+&"character": "Chief",
+&"id": "75",
+&"next_id": "76",
+&"text": "We'll add Bertha to the team.",
+&"type": "dialogue"
+},
+"76": {
+&"id": "76",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 14,
+&"type": &"dot"
+}, {
+&"i": 15,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 25,
+&"type": &"dot"
+}, {
+&"function": "append",
+&"i": 26,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 33,
+&"type": &"string",
+&"value": "Bertha"
+}, {
+&"i": 41,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "77",
+&"type": "mutation"
+},
+"77": {
+&"id": "77",
+&"is_snippet": false,
+&"next_id": "46",
+&"next_id_after": "",
+&"type": "goto"
+},
+"78": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 19,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 29,
+&"type": &"dot"
+}, {
+&"i": 30,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 40,
+&"type": &"dot"
+}, {
+&"function": "has",
+&"i": 41,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 45,
+&"type": &"string",
+&"value": "Bertha"
+}, {
+&"i": 53,
+&"type": &"parens_close"
+}])])
+}])
+},
+&"condition_as_text": "GlobalVars.agent_name.has(\"Bertha\")",
+&"id": "78",
+&"next_id": "79",
+&"text": "Remove Bertha",
+&"type": "response"
+},
+"79": {
+&"character": "Chief",
+&"id": "79",
+&"next_id": "80",
+&"text": "We'll remove Bertha from the team.",
+&"type": "dialogue"
+},
+"8": {
+&"id": "8",
+&"next_id": "9",
+&"type": "title"
+},
+"80": {
+&"id": "80",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 14,
+&"type": &"dot"
+}, {
+&"i": 15,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 25,
+&"type": &"dot"
+}, {
+&"function": "erase",
+&"i": 26,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 32,
+&"type": &"string",
+&"value": "Bertha"
+}, {
+&"i": 40,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "81",
+&"type": "mutation"
+},
+"81": {
+&"id": "81",
+&"is_snippet": false,
+&"next_id": "46",
+&"next_id_after": "",
+&"type": "goto"
+},
+"82": {
+&"id": "82",
+&"next_id": "83",
+&"text": "Let me see the list again",
+&"type": "response"
+},
+"83": {
+&"id": "83",
+&"is_snippet": false,
+&"next_id": "46",
+&"next_id_after": "",
+&"type": "goto"
+},
+"84": {
+&"id": "84",
+&"next_id": "85",
+&"text": "Cristobal",
+&"type": "response"
+},
+"85": {
+&"character": "Cristobal",
+&"id": "85",
+&"next_id": "86",
+&"text": "Cristobal is able to plant a listening device at an intersection. [if not GlobalVars.agent_name.has(\"Cristobal\")]Would you like to add Cristobal to the team?[/if] [if GlobalVars.agent_name.has(\"Cristobal\")]Cristobal is already selected. Would you like remove Cristobal?[/if]",
+&"type": "dialogue"
+},
+"86": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 20,
+&"type": &"not"
+}, {
+&"i": 24,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 34,
+&"type": &"dot"
+}, {
+&"i": 35,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 45,
+&"type": &"dot"
+}, {
+&"function": "has",
+&"i": 46,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 50,
+&"type": &"string",
+&"value": "Cristobal"
+}, {
+&"i": 61,
+&"type": &"parens_close"
+}])])
+}])
+},
+&"condition_as_text": "not GlobalVars.agent_name.has(\"Cristobal\")",
+&"id": "86",
+&"next_id": "87",
+&"responses": PackedStringArray("86", "90", "94"),
+&"text": "Pick Cristobal",
+&"type": "response"
+},
+"87": {
+&"character": "Chief",
+&"id": "87",
+&"next_id": "88",
+&"text": "We'll add Cristobal to the team.",
+&"type": "dialogue"
+},
+"88": {
+&"id": "88",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 14,
+&"type": &"dot"
+}, {
+&"i": 15,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 25,
+&"type": &"dot"
+}, {
+&"function": "append",
+&"i": 26,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 33,
+&"type": &"string",
+&"value": "Cristobal"
+}, {
+&"i": 44,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "89",
+&"type": "mutation"
+},
+"89": {
+&"id": "89",
+&"is_snippet": false,
+&"next_id": "46",
+&"next_id_after": "",
+&"type": "goto"
+},
+"9": {
+&"character": "Chief",
+&"id": "9",
+&"next_id": "10",
+&"text": "Okay. Here is a list of suspects that we need to catch. Let me know which of these you can help with.",
+&"type": "dialogue"
+},
+"90": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 22,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 32,
+&"type": &"dot"
+}, {
+&"i": 33,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 43,
+&"type": &"dot"
+}, {
+&"function": "has",
+&"i": 44,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 48,
+&"type": &"string",
+&"value": "Cristobal"
+}, {
+&"i": 59,
+&"type": &"parens_close"
+}])])
+}])
+},
+&"condition_as_text": "GlobalVars.agent_name.has(\"Cristobal\")",
+&"id": "90",
+&"next_id": "91",
+&"text": "Remove Cristobal",
+&"type": "response"
+},
+"91": {
+&"character": "Chief",
+&"id": "91",
+&"next_id": "92",
+&"text": "We'll remove Cristobal from the team.",
+&"type": "dialogue"
+},
+"92": {
+&"id": "92",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 14,
+&"type": &"dot"
+}, {
+&"i": 15,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 25,
+&"type": &"dot"
+}, {
+&"function": "erase",
+&"i": 26,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 32,
+&"type": &"string",
+&"value": "Cristobal"
+}, {
+&"i": 43,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "93",
+&"type": "mutation"
+},
+"93": {
+&"id": "93",
+&"is_snippet": false,
+&"next_id": "46",
+&"next_id_after": "",
+&"type": "goto"
+},
+"94": {
+&"id": "94",
+&"next_id": "95",
+&"text": "Let me see the list again",
+&"type": "response"
+},
+"95": {
+&"id": "95",
+&"is_snippet": false,
+&"next_id": "46",
+&"next_id_after": "",
+&"type": "goto"
+},
+"96": {
+&"id": "96",
+&"next_id": "97",
+&"text": "Dolly",
+&"type": "response"
+},
+"97": {
+&"character": "Dolly",
+&"id": "97",
+&"next_id": "98",
+&"text": "Dolly is able to place a blockade on an intersection. [if not GlobalVars.agent_name.has(\"Dolly\")]Would you like to add Dolly to the team?[/if] [if GlobalVars.agent_name.has(\"Dolly\")]Dolly is already selected. Would you like remove Dolly?[/if]",
+&"type": "dialogue"
+},
+"98": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 16,
+&"type": &"not"
+}, {
+&"i": 20,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 30,
+&"type": &"dot"
+}, {
+&"i": 31,
+&"type": &"variable",
+&"value": "agent_name"
+}, {
+&"i": 41,
+&"type": &"dot"
+}, {
+&"function": "has",
+&"i": 42,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 46,
+&"type": &"string",
+&"value": "Dolly"
+}, {
+&"i": 53,
+&"type": &"parens_close"
+}])])
+}])
+},
+&"condition_as_text": "not GlobalVars.agent_name.has(\"Dolly\")",
+&"id": "98",
+&"next_id": "99",
+&"responses": PackedStringArray("98", "102", "106"),
+&"text": "Pick Dolly",
+&"type": "response"
+},
+"99": {
+&"character": "Chief",
+&"id": "99",
+&"next_id": "100",
+&"text": "We'll add Dolly to the team.",
+&"type": "dialogue"
+}
+}
+raw_text = "~ start
+Chief: Hi. Welcome to Sparta, New Jersey. I'm the police chief. We can use your help. Are you interested?
+- Yes, what can I do?
+- Quit
+	Chief: [[I knew you weren't up to it.|Fine, stop wasting my time, then.|Okay, maybe next time.]]
+	do GlobalVars.quit.emit()
+	=> END
+
+~ SuspectList
+Chief: Okay. Here is a list of suspects that we need to catch. Let me know which of these you can help with.
+- Keith (easy)
+	Keith: Keith should be easy to catch. He's not too bright and doesn't have any particular skills.
+	- Pick Keith
+		Chief: He shouldn't give you much of a problem. Good luck bringing Keith in.
+		# Set the suspect threat level
+		set GlobalVars.sus_name = \"Keith\"
+		set GlobalVars.sus_threat_profile = GlobalVars.threat_profile_a
+	- Pick someone else
+		=> SuspectList
+- Patti (medium)
+	Patti: Patti is a bit tricky. She is good at avoiding capture but she does take risks. She has a few tricks up her sleave.
+	- Pick Patti
+		Chief: Patti will give you a challenge. Good luck bringing in Patti.
+		# Set the suspect threat level
+		set GlobalVars.sus_name = \"Patti\"
+		set GlobalVars.sus_threat_profile = GlobalVars.threat_profile_b
+	- Pick someone else
+		=> SuspectList
+- Mo (hard)
+	Mo: Capturing Mo won't be easy. He is very cautious and has a few skills that will make him hard to capture.
+	- Pick Mo
+		Chief: He will be tough. Good luck bringing in Mo.
+		# Set the suspect threat level
+		set GlobalVars.sus_name = \"Mo\"
+		set GlobalVars.sus_threat_profile = GlobalVars.threat_profile_c
+	- Pick someone else
+		=> SuspectList
+- I changed my mind. I have better things to do.
+	Chief: [[I understand. See ya around.|Cupcake|Fine, we didn't need your help anyway.]]
+	do GlobalVars.quit.emit()
+	=> END
+
+~ AgentListIntro
+Chief: Now you need to assemble your team. We work in teams of five. Select five agents from this list. Each agent has a unique skill that will be useful for you in your mission.
+~ AgentList
+# List the names of those already selected if any are selected
+match GlobalVars.agent_name.size()
+	when 0
+		Chief: Here is the list:
+	when 1
+		Chief: So far, only {{GlobalVars.agent_name[0]}} is on the team. Pick four more.
+	when 2
+		Chief: So far we have {{GlobalVars.agent_name[0]}} and {{GlobalVars.agent_name[1]}}. Pick three more.
+	when 3
+		Chief: So far we have {{GlobalVars.agent_name[0]}}, {{GlobalVars.agent_name[1]}}, and {{GlobalVars.agent_name[2]}}. Pick two more.
+	when 4
+		Chief: So far we have {{GlobalVars.agent_name[0]}}, {{GlobalVars.agent_name[1]}}, {{GlobalVars.agent_name[2]}}, and {{GlobalVars.agent_name[3]}}. Almost there. Pick one more.
+	when 5
+		Chief: We have our team: {{GlobalVars.agent_name[0]}}, {{GlobalVars.agent_name[1]}}, {{GlobalVars.agent_name[2]}}, {{GlobalVars.agent_name[3]}}, and {{GlobalVars.agent_name[4]}}. If you're satisfied we can start deploying them, or you can go back and keep editing the list.
+# List the selected names
+- Arthur
+	Arthur: Arthur is able to use the water pathways. [if not GlobalVars.agent_name.has(\"Arthur\")]Would you like to add Arthur to the team?[/if] [if GlobalVars.agent_name.has(\"Arthur\")]Arthur is already selected. Would you like remove Arthur?[/if]
+	- Pick Arthur [if not GlobalVars.agent_name.has(\"Arthur\")]
+		Chief: We'll add Arthur to the team.
+		set GlobalVars.agent_name.append(\"Arthur\")
+		=> AgentList
+	- Remove Arthur [if GlobalVars.agent_name.has(\"Arthur\")]
+		Chief: We'll remove Arthur from the team.
+		set GlobalVars.agent_name.erase(\"Arthur\")
+		=> AgentList
+	- Let me see the list again
+		=> AgentList
+- Bertha
+	Bertha: Bertha has some psychic abilities and is able to sense the suspect's tension. [if not GlobalVars.agent_name.has(\"Bertha\")]Would you like to add Bertha to the team?[/if] [if GlobalVars.agent_name.has(\"Bertha\")]Bertha is already selected. Would you like remove Bertha?[/if]
+	- Pick Bertha [if not GlobalVars.agent_name.has(\"Bertha\")]
+		Chief: We'll add Bertha to the team.
+		set GlobalVars.agent_name.append(\"Bertha\")
+		=> AgentList
+	- Remove Bertha [if GlobalVars.agent_name.has(\"Bertha\")]
+		Chief: We'll remove Bertha from the team.
+		set GlobalVars.agent_name.erase(\"Bertha\")
+		=> AgentList
+	- Let me see the list again
+		=> AgentList
+- Cristobal
+	Cristobal: Cristobal is able to plant a listening device at an intersection. [if not GlobalVars.agent_name.has(\"Cristobal\")]Would you like to add Cristobal to the team?[/if] [if GlobalVars.agent_name.has(\"Cristobal\")]Cristobal is already selected. Would you like remove Cristobal?[/if]
+	- Pick Cristobal [if not GlobalVars.agent_name.has(\"Cristobal\")]
+		Chief: We'll add Cristobal to the team.
+		set GlobalVars.agent_name.append(\"Cristobal\")
+		=> AgentList
+	- Remove Cristobal [if GlobalVars.agent_name.has(\"Cristobal\")]
+		Chief: We'll remove Cristobal from the team.
+		set GlobalVars.agent_name.erase(\"Cristobal\")
+		=> AgentList
+	- Let me see the list again
+		=> AgentList
+- Dolly
+	Dolly: Dolly is able to place a blockade on an intersection. [if not GlobalVars.agent_name.has(\"Dolly\")]Would you like to add Dolly to the team?[/if] [if GlobalVars.agent_name.has(\"Dolly\")]Dolly is already selected. Would you like remove Dolly?[/if]
+	- Pick Dolly [if not GlobalVars.agent_name.has(\"Dolly\")]
+		Chief: We'll add Dolly to the team.
+		set GlobalVars.agent_name.append(\"Dolly\")
+		=> AgentList
+	- Remove Dolly [if GlobalVars.agent_name.has(\"Dolly\")]
+		Chief: We'll remove Dolly from the team.
+		set GlobalVars.agent_name.erase(\"Dolly\")
+		=> AgentList
+	- Let me see the list again
+		=> AgentList
+- Edouard
+	Edouard: Edouard's special ability is unknown. [if not GlobalVars.agent_name.has(\"Edouard\")]Would you like to add Edouard to the team?[/if] [if GlobalVars.agent_name.has(\"Edouard\")]Edouard is already selected. Would you like remove Edouard?[/if]
+	- Pick Edouard [if not GlobalVars.agent_name.has(\"Edouard\")]
+		Chief: We'll add Edouard to the team.
+		set GlobalVars.agent_name.append(\"Edouard\")
+		=> AgentList
+	- Remove Edouard [if GlobalVars.agent_name.has(\"Edouard\")]
+		Chief: We'll remove Edouard from the team.
+		set GlobalVars.agent_name.erase(\"Edouard\")
+		=> AgentList
+	- Let me see the list again
+		=> AgentList
+- Fay
+	Fay: Fay's special ability is unknown. [if not GlobalVars.agent_name.has(\"Fay\")]Would you like to add Fay to the team?[/if] [if GlobalVars.agent_name.has(\"Fay\")]Fay is already selected. Would you like remove Fay?[/if]
+	- Pick Fay [if not GlobalVars.agent_name.has(\"Fay\")]
+		Chief: We'll add Fay to the team.
+		set GlobalVars.agent_name.append(\"Fay\")
+		=> AgentList
+	- Remove Fay [if GlobalVars.agent_name.has(\"Fay\")]
+		Chief: We'll remove Fay from the team.
+		set GlobalVars.agent_name.erase(\"Fay\")
+		=> AgentList
+	- Let me see the list again
+		=> AgentList
+- Gonzalo
+	Gonzalo: Gonzalo's special ability is unknown. [if not GlobalVars.agent_name.has(\"Gonzalo\")]Would you like to add Gonzalo to the team?[/if] [if GlobalVars.agent_name.has(\"Gonzalo\")]Gonzalo is already selected. Would you like remove Gonzalo?[/if]
+	- Pick Gonzalo [if not GlobalVars.agent_name.has(\"Gonzalo\")]
+		Chief: We'll add Gonzalo to the team.
+		set GlobalVars.agent_name.append(\"Gonzalo\")
+		=> AgentList
+	- Remove Gonzalo [if GlobalVars.agent_name.has(\"Gonzalo\")]
+		Chief: We'll remove Gonzalo from the team.
+		set GlobalVars.agent_name.erase(\"Gonzalo\")
+		=> AgentList
+	- Let me see the list again
+		=> AgentList
+- Hanna
+	Hanna: Hanna is able to summon a sixth agent to help. [if not GlobalVars.agent_name.has(\"Hanna\")]Would you like to add Hanna to the team?[/if] [if GlobalVars.agent_name.has(\"Hanna\")]Hanna is already selected. Would you like remove Hanna?[/if]
+	- Pick Hanna [if not GlobalVars.agent_name.has(\"Hanna\")]
+		Chief: We'll add Hanna to the team.
+		set GlobalVars.agent_name.append(\"Hanna\")
+		=> AgentList
+	- Remove Hanna [if GlobalVars.agent_name.has(\"Hanna\")]
+		Chief: We'll remove Hanna from the team.
+		set GlobalVars.agent_name.erase(\"Hanna\")
+		=> AgentList
+	- Let me see the list again.
+		=> AgentList
+- My team is complete. Let's get started!  [if GlobalVars.agent_name.size() == 5]
+- I changed my mind. I have better things to do.
+	Chief: [[I understand. See ya around.|Cupcake|Fine, we didn't need your help anyway.]]
+	do GlobalVars.quit.emit()
+	=> END
+
+~ StartGame
+Chief: Now that the team is in place, you must deploy them around Sparta. You can place them on a few key intersections around town. After all five agents are in place we can start our pursuit.
+do GlobalVars.agent_name.insert(0,\"IGNORE\")
+do GlobalVars.team_selected_from_dialogue.emit()
+=> END
+"
+metadata/dialogue_manager_version = "3.10.4"

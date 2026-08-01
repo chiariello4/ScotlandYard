@@ -1,0 +1,105 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_onn8g"]
+
+[resource]
+script = ExtResource("1_onn8g")
+using_states = PackedStringArray()
+titles = {
+"start": "10"
+}
+character_names = PackedStringArray("Chief", "Dispatcher")
+first_title = "0"
+lines = {
+"0": {
+&"id": "0",
+&"next_id": "10",
+&"type": "title"
+},
+"10": {
+&"character": "Chief",
+&"id": "10",
+&"next_id": "11",
+&"text": "Hi. Welcome to Sparta, New Jersey. I'm the police chief. We can use your help. Are you interested?",
+&"type": "dialogue"
+},
+"11": {
+&"id": "11",
+&"next_id": "12",
+&"responses": PackedStringArray("11", "15"),
+&"text": "Yes, what can I do?",
+&"type": "response"
+},
+"12": {
+&"character": "Chief",
+&"id": "12",
+&"next_id": "13",
+&"text": "Great. There are a few suspects that you can track down for us.",
+&"type": "dialogue"
+},
+"13": {
+&"character": "Chief",
+&"id": "13",
+&"next_id": "14",
+&"text": "You'll be working closely with our dispatcher.",
+&"type": "dialogue"
+},
+"14": {
+&"character": "Dispatcher",
+&"id": "14",
+&"next_id": "17",
+&"text": "Hi. I'm Sparta's dispatcher. I'll be your contact at headquarters.",
+&"type": "dialogue"
+},
+"15": {
+&"id": "15",
+&"next_id": "16",
+&"text": "Quit",
+&"type": "response"
+},
+"16": {
+&"character": "Chief",
+&"id": "16",
+&"next_id": "17",
+&"text": "[[I knew you weren't up to it.|Fine, stop wasting my time, then.|Okay, maybe next time.]]",
+&"type": "dialogue"
+},
+"17": {
+&"id": "17",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"18": {
+&"id": "18",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"9": {
+&"id": "9",
+&"next_id": "10",
+&"type": ""
+}
+}
+raw_text = "~ start
+#Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
+#Nathan: Here are some choices.
+#- First one
+#	Nathan: You picked the first one.
+#- Second one
+#	Nathan: You picked the second one.
+#- Start again => start
+#- End the conversation => END
+#Nathan: For more information see the online documentation.
+Chief: Hi. Welcome to Sparta, New Jersey. I'm the police chief. We can use your help. Are you interested?
+- Yes, what can I do?
+	Chief: Great. There are a few suspects that you can track down for us.
+	Chief: You'll be working closely with our dispatcher.
+	Dispatcher: Hi. I'm Sparta's dispatcher. I'll be your contact at headquarters.
+- Quit
+	Chief: [[I knew you weren't up to it.|Fine, stop wasting my time, then.|Okay, maybe next time.]]
+=> END"
+metadata/dialogue_manager_version = "3.10.4"

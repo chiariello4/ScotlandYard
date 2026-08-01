@@ -1,0 +1,12 @@
+res://game_message.tscn::dd9e8e297adc62aad18157914c1f51d9::1785610756::res://.godot/exported/133200997/export-78c7968fcd52b4915474495e0d260c23-game_message.scn
+res://main.tscn::4d53c76bdf7fc24bef74024fb69d51e4::1785610756::res://.godot/exported/133200997/export-3070c538c03ee49b7677ff960a3f5195-main.scn
+res://player_panel.tscn::14ee1a45a3b8e9afb5d6322b99a7662f::1785610756::res://.godot/exported/133200997/export-13e23fdf2561aa8ef193e5ebc0faf07c-player_panel.scn
+res://tile_map_sparta.tscn::2e9586510280291d07c3389c916e1827::1762880701::res://.godot/exported/133200997/export-c38c7f31690506e069fd3949cd9e1a7c-tile_map_sparta.scn
+res://addons/dialogue_manager/example_balloon/example_balloon.tscn::b1f28d8bf88ec3643d7ed8a917939102::1783969416::res://.godot/exported/133200997/export-57fc9b32a4ae3d4a3041b46baf4b8f92-example_balloon.scn
+res://addons/dialogue_manager/example_balloon/small_example_balloon.tscn::ad39f864cd724c0ab85c37ccb1b3962b::1779044469::res://.godot/exported/133200997/export-25872080cd204f02261b5746b425708f-small_example_balloon.scn
+res://addons/dialogue_manager/dialogue_label.tscn::5087c11b45dfaf8effc779674dfe11e8::1779044469::res://.godot/exported/133200997/export-e41b7d5321416240678013b406b79557-dialogue_label.scn
+res://addons/dialogue_manager/test_scene.tscn::5946a9a55ceff988ba46e7f734ff0538::1779044469::res://.godot/exported/133200997/export-74a175fe1e216df3bdf79c5c27a2ac2c-test_scene.scn
+res://dialog/balloon.tscn::0f15510e065c9d66503a88fbbeadc751::1785610756::res://.godot/exported/133200997/export-e04af8364c231c2571357025fa5042fc-balloon.scn
+res://game_dialog.tscn::9321c8d696b10145e1293a69aacb3f4a::1783612535::res://.godot/exported/133200997/export-aafa249795ec5eb147841b438a45ba53-game_dialog.scn
+res://themes/default_theme.tres::93c2b7226954e00c0f0e8278ea43f08e::1785607493::res://.godot/exported/133200997/export-090902c623f69d1979158a68112eedf1-default_theme.res
+res://themes/loc_button_theme.tres::fe137cf95bb184c8b39673b97e8f6d6f::1785608161::res://.godot/exported/133200997/export-66eba01ef557a5d9ea9fc85d58bceb36-loc_button_theme.res

@@ -1,0 +1,22 @@
+~ travelmode
+do GlobalVars.hide_moves.emit()
+{{GlobalVars.agent_name[GlobalVars.player_focus]}}: How do you want me to get there?
+- {{GlobalVars.travel_mode[0]}} [if GlobalVars.mode_option.has(0)]
+	set GlobalVars.mode_option_selected = 0
+- {{GlobalVars.travel_mode[1]}} [if GlobalVars.mode_option.has(1)]
+	set GlobalVars.mode_option_selected = 1
+- {{GlobalVars.travel_mode[2]}} [if GlobalVars.mode_option.has(2)]
+	set GlobalVars.mode_option_selected = 2
+do GlobalVars.mode_choice_selected.emit(GlobalVars.mode_option_selected)
+do GlobalVars.unhide_moves.emit()
+=> END
+
+~ waittodeploy
+% {{GlobalVars.agent_name[GlobalVars.player_focus]}}: Hi.
+% {{GlobalVars.agent_name[GlobalVars.player_focus]}}: Tell me where to go.
+% {{GlobalVars.agent_name[GlobalVars.player_focus]}}: I'm ready for deployment.
+% {{GlobalVars.agent_name[GlobalVars.player_focus]}}: Thanks for adding me to the team.
+% {{GlobalVars.agent_name[GlobalVars.player_focus]}}: I'm hungry.
+% {{GlobalVars.agent_name[GlobalVars.player_focus]}}: I love Sparta.
+% {{GlobalVars.agent_name[GlobalVars.player_focus]}}: Select a location for me to start.
+=> END

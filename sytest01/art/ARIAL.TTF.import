@@ -3,20 +3,20 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bijiwbc6t0nur"
-path="res://.godot/imported/ARIAL.TTF-9f5813e8fa76ab708efc2c51efd1a989.fontdata"
+path="res://.godot/imported/arial.ttf-f9eb48ada4b53fde0328e70a39162870.fontdata"
 
 [deps]
 
-source_file="res://art/ARIAL.TTF"
-dest_files=["res://.godot/imported/ARIAL.TTF-9f5813e8fa76ab708efc2c51efd1a989.fontdata"]
+source_file="res://art/arial.ttf"
+dest_files=["res://.godot/imported/arial.ttf-f9eb48ada4b53fde0328e70a39162870.fontdata"]
 
 [params]
 
 Rendering=null
 antialiasing=1
-generate_mipmaps=false
+generate_mipmaps=true
 disable_embedded_bitmaps=true
-multichannel_signed_distance_field=false
+multichannel_signed_distance_field=true
 msdf_pixel_range=8
 msdf_size=48
 allow_system_fallback=true

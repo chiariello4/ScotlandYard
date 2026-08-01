@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_alwnv"]
+
+[resource]
+script = ExtResource("1_alwnv")
+using_states = PackedStringArray()
+titles = {
+"chief_opening_dialog": "1"
+}
+character_names = PackedStringArray("Chief", "Dispatcher")
+first_title = "0"
+lines = {
+"0": {
+&"id": "0",
+&"next_id": "1",
+&"type": "title"
+},
+"1": {
+&"character": "Chief",
+&"id": "1",
+&"next_id": "2",
+&"text": "Hello, I'm the chief of police in Sparta.",
+&"type": "dialogue"
+},
+"2": {
+&"character": "Dispatcher",
+&"id": "2",
+&"next_id": "3",
+&"text": "And I'm Sparta's dispatcher.",
+&"type": "dialogue"
+},
+"3": {
+&"id": "3",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"4": {
+&"id": "4",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+}
+}
+raw_text = "~ chief_opening_dialog
+Chief: Hello, I'm the chief of police in Sparta.
+Dispatcher: And I'm Sparta's dispatcher.
+=> END"
+metadata/dialogue_manager_version = "3.10.4"

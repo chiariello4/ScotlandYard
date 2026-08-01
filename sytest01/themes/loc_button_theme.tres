@@ -1,0 +1,26 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://c8b6xys6gfh8g"]
+
+[ext_resource type="FontFile" uid="uid://bijiwbc6t0nur" path="res://art/arial.ttf" id="1_vid5m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vid5m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vid5m"]
+bg_color = Color(1, 1, 1, 0.0156863)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0, 0, 0, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 14
+Button/fonts/font = ExtResource("1_vid5m")
+Button/styles/disabled = SubResource("StyleBoxEmpty_vid5m")
+Button/styles/normal = SubResource("StyleBoxFlat_vid5m")
