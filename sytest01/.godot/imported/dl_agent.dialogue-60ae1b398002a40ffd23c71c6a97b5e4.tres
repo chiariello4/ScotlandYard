@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="DialogueResource" format=3]
 
 [ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_88geh"]
 
@@ -6,10 +6,34 @@
 script = ExtResource("1_88geh")
 using_states = PackedStringArray()
 titles = {
+"listening_device": "95",
+"location": "24",
+"misbehavior_arthur": "170",
+"misbehavior_arthur_2": "187",
+"misbehavior_bertha": "196",
+"misbehavior_bertha_2": "210",
+"misbehavior_cristobal": "218",
+"misbehavior_cristobal_2": "232",
+"misbehavior_dolly": "241",
+"misbehavior_dolly_2": "251",
+"misbehavior_edouard": "261",
+"misbehavior_edouard_2": "268",
+"misbehavior_fay": "275",
+"misbehavior_fay_2": "283",
+"misbehavior_gonzalo": "290",
+"misbehavior_gonzalo_2": "303",
+"misbehavior_hanna": "314",
+"misbehavior_hanna_2": "325",
+"outofmoves": "28",
+"special": "36",
 "travelmode": "1",
-"waittodeploy": "14"
+"waittodeploy": "14",
+"wild_animal_at_location_choice": "126",
+"wild_animal_at_location_choice_again": "142",
+"wild_animal_encounter": "113",
+"wild_animal_nervous": "99"
 }
-character_names = PackedStringArray("{{GlobalVars.agent_name[GlobalVars.player_focus]}}")
+character_names = PackedStringArray("{{GlobalVars.agent_name[GlobalVars.player_focus]}}", "Dispatcher", "Bertha", "Cristobal", "Dolly", "Edouard", "Hanna", "Arthur", "{{GlobalVars.agent_closest_to_cristobal}}", "Fay", "Gonzalo")
 first_title = "0"
 lines = {
 "0": {
@@ -79,6 +103,339 @@ lines = {
 &"next_id": "11",
 &"type": "mutation"
 },
+"100": {
+&"id": "100",
+&"next_id": "101",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "99",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "100",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "104",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "105",
+&"weight": 1.0
+}]),
+&"type": "random"
+},
+"101": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 25,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 35,
+&"type": &"dot"
+}, {
+&"i": 36,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 48,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"id": "101",
+&"next_id": "102",
+&"text": "There's a bear around here? Great, bring it on! Here, bear! Come and get me.",
+&"type": "dialogue"
+},
+"102": {
+&"character": "Dispatcher",
+&"id": "102",
+&"next_id": "103",
+&"text": "Agent {{GlobalVars.agent_name[GlobalVars.player_focus]}}, bears are no joke. Handle bear encounters professionally.",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 21,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 31,
+&"type": &"dot"
+}, {
+&"i": 32,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 43,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 53,
+&"type": &"dot"
+}, {
+&"i": 54,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 66,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"type": "dialogue"
+},
+"103": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 25,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 35,
+&"type": &"dot"
+}, {
+&"i": 36,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 48,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"id": "103",
+&"next_id": "110",
+&"text": "You're right, sorry.",
+&"type": "dialogue"
+},
+"104": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 2,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 12,
+&"type": &"dot"
+}, {
+&"i": 13,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 24,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 34,
+&"type": &"dot"
+}, {
+&"i": 35,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 47,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"id": "104",
+&"next_id": "110",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "99",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "100",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "104",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "105",
+&"weight": 1.0
+}]),
+&"text": "I understand there's a bear spotted in this part of town. I'll be careful.",
+&"type": "dialogue"
+},
+"105": {
+&"id": "105",
+&"next_id": "106",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "99",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "100",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "104",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "105",
+&"weight": 1.0
+}]),
+&"type": "random"
+},
+"106": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 5,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 15,
+&"type": &"dot"
+}, {
+&"i": 16,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 27,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 37,
+&"type": &"dot"
+}, {
+&"i": 38,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 50,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}, {
+&"i": 52,
+&"type": &"comparison",
+&"value": "!="
+}, {
+&"i": 55,
+&"type": &"string",
+&"value": "Arthur"
+}])
+},
+&"id": "106",
+&"next_id": "107",
+&"next_id_after": "110",
+&"type": "condition"
+},
+"107": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 14,
+&"type": &"dot"
+}, {
+&"i": 15,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 26,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 36,
+&"type": &"dot"
+}, {
+&"i": 37,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 49,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"id": "107",
+&"next_id": "108",
+&"text": "I'm not afraid of a big, hairy animal. Have you seen Arthur without a shirt on? I can handle that.",
+&"type": "dialogue"
+},
+"108": {
+&"character": "Arthur",
+&"id": "108",
+&"next_id": "109",
+&"text": "I heard that!",
+&"type": "dialogue"
+},
+"109": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 14,
+&"type": &"dot"
+}, {
+&"i": 15,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 26,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 36,
+&"type": &"dot"
+}, {
+&"i": 37,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 49,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"id": "109",
+&"next_id": "110",
+&"text": "Just messin' with you, buddy.",
+&"type": "dialogue"
+},
 "11": {
 &"id": "11",
 &"is_snippet": false,
@@ -86,15 +443,643 @@ lines = {
 &"next_id_after": "",
 &"type": "goto"
 },
+"110": {
+&"id": "110",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"111": {
+&"id": "111",
+&"next_id": "112",
+&"type": ""
+},
+"112": {
+&"id": "112",
+&"next_id": "113",
+&"type": "title"
+},
+"113": {
+&"id": "113",
+&"next_id": "114",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "113",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "116",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "120",
+&"weight": 1.0
+}]),
+&"type": "random"
+},
+"114": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 25,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 35,
+&"type": &"dot"
+}, {
+&"i": 36,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 48,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"id": "114",
+&"next_id": "115",
+&"text": "There is a bear at this location, but he has wandered off.",
+&"type": "dialogue"
+},
+"115": {
+&"character": "Dispatcher",
+&"id": "115",
+&"next_id": "123",
+&"text": "Noted. Thanks.",
+&"type": "dialogue"
+},
+"116": {
+&"id": "116",
+&"next_id": "117",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "113",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "116",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "120",
+&"weight": 1.0
+}]),
+&"type": "random"
+},
+"117": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 25,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 35,
+&"type": &"dot"
+}, {
+&"i": 36,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 48,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"id": "117",
+&"next_id": "118",
+&"text": "Um ... uh ... There's a bear staring right at me.",
+&"type": "dialogue"
+},
+"118": {
+&"character": "Dispatcher",
+&"id": "118",
+&"next_id": "119",
+&"text": "Stay, calm. Remember your training.",
+&"type": "dialogue"
+},
+"119": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 25,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 35,
+&"type": &"dot"
+}, {
+&"i": 36,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 48,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"id": "119",
+&"next_id": "123",
+&"text": "Right. ... Okay, it's moved away. Thanks.",
+&"type": "dialogue"
+},
 "12": {
 &"id": "12",
 &"next_id": "13",
 &"type": ""
 },
+"120": {
+&"id": "120",
+&"next_id": "121",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "113",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "116",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "120",
+&"weight": 1.0
+}]),
+&"type": "random"
+},
+"121": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 25,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 35,
+&"type": &"dot"
+}, {
+&"i": 36,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 48,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"id": "121",
+&"next_id": "122",
+&"text": "Oh, look. A bear! Not to worry, it's wandering away.",
+&"type": "dialogue"
+},
+"122": {
+&"character": "Dispatcher",
+&"id": "122",
+&"next_id": "123",
+&"text": "Thanks for letting me know.",
+&"type": "dialogue"
+},
+"123": {
+&"id": "123",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"124": {
+&"id": "124",
+&"next_id": "125",
+&"type": ""
+},
+"125": {
+&"id": "125",
+&"next_id": "126",
+&"type": "title"
+},
+"126": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 2,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 12,
+&"type": &"dot"
+}, {
+&"i": 13,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 24,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 34,
+&"type": &"dot"
+}, {
+&"i": 35,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 47,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"id": "126",
+&"next_id": "128",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "126",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "127",
+&"weight": 1.0
+}]),
+&"text": "You want me to go there? But there's a bear there. I can see it.",
+&"type": "dialogue"
+},
+"127": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 2,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 12,
+&"type": &"dot"
+}, {
+&"i": 13,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 24,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 34,
+&"type": &"dot"
+}, {
+&"i": 35,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 47,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"id": "127",
+&"next_id": "128",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "126",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "127",
+&"weight": 1.0
+}]),
+&"text": "Are you sure? There's black bear at that location.",
+&"type": "dialogue"
+},
+"128": {
+&"id": "128",
+&"next_id": "129",
+&"type": ""
+},
+"129": {
+&"character": "Dispatcher",
+&"id": "129",
+&"next_id": "130",
+&"text": "Yes, that was your assignment, agent {{GlobalVars.agent_name[GlobalVars.player_focus]}}. Is there a problem?",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 51,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 61,
+&"type": &"dot"
+}, {
+&"i": 62,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 73,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 83,
+&"type": &"dot"
+}, {
+&"i": 84,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 96,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"type": "dialogue"
+},
 "13": {
 &"id": "13",
 &"next_id": "14",
 &"type": "title"
+},
+"130": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 2,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 12,
+&"type": &"dot"
+}, {
+&"i": 13,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 24,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 34,
+&"type": &"dot"
+}, {
+&"i": 35,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 47,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"id": "130",
+&"next_id": "131",
+&"text": "Can I just wait for the bear to move away?",
+&"type": "dialogue"
+},
+"131": {
+&"id": "131",
+&"next_id": "132",
+&"responses": PackedStringArray("131", "136"),
+&"text": "Sure, wait for the bear to move.",
+&"type": "response"
+},
+"132": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 25,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 35,
+&"type": &"dot"
+}, {
+&"i": 36,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 48,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"id": "132",
+&"next_id": "133",
+&"text": "Great. Thanks.",
+&"type": "dialogue"
+},
+"133": {
+&"character": "Dispatcher",
+&"id": "133",
+&"next_id": "134",
+&"text": "While you're waiting, brush up on your training for bear encounters.",
+&"type": "dialogue"
+},
+"134": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 25,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 35,
+&"type": &"dot"
+}, {
+&"i": 36,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 48,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"id": "134",
+&"next_id": "135",
+&"text": "Will do.",
+&"type": "dialogue"
+},
+"135": {
+&"id": "135",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"variable",
+&"value": "skip_turn_wild_animal"
+}, {
+&"i": 35,
+&"type": &"dot"
+}, {
+&"function": "emit",
+&"i": 36,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 41,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "139",
+&"type": "mutation"
+},
+"136": {
+&"id": "136",
+&"next_id": "137",
+&"text": "Proceed to that location. You've had your training - use it.",
+&"type": "response"
+},
+"137": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 25,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 35,
+&"type": &"dot"
+}, {
+&"i": 36,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 48,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"id": "137",
+&"next_id": "138",
+&"text": "[[I understand.|Right, got it.]] Here I go. It's moving away now.",
+&"type": "dialogue"
+},
+"138": {
+&"id": "138",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"variable",
+&"value": "no_skip_turn_wild_animal"
+}, {
+&"i": 38,
+&"type": &"dot"
+}, {
+&"function": "emit",
+&"i": 39,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 44,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "139",
+&"type": "mutation"
+},
+"139": {
+&"id": "139",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
 },
 "14": {
 &"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
@@ -160,6 +1145,217 @@ lines = {
 &"weight": 1.0
 }]),
 &"text": "Hi.",
+&"type": "dialogue"
+},
+"140": {
+&"id": "140",
+&"next_id": "141",
+&"type": ""
+},
+"141": {
+&"id": "141",
+&"next_id": "142",
+&"type": "title"
+},
+"142": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 2,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 12,
+&"type": &"dot"
+}, {
+&"i": 13,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 24,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 34,
+&"type": &"dot"
+}, {
+&"i": 35,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 47,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"id": "142",
+&"next_id": "144",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "142",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "143",
+&"weight": 1.0
+}]),
+&"text": "You want me to go there? But there's a bear there. I can see it.",
+&"type": "dialogue"
+},
+"143": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 2,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 12,
+&"type": &"dot"
+}, {
+&"i": 13,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 24,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 34,
+&"type": &"dot"
+}, {
+&"i": 35,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 47,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"id": "143",
+&"next_id": "144",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "142",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "143",
+&"weight": 1.0
+}]),
+&"text": "Are you sure? There's black bear at that location.",
+&"type": "dialogue"
+},
+"144": {
+&"id": "144",
+&"next_id": "145",
+&"type": ""
+},
+"145": {
+&"character": "Dispatcher",
+&"id": "145",
+&"next_id": "147",
+&"text": "Yes, that was your assignment, agent {{GlobalVars.agent_name[GlobalVars.player_focus]}}. We already went over this. What's the problem, now?",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 51,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 61,
+&"type": &"dot"
+}, {
+&"i": 62,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 73,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 83,
+&"type": &"dot"
+}, {
+&"i": 84,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 96,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"type": "dialogue"
+},
+"146": {
+&"id": "146",
+&"next_id": "147",
+&"type": ""
+},
+"147": {
+&"id": "147",
+&"next_id": "148",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "147",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "151",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "154",
+&"weight": 1.0
+}]),
+&"type": "random"
+},
+"148": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 25,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 35,
+&"type": &"dot"
+}, {
+&"i": 36,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 48,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"id": "148",
+&"next_id": "149",
+&"text": "I know, but this bear is looking at me funny.",
+&"type": "dialogue"
+},
+"149": {
+&"character": "Dispatcher",
+&"id": "149",
+&"next_id": "150",
+&"text": "What does that even mean?",
 &"type": "dialogue"
 },
 "15": {
@@ -228,6 +1424,216 @@ lines = {
 &"text": "Tell me where to go.",
 &"type": "dialogue"
 },
+"150": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 25,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 35,
+&"type": &"dot"
+}, {
+&"i": 36,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 48,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"id": "150",
+&"next_id": "157",
+&"text": "It mean ... I dunno. Just funny.",
+&"type": "dialogue"
+},
+"151": {
+&"id": "151",
+&"next_id": "152",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "147",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "151",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "154",
+&"weight": 1.0
+}]),
+&"type": "random"
+},
+"152": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 25,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 35,
+&"type": &"dot"
+}, {
+&"i": 36,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 48,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"id": "152",
+&"next_id": "153",
+&"text": "This one is different. He's ... or she's ... um ... hungry.",
+&"type": "dialogue"
+},
+"153": {
+&"character": "Dispatcher",
+&"id": "153",
+&"next_id": "157",
+&"text": "The bear is hungry. Are you serious?",
+&"type": "dialogue"
+},
+"154": {
+&"id": "154",
+&"next_id": "155",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "147",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "151",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "154",
+&"weight": 1.0
+}]),
+&"type": "random"
+},
+"155": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 25,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 35,
+&"type": &"dot"
+}, {
+&"i": 36,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 48,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"id": "155",
+&"next_id": "156",
+&"text": "This one doesn't look happy.",
+&"type": "dialogue"
+},
+"156": {
+&"character": "Dispatcher",
+&"id": "156",
+&"next_id": "157",
+&"text": "What exactly does a happy bear look like?",
+&"type": "dialogue"
+},
+"157": {
+&"id": "157",
+&"next_id": "158",
+&"type": ""
+},
+"158": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 2,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 12,
+&"type": &"dot"
+}, {
+&"i": 13,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 24,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 34,
+&"type": &"dot"
+}, {
+&"i": 35,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 47,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"id": "158",
+&"next_id": "159",
+&"text": "Can I wait here until the bear moves away?",
+&"type": "dialogue"
+},
+"159": {
+&"id": "159",
+&"next_id": "160",
+&"responses": PackedStringArray("159", "164"),
+&"text": "Sure, wait for the bear to move.",
+&"type": "response"
+},
 "16": {
 &"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
 &"character_replacements": Array[Dictionary]([{
@@ -294,6 +1700,209 @@ lines = {
 &"text": "I'm ready for deployment.",
 &"type": "dialogue"
 },
+"160": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 25,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 35,
+&"type": &"dot"
+}, {
+&"i": 36,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 48,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"id": "160",
+&"next_id": "161",
+&"text": "Great. Thanks.",
+&"type": "dialogue"
+},
+"161": {
+&"character": "Dispatcher",
+&"id": "161",
+&"next_id": "162",
+&"text": "While you're waiting, brush up on your training for bear encounters.",
+&"type": "dialogue"
+},
+"162": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 25,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 35,
+&"type": &"dot"
+}, {
+&"i": 36,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 48,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"id": "162",
+&"next_id": "163",
+&"text": "Will do.",
+&"type": "dialogue"
+},
+"163": {
+&"id": "163",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"variable",
+&"value": "skip_turn_wild_animal"
+}, {
+&"i": 35,
+&"type": &"dot"
+}, {
+&"function": "emit",
+&"i": 36,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 41,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "167",
+&"type": "mutation"
+},
+"164": {
+&"id": "164",
+&"next_id": "165",
+&"text": "Proceed to that location. You've had your training - use it.",
+&"type": "response"
+},
+"165": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 25,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 35,
+&"type": &"dot"
+}, {
+&"i": 36,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 48,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"id": "165",
+&"next_id": "166",
+&"text": "[[I understand.|Right, got it.]] Here I go.",
+&"type": "dialogue"
+},
+"166": {
+&"id": "166",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"variable",
+&"value": "no_skip_turn_wild_animal"
+}, {
+&"i": 38,
+&"type": &"dot"
+}, {
+&"function": "emit",
+&"i": 39,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 44,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "167",
+&"type": "mutation"
+},
+"167": {
+&"id": "167",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"168": {
+&"id": "168",
+&"next_id": "169",
+&"type": ""
+},
+"169": {
+&"id": "169",
+&"next_id": "170",
+&"type": "title"
+},
 "17": {
 &"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
 &"character_replacements": Array[Dictionary]([{
@@ -358,6 +1967,76 @@ lines = {
 &"weight": 1.0
 }]),
 &"text": "Thanks for adding me to the team.",
+&"type": "dialogue"
+},
+"170": {
+&"character": "Dispatcher",
+&"id": "170",
+&"next_id": "171",
+&"text": "Arthur, did you get your assignment?",
+&"type": "dialogue"
+},
+"171": {
+&"character": "Arthur",
+&"id": "171",
+&"next_id": "172",
+&"text": "[wave]Splash ... Splash[/wave]",
+&"type": "dialogue"
+},
+"172": {
+&"character": "Dispatcher",
+&"id": "172",
+&"next_id": "173",
+&"text": "Arthur, please respond.",
+&"type": "dialogue"
+},
+"173": {
+&"character": "Arthur",
+&"id": "173",
+&"next_id": "174",
+&"text": "[wave]Splash ... Splash[/wave]",
+&"type": "dialogue"
+},
+"174": {
+&"character": "Dispatcher",
+&"id": "174",
+&"next_id": "175",
+&"text": "Arthur!",
+&"type": "dialogue"
+},
+"175": {
+&"character": "Arthur",
+&"id": "175",
+&"next_id": "176",
+&"text": "Oh, um ... hang on ... Yes. Yes, I'm here. ... Hi!",
+&"type": "dialogue"
+},
+"176": {
+&"character": "Dispatcher",
+&"id": "176",
+&"next_id": "177",
+&"text": "You were asked to move to a new location. What were you doing?",
+&"type": "dialogue"
+},
+"177": {
+&"character": "Arthur",
+&"id": "177",
+&"next_id": "178",
+&"text": "Nothing. ... Well, I was, um ... going for a quick swim. I saw the water and couldn't resist.",
+&"type": "dialogue"
+},
+"178": {
+&"character": "Dispatcher",
+&"id": "178",
+&"next_id": "179",
+&"text": "You were going for a swim? Are you serious?",
+&"type": "dialogue"
+},
+"179": {
+&"character": "Arthur",
+&"id": "179",
+&"next_id": "180",
+&"text": "No. ... I mean, yes.",
 &"type": "dialogue"
 },
 "18": {
@@ -426,6 +2105,72 @@ lines = {
 &"text": "I'm hungry.",
 &"type": "dialogue"
 },
+"180": {
+&"character": "Dispatcher",
+&"id": "180",
+&"next_id": "181",
+&"text": "That's private property. Wait, did you actually bring a bathing suit with you? Never mind; I don't want to know.",
+&"type": "dialogue"
+},
+"181": {
+&"character": "Arthur",
+&"id": "181",
+&"next_id": "182",
+&"text": "Uh, some things are better left unsaid.",
+&"type": "dialogue"
+},
+"182": {
+&"character": "Dispatcher",
+&"id": "182",
+&"next_id": "183",
+&"text": "Wow. Okay, dry off and wait for your next assignment. And don't let this happen again.",
+&"type": "dialogue"
+},
+"183": {
+&"character": "Arthur",
+&"id": "183",
+&"next_id": "184",
+&"text": "Yes, sir.",
+&"type": "dialogue"
+},
+"184": {
+&"id": "184",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"185": {
+&"id": "185",
+&"next_id": "186",
+&"type": ""
+},
+"186": {
+&"id": "186",
+&"next_id": "187",
+&"type": "title"
+},
+"187": {
+&"character": "Dispatcher",
+&"id": "187",
+&"next_id": "188",
+&"text": "Arthur, did you get your assignment?",
+&"type": "dialogue"
+},
+"188": {
+&"character": "Arthur",
+&"id": "188",
+&"next_id": "189",
+&"text": "[wave]Splash ... Splash[/wave]",
+&"type": "dialogue"
+},
+"189": {
+&"character": "Dispatcher",
+&"id": "189",
+&"next_id": "190",
+&"text": "No. No. Don't tell me. [shake freq=20.0 amp=5.0]Arthur![/shake]",
+&"type": "dialogue"
+},
 "19": {
 &"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
 &"character_replacements": Array[Dictionary]([{
@@ -490,6 +2235,94 @@ lines = {
 &"weight": 1.0
 }]),
 &"text": "I love Sparta.",
+&"type": "dialogue"
+},
+"190": {
+&"character": "Arthur",
+&"id": "190",
+&"next_id": "191",
+&"text": "Yes. Hang on. ... Um ... Hi!",
+&"type": "dialogue"
+},
+"191": {
+&"character": "Dispatcher",
+&"id": "191",
+&"next_id": "192",
+&"text": "Enough! Get changed and be ready next time!",
+&"type": "dialogue"
+},
+"192": {
+&"character": "Arthur",
+&"id": "192",
+&"next_id": "193",
+&"text": "Okay. Sorry.",
+&"type": "dialogue"
+},
+"193": {
+&"id": "193",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"194": {
+&"id": "194",
+&"next_id": "195",
+&"type": ""
+},
+"195": {
+&"id": "195",
+&"next_id": "196",
+&"type": "title"
+},
+"196": {
+&"id": "196",
+&"next_id": "197",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "196",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "201",
+&"weight": 1.0
+}]),
+&"type": "random"
+},
+"197": {
+&"character": "Dispatcher",
+&"id": "197",
+&"next_id": "198",
+&"text": "Bertha, where are you going? You were asked to move to loation {{GlobalVars.original_location_name}}",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 78,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 88,
+&"type": &"dot"
+}, {
+&"i": 89,
+&"type": &"variable",
+&"value": "original_location_name"
+}]),
+&"value_in_text": "{{GlobalVars.original_location_name}}"
+}]),
+&"type": "dialogue"
+},
+"198": {
+&"character": "Bertha",
+&"id": "198",
+&"next_id": "199",
+&"text": "I got a good feeling about this!",
+&"type": "dialogue"
+},
+"199": {
+&"character": "Dispatcher",
+&"id": "199",
+&"next_id": "200",
+&"text": "No one asked for your feelings. Going forward, follow your orders.",
 &"type": "dialogue"
 },
 "2": {
@@ -595,6 +2428,117 @@ lines = {
 &"text": "Select a location for me to start.",
 &"type": "dialogue"
 },
+"200": {
+&"character": "Bertha",
+&"id": "200",
+&"next_id": "207",
+&"text": "Yes, sir.",
+&"type": "dialogue"
+},
+"201": {
+&"id": "201",
+&"next_id": "202",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "196",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "201",
+&"weight": 1.0
+}]),
+&"type": "random"
+},
+"202": {
+&"character": "Bertha",
+&"id": "202",
+&"next_id": "203",
+&"text": "Wait, I'm getting something ... [wave]mmmmmmmmm[/wave] ... I got it!",
+&"type": "dialogue"
+},
+"203": {
+&"character": "Dispatcher",
+&"id": "203",
+&"next_id": "204",
+&"text": "Bertha, your objective is to move to {{GlobalVars.original_location_name}}. Where are you going?",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 52,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 62,
+&"type": &"dot"
+}, {
+&"i": 63,
+&"type": &"variable",
+&"value": "original_location_name"
+}]),
+&"value_in_text": "{{GlobalVars.original_location_name}}"
+}]),
+&"type": "dialogue"
+},
+"204": {
+&"character": "Bertha",
+&"id": "204",
+&"next_id": "205",
+&"text": "The universe is telling me to go to location {{GlobalVars.agent_location[1]}}!",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 56,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 66,
+&"type": &"dot"
+}, {
+&"i": 67,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 82,
+&"type": &"number",
+&"value": 1
+}, {
+&"i": 83,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_location"
+}]),
+&"value_in_text": "{{GlobalVars.agent_location[1]}}"
+}]),
+&"type": "dialogue"
+},
+"205": {
+&"character": "Dispatcher",
+&"id": "205",
+&"next_id": "206",
+&"text": "You're not paid to listen to the universe. Next time, please follow your instructions.",
+&"type": "dialogue"
+},
+"206": {
+&"character": "Bertha",
+&"id": "206",
+&"next_id": "207",
+&"text": "Okay.",
+&"type": "dialogue"
+},
+"207": {
+&"id": "207",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"208": {
+&"id": "208",
+&"next_id": "209",
+&"type": ""
+},
+"209": {
+&"id": "209",
+&"next_id": "210",
+&"type": "title"
+},
 "21": {
 &"id": "21",
 &"is_snippet": false,
@@ -602,12 +2546,906 @@ lines = {
 &"next_id_after": "",
 &"type": "goto"
 },
-"22": {
-&"id": "22",
+"210": {
+&"character": "Bertha",
+&"id": "210",
+&"next_id": "211",
+&"text": "[wave]mmmmmmmmm[/wave] ... I know where I need to go!",
+&"type": "dialogue"
+},
+"211": {
+&"character": "Dispatcher",
+&"id": "211",
+&"next_id": "212",
+&"text": "You need to go to {{GlobalVars.original_location_name}} as you were instructed!",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 32,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 42,
+&"type": &"dot"
+}, {
+&"i": 43,
+&"type": &"variable",
+&"value": "original_location_name"
+}]),
+&"value_in_text": "{{GlobalVars.original_location_name}}"
+}]),
+&"type": "dialogue"
+},
+"212": {
+&"character": "Bertha",
+&"id": "212",
+&"next_id": "213",
+&"text": "But I ...",
+&"type": "dialogue"
+},
+"213": {
+&"character": "Dispatcher",
+&"id": "213",
+&"next_id": "214",
+&"text": "We've been over this!",
+&"type": "dialogue"
+},
+"214": {
+&"character": "Bertha",
+&"id": "214",
+&"next_id": "215",
+&"text": "Yes, sir.",
+&"type": "dialogue"
+},
+"215": {
+&"id": "215",
 &"is_snippet": false,
 &"next_id": "end",
 &"next_id_after": "",
 &"type": "goto"
+},
+"216": {
+&"id": "216",
+&"next_id": "217",
+&"type": ""
+},
+"217": {
+&"id": "217",
+&"next_id": "218",
+&"type": "title"
+},
+"218": {
+&"character": "Cristobal",
+&"id": "218",
+&"next_id": "219",
+&"text": "[i]@#$% ![/i]",
+&"type": "dialogue"
+},
+"219": {
+&"character": "{{GlobalVars.agent_closest_to_cristobal}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 2,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 12,
+&"type": &"dot"
+}, {
+&"i": 13,
+&"type": &"variable",
+&"value": "agent_closest_to_cristobal"
+}]),
+&"value_in_text": "{{GlobalVars.agent_closest_to_cristobal}}"
+}]),
+&"id": "219",
+&"next_id": "220",
+&"text": "[i]&%@# ![/i]",
+&"type": "dialogue"
+},
+"22": {
+&"id": "22",
+&"next_id": "23",
+&"type": ""
+},
+"220": {
+&"character": "Dispatcher",
+&"id": "220",
+&"next_id": "221",
+&"text": "Cristobal, {{GlobalVars.agent_closest_to_cristobal}}, what's going on?",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 25,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 35,
+&"type": &"dot"
+}, {
+&"i": 36,
+&"type": &"variable",
+&"value": "agent_closest_to_cristobal"
+}]),
+&"value_in_text": "{{GlobalVars.agent_closest_to_cristobal}}"
+}]),
+&"type": "dialogue"
+},
+"221": {
+&"character": "Cristobal",
+&"id": "221",
+&"next_id": "222",
+&"text": "This is my territory.",
+&"type": "dialogue"
+},
+"222": {
+&"character": "{{GlobalVars.agent_closest_to_cristobal}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 2,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 12,
+&"type": &"dot"
+}, {
+&"i": 13,
+&"type": &"variable",
+&"value": "agent_closest_to_cristobal"
+}]),
+&"value_in_text": "{{GlobalVars.agent_closest_to_cristobal}}"
+}]),
+&"id": "222",
+&"next_id": "223",
+&"text": "What are you talking about? I was asigned this location!",
+&"type": "dialogue"
+},
+"223": {
+&"character": "Cristobal",
+&"id": "223",
+&"next_id": "224",
+&"text": "I work alone!",
+&"type": "dialogue"
+},
+"224": {
+&"character": "Dispatcher",
+&"id": "224",
+&"next_id": "225",
+&"text": "[shake freq=20.0 amp=5.0]Enough![/shake]",
+&"type": "dialogue"
+},
+"225": {
+&"character": "{{GlobalVars.agent_closest_to_cristobal}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 2,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 12,
+&"type": &"dot"
+}, {
+&"i": 13,
+&"type": &"variable",
+&"value": "agent_closest_to_cristobal"
+}]),
+&"value_in_text": "{{GlobalVars.agent_closest_to_cristobal}}"
+}]),
+&"id": "225",
+&"next_id": "226",
+&"text": "He started it.",
+&"type": "dialogue"
+},
+"226": {
+&"character": "Cristobal",
+&"id": "226",
+&"next_id": "227",
+&"text": "Yeah, I started it. This is my space.",
+&"type": "dialogue"
+},
+"227": {
+&"character": "Dispatcher",
+&"id": "227",
+&"next_id": "228",
+&"text": "Alright, Cristobal. That's enough. You stay there and cool down.",
+&"type": "dialogue"
+},
+"228": {
+&"character": "Cristobal",
+&"id": "228",
+&"next_id": "229",
+&"text": "Hmmph. Fine.",
+&"type": "dialogue"
+},
+"229": {
+&"id": "229",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"23": {
+&"id": "23",
+&"next_id": "24",
+&"type": "title"
+},
+"230": {
+&"id": "230",
+&"next_id": "231",
+&"type": ""
+},
+"231": {
+&"id": "231",
+&"next_id": "232",
+&"type": "title"
+},
+"232": {
+&"character": "Cristobal",
+&"id": "232",
+&"next_id": "233",
+&"text": "[i]@#$% ![/i]",
+&"type": "dialogue"
+},
+"233": {
+&"character": "{{GlobalVars.agent_closest_to_cristobal}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 2,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 12,
+&"type": &"dot"
+}, {
+&"i": 13,
+&"type": &"variable",
+&"value": "agent_closest_to_cristobal"
+}]),
+&"value_in_text": "{{GlobalVars.agent_closest_to_cristobal}}"
+}]),
+&"id": "233",
+&"next_id": "234",
+&"text": "[i]&%@# ![/i]",
+&"type": "dialogue"
+},
+"234": {
+&"character": "Dispatcher",
+&"id": "234",
+&"next_id": "235",
+&"text": "Cristobal, again??",
+&"type": "dialogue"
+},
+"235": {
+&"character": "Cristobal",
+&"id": "235",
+&"next_id": "236",
+&"text": "Well ... okay, I'm sorry. It's just ...",
+&"type": "dialogue"
+},
+"236": {
+&"character": "Dispatcher",
+&"id": "236",
+&"next_id": "237",
+&"text": "It's just nothing. Do your job. For now, just remain where you are.",
+&"type": "dialogue"
+},
+"237": {
+&"character": "Cristobal",
+&"id": "237",
+&"next_id": "238",
+&"text": "Yes, sir.",
+&"type": "dialogue"
+},
+"238": {
+&"id": "238",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"239": {
+&"id": "239",
+&"next_id": "240",
+&"type": ""
+},
+"24": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 2,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 12,
+&"type": &"dot"
+}, {
+&"i": 13,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 24,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 34,
+&"type": &"dot"
+}, {
+&"i": 35,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 47,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"id": "24",
+&"next_id": "25",
+&"text": "My location is {{GlobalVars.loc_name}} in the {{GlobalVars.loc_section}} section, at the {{GlobalVars.loc_description}}",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 69,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 79,
+&"type": &"dot"
+}, {
+&"i": 80,
+&"type": &"variable",
+&"value": "loc_name"
+}]),
+&"value_in_text": "{{GlobalVars.loc_name}}"
+}, {
+&"expression": Array[Dictionary]([{
+&"i": 100,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 110,
+&"type": &"dot"
+}, {
+&"i": 111,
+&"type": &"variable",
+&"value": "loc_section"
+}]),
+&"value_in_text": "{{GlobalVars.loc_section}}"
+}, {
+&"expression": Array[Dictionary]([{
+&"i": 143,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 153,
+&"type": &"dot"
+}, {
+&"i": 154,
+&"type": &"variable",
+&"value": "loc_description"
+}]),
+&"value_in_text": "{{GlobalVars.loc_description}}"
+}]),
+&"type": "dialogue"
+},
+"240": {
+&"id": "240",
+&"next_id": "241",
+&"type": "title"
+},
+"241": {
+&"character": "Dolly",
+&"id": "241",
+&"next_id": "242",
+&"text": "Can you send me to a different location?",
+&"type": "dialogue"
+},
+"242": {
+&"character": "Dispatcher",
+&"id": "242",
+&"next_id": "243",
+&"text": "Is there a problem at {{GlobalVars.original_location_name}}?",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 36,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 46,
+&"type": &"dot"
+}, {
+&"i": 47,
+&"type": &"variable",
+&"value": "original_location_name"
+}]),
+&"value_in_text": "{{GlobalVars.original_location_name}}"
+}]),
+&"type": "dialogue"
+},
+"243": {
+&"character": "Dolly",
+&"id": "243",
+&"next_id": "244",
+&"text": "The ground is wet.",
+&"type": "dialogue"
+},
+"244": {
+&"character": "Dispatcher",
+&"id": "244",
+&"next_id": "245",
+&"text": "Did I understand you correctly ... that the ground is wet?",
+&"type": "dialogue"
+},
+"245": {
+&"character": "Dolly",
+&"id": "245",
+&"next_id": "246",
+&"text": "I'm wearning heals, and ...",
+&"type": "dialogue"
+},
+"246": {
+&"character": "Dispatcher",
+&"id": "246",
+&"next_id": "247",
+&"text": "You may be doing a lot of walking today, and yes, it may be muddy. Put on some comfortable shoes now.",
+&"type": "dialogue"
+},
+"247": {
+&"character": "Dolly",
+&"id": "247",
+&"next_id": "248",
+&"text": "Yes, sir.",
+&"type": "dialogue"
+},
+"248": {
+&"id": "248",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"249": {
+&"id": "249",
+&"next_id": "250",
+&"type": ""
+},
+"25": {
+&"id": "25",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"250": {
+&"id": "250",
+&"next_id": "251",
+&"type": "title"
+},
+"251": {
+&"character": "Dolly",
+&"id": "251",
+&"next_id": "252",
+&"text": "That path doesn't look well maintained.",
+&"type": "dialogue"
+},
+"252": {
+&"character": "Dispatcher",
+&"id": "252",
+&"next_id": "253",
+&"text": "Excuse me?",
+&"type": "dialogue"
+},
+"253": {
+&"character": "Dolly",
+&"id": "253",
+&"next_id": "254",
+&"text": "My knit sweater is definitely going to get snagged on branches along that path.",
+&"type": "dialogue"
+},
+"254": {
+&"character": "Dispatcher",
+&"id": "254",
+&"next_id": "255",
+&"text": "Your knit sweater? Are you also concerned about getting stains on your chinos?",
+&"type": "dialogue"
+},
+"255": {
+&"character": "Dolly",
+&"id": "255",
+&"next_id": "256",
+&"text": "Now that you mention it ...",
+&"type": "dialogue"
+},
+"256": {
+&"character": "Dispatcher",
+&"id": "256",
+&"next_id": "257",
+&"text": "Look, Dolly, next time dress appropriately for the assignment. Get yourself ready to move next turn.",
+&"type": "dialogue"
+},
+"257": {
+&"character": "Dolly",
+&"id": "257",
+&"next_id": "258",
+&"text": "I understand.",
+&"type": "dialogue"
+},
+"258": {
+&"id": "258",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"259": {
+&"id": "259",
+&"next_id": "260",
+&"type": ""
+},
+"26": {
+&"id": "26",
+&"next_id": "27",
+&"type": ""
+},
+"260": {
+&"id": "260",
+&"next_id": "261",
+&"type": "title"
+},
+"261": {
+&"character": "Dispatcher",
+&"id": "261",
+&"next_id": "262",
+&"text": "Edouard, you were asked to move to location {{GlobalVars.original_location_name}}.",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 58,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 68,
+&"type": &"dot"
+}, {
+&"i": 69,
+&"type": &"variable",
+&"value": "original_location_name"
+}]),
+&"value_in_text": "{{GlobalVars.original_location_name}}"
+}]),
+&"type": "dialogue"
+},
+"262": {
+&"character": "Edouard",
+&"id": "262",
+&"next_id": "263",
+&"text": "I tried. I seem to have gotten lost on the path somewhere, and now I think I'm back where I started from.",
+&"type": "dialogue"
+},
+"263": {
+&"character": "Dispatcher",
+&"id": "263",
+&"next_id": "264",
+&"text": "You got lost? ... Okay, just stay there and familiarize yourself with the area so it doesn't happen again.",
+&"type": "dialogue"
+},
+"264": {
+&"character": "Edouard",
+&"id": "264",
+&"next_id": "265",
+&"text": "Yes, sir.",
+&"type": "dialogue"
+},
+"265": {
+&"id": "265",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"266": {
+&"id": "266",
+&"next_id": "267",
+&"type": ""
+},
+"267": {
+&"id": "267",
+&"next_id": "268",
+&"type": "title"
+},
+"268": {
+&"character": "Dispatcher",
+&"id": "268",
+&"next_id": "269",
+&"text": "Edouard, you're still in the same location. Don't tell me you got lost again.",
+&"type": "dialogue"
+},
+"269": {
+&"character": "Edouard",
+&"id": "269",
+&"next_id": "270",
+&"text": "Wow, you're right. I [i]am[/i] back to where I started. How funny is that?",
+&"type": "dialogue"
+},
+"27": {
+&"id": "27",
+&"next_id": "28",
+&"type": "title"
+},
+"270": {
+&"character": "Dispatcher",
+&"id": "270",
+&"next_id": "271",
+&"text": "Yeah, that's really funny. Now please, be more carful when you're given an assignment, okay?",
+&"type": "dialogue"
+},
+"271": {
+&"character": "Edouard",
+&"id": "271",
+&"next_id": "272",
+&"text": "I will. I just find it so disorienting. I'm not a 'walk in the woods' guy.",
+&"type": "dialogue"
+},
+"272": {
+&"id": "272",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"273": {
+&"id": "273",
+&"next_id": "274",
+&"type": ""
+},
+"274": {
+&"id": "274",
+&"next_id": "275",
+&"type": "title"
+},
+"275": {
+&"character": "Fay",
+&"id": "275",
+&"next_id": "276",
+&"text": "Hoo. Right. Huff. I've been walking all day. Can I stop here and take a break?",
+&"type": "dialogue"
+},
+"276": {
+&"character": "Dispatcher",
+&"id": "276",
+&"next_id": "277",
+&"text": "Are you saying you can't get to that location?",
+&"type": "dialogue"
+},
+"277": {
+&"character": "Fay",
+&"id": "277",
+&"next_id": "278",
+&"text": "I can. ... I mean, I can't. I need to rest for a few minutes. Is that okay?",
+&"type": "dialogue"
+},
+"278": {
+&"character": "Dispatcher",
+&"id": "278",
+&"next_id": "279",
+&"text": "We are working as a team to close in on our suspect. But if you are unable to move at this time, then go ahead and rest.",
+&"type": "dialogue"
+},
+"279": {
+&"character": "Fay",
+&"id": "279",
+&"next_id": "280",
+&"text": "Thanks. I'll be ready to go in a few minutes.",
+&"type": "dialogue"
+},
+"28": {
+&"id": "28",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 14,
+&"type": &"dot"
+}, {
+&"i": 15,
+&"type": &"variable",
+&"value": "dialogue_active"
+}, {
+&"i": 31,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"i": 33,
+&"type": &"variable",
+&"value": "true"
+}]),
+&"is_blocking": true
+},
+&"next_id": "29",
+&"type": "mutation"
+},
+"280": {
+&"id": "280",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"281": {
+&"id": "281",
+&"next_id": "282",
+&"type": ""
+},
+"282": {
+&"id": "282",
+&"next_id": "283",
+&"type": "title"
+},
+"283": {
+&"character": "Fay",
+&"id": "283",
+&"next_id": "284",
+&"text": "Oh, boy. We're going already? Wouldn't it be better if I just waited here?",
+&"type": "dialogue"
+},
+"284": {
+&"character": "Dispatcher",
+&"id": "284",
+&"next_id": "285",
+&"text": "You believe that if you wait there that {{GlobalVars.sus_name}} will just walk right up to you?",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 54,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 64,
+&"type": &"dot"
+}, {
+&"i": 65,
+&"type": &"variable",
+&"value": "sus_name"
+}]),
+&"value_in_text": "{{GlobalVars.sus_name}}"
+}]),
+&"type": "dialogue"
+},
+"285": {
+&"character": "Fay",
+&"id": "285",
+&"next_id": "286",
+&"text": "Well, if you put it that way, no. I just need to rest.",
+&"type": "dialogue"
+},
+"286": {
+&"character": "Dispatcher",
+&"id": "286",
+&"next_id": "287",
+&"text": "You need to rest again? ... Fine.",
+&"type": "dialogue"
+},
+"287": {
+&"id": "287",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"288": {
+&"id": "288",
+&"next_id": "289",
+&"type": ""
+},
+"289": {
+&"id": "289",
+&"next_id": "290",
+&"type": "title"
+},
+"29": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 2,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 12,
+&"type": &"dot"
+}, {
+&"i": 13,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 24,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 34,
+&"type": &"dot"
+}, {
+&"i": 35,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 47,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"id": "29",
+&"next_id": "30",
+&"text": "Sorry, boss. I'm stuck here. I'm afraid you'll have to go on without me.",
+&"type": "dialogue"
+},
+"290": {
+&"character": "Dispatcher",
+&"id": "290",
+&"next_id": "291",
+&"text": "Gonzalo, did you get your assignment?",
+&"type": "dialogue"
+},
+"291": {
+&"character": "Arthur",
+&"id": "291",
+&"next_id": "292",
+&"text": "[wave]munch ... munch ... munch[/wave]",
+&"type": "dialogue"
+},
+"292": {
+&"character": "Dispatcher",
+&"id": "292",
+&"next_id": "293",
+&"text": "Gonzalo, please respond.",
+&"type": "dialogue"
+},
+"293": {
+&"character": "Arthur",
+&"id": "293",
+&"next_id": "294",
+&"text": "[wave]mlum ... mlum ... gulp[/wave]",
+&"type": "dialogue"
+},
+"294": {
+&"character": "Dispatcher",
+&"id": "294",
+&"next_id": "295",
+&"text": "Gonzalo!",
+&"type": "dialogue"
+},
+"295": {
+&"character": "Gonzalo",
+&"id": "295",
+&"next_id": "296",
+&"text": "Yesh ... I mean, I'm here.",
+&"type": "dialogue"
+},
+"296": {
+&"character": "Dispatcher",
+&"id": "296",
+&"next_id": "297",
+&"text": "What were you doing?",
+&"type": "dialogue"
+},
+"297": {
+&"character": "Gonzalo",
+&"id": "297",
+&"next_id": "298",
+&"text": "I just stopped for a bite to eat. Did I miss something?",
+&"type": "dialogue"
+},
+"298": {
+&"character": "Dispatcher",
+&"id": "298",
+&"next_id": "299",
+&"text": "Yes, you missed your assignemnt. Next time, please pay attention.",
+&"type": "dialogue"
+},
+"299": {
+&"character": "Gonzalo",
+&"id": "299",
+&"next_id": "300",
+&"text": "Yes, sir.",
+&"type": "dialogue"
 },
 "3": {
 &"condition": {
@@ -669,6 +3507,423 @@ lines = {
 }]),
 &"type": "response"
 },
+"30": {
+&"character": "Dispatcher",
+&"id": "30",
+&"next_id": "31",
+&"text": "Agent {{GlobalVars.agent_name[GlobalVars.player_focus]}} is unable to move and thus out of the game.",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 20,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 30,
+&"type": &"dot"
+}, {
+&"i": 31,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 42,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 52,
+&"type": &"dot"
+}, {
+&"i": 53,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 65,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"type": "dialogue"
+},
+"300": {
+&"id": "300",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"301": {
+&"id": "301",
+&"next_id": "302",
+&"type": ""
+},
+"302": {
+&"id": "302",
+&"next_id": "303",
+&"type": "title"
+},
+"303": {
+&"character": "Dispatcher",
+&"id": "303",
+&"next_id": "304",
+&"text": "Gonzalo, are you there.",
+&"type": "dialogue"
+},
+"304": {
+&"character": "Gonzalo",
+&"id": "304",
+&"next_id": "305",
+&"text": "[wave]munch ... munch ... munch[/wave]",
+&"type": "dialogue"
+},
+"305": {
+&"character": "Dispatcher",
+&"id": "305",
+&"next_id": "306",
+&"text": "Not again, [shake freq=20.0 amp=5.0]Gonzalo![/shake]",
+&"type": "dialogue"
+},
+"306": {
+&"character": "Gonzalo",
+&"id": "306",
+&"next_id": "307",
+&"text": "[i]Cough! Cough![/i] Uh, hello.",
+&"type": "dialogue"
+},
+"307": {
+&"character": "Dispatcher",
+&"id": "307",
+&"next_id": "308",
+&"text": "Don't tell me you stopped again for more food?",
+&"type": "dialogue"
+},
+"308": {
+&"character": "Gonzalo",
+&"id": "308",
+&"next_id": "309",
+&"text": "Well, I was already stopped, and the place here had some really tasty looking ...",
+&"type": "dialogue"
+},
+"309": {
+&"character": "Dispatcher",
+&"id": "309",
+&"next_id": "310",
+&"text": "Look, bring some granola bars with you, or an apple, or something you can eat while on assignment, okay?",
+&"type": "dialogue"
+},
+"31": {
+&"id": "31",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 14,
+&"type": &"dot"
+}, {
+&"i": 15,
+&"type": &"variable",
+&"value": "dialogue_active"
+}, {
+&"i": 31,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"i": 33,
+&"type": &"variable",
+&"value": "false"
+}]),
+&"is_blocking": true
+},
+&"next_id": "32",
+&"type": "mutation"
+},
+"310": {
+&"character": "Gonzalo",
+&"id": "310",
+&"next_id": "311",
+&"text": "Okay. Sorry.",
+&"type": "dialogue"
+},
+"311": {
+&"id": "311",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"312": {
+&"id": "312",
+&"next_id": "313",
+&"type": ""
+},
+"313": {
+&"id": "313",
+&"next_id": "314",
+&"type": "title"
+},
+"314": {
+&"character": "Dispatcher",
+&"id": "314",
+&"next_id": "315",
+&"text": "Agent Hanna, did you get your assignment?",
+&"type": "dialogue"
+},
+"315": {
+&"character": "Hanna",
+&"id": "315",
+&"next_id": "316",
+&"text": "[i]OMG! I'm in Sparta, and it's like the cutest town![/i]",
+&"type": "dialogue"
+},
+"316": {
+&"character": "Dispatcher",
+&"id": "316",
+&"next_id": "317",
+&"text": "Hanna, who are you talking to.",
+&"type": "dialogue"
+},
+"317": {
+&"character": "Hanna",
+&"id": "317",
+&"next_id": "318",
+&"text": "Oh ... right ... hi! I mean, this is Hanna.",
+&"type": "dialogue"
+},
+"318": {
+&"character": "Dispatcher",
+&"id": "318",
+&"next_id": "319",
+&"text": "Are you posting videos on social media?",
+&"type": "dialogue"
+},
+"319": {
+&"character": "Hanna",
+&"id": "319",
+&"next_id": "320",
+&"text": "Well, you see, I'm always looking for new content, and ...",
+&"type": "dialogue"
+},
+"32": {
+&"id": "32",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"variable",
+&"value": "out_of_moves_check"
+}, {
+&"i": 32,
+&"type": &"dot"
+}, {
+&"function": "emit",
+&"i": 33,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 38,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "33",
+&"type": "mutation"
+},
+"320": {
+&"character": "Dispatcher",
+&"id": "320",
+&"next_id": "321",
+&"text": "and you are revealing to the suspect you're trying to track down exactly where you are.",
+&"type": "dialogue"
+},
+"321": {
+&"character": "Hanna",
+&"id": "321",
+&"next_id": "322",
+&"text": "Right. I understand. Sorry.",
+&"type": "dialogue"
+},
+"322": {
+&"id": "322",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"323": {
+&"id": "323",
+&"next_id": "324",
+&"type": ""
+},
+"324": {
+&"id": "324",
+&"next_id": "325",
+&"type": "title"
+},
+"325": {
+&"character": "Dispatcher",
+&"id": "325",
+&"next_id": "326",
+&"text": "Hanna, why are you still there?",
+&"type": "dialogue"
+},
+"326": {
+&"character": "Hanna",
+&"id": "326",
+&"next_id": "327",
+&"text": "[i]Hey guys! You won't believe this, but I just saw the most adorable fox! I was like, so close ...[/i]",
+&"type": "dialogue"
+},
+"327": {
+&"character": "Dispatcher",
+&"id": "327",
+&"next_id": "328",
+&"text": "Don't tell me you're posting stuff again?",
+&"type": "dialogue"
+},
+"328": {
+&"character": "Hanna",
+&"id": "328",
+&"next_id": "329",
+&"text": "Oh, yeah, no, I was just ... talking ... to my mom. Yeah, my mom. You see ...",
+&"type": "dialogue"
+},
+"329": {
+&"character": "Dispatcher",
+&"id": "329",
+&"next_id": "330",
+&"text": "Tell your [i]mom[/i] that you're working and that you'll talk to her later.",
+&"type": "dialogue"
+},
+"33": {
+&"id": "33",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"330": {
+&"character": "Hanna",
+&"id": "330",
+&"next_id": "331",
+&"text": "Got it.",
+&"type": "dialogue"
+},
+"331": {
+&"id": "331",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"332": {
+&"id": "332",
+&"next_id": "333",
+&"type": ""
+},
+"333": {
+&"id": "333",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"34": {
+&"id": "34",
+&"next_id": "35",
+&"type": ""
+},
+"35": {
+&"id": "35",
+&"next_id": "36",
+&"type": "title"
+},
+"36": {
+&"cases": Array[Dictionary]([{
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 6,
+&"type": &"string",
+&"value": "Bertha"
+}])
+},
+&"next_id": "38"
+}, {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 6,
+&"type": &"string",
+&"value": "Cristobal"
+}])
+},
+&"next_id": "44"
+}, {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 6,
+&"type": &"string",
+&"value": "Dolly"
+}])
+},
+&"next_id": "52"
+}, {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 6,
+&"type": &"string",
+&"value": "Edouard"
+}])
+},
+&"next_id": "60"
+}, {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 6,
+&"type": &"string",
+&"value": "Hanna"
+}])
+},
+&"next_id": "71"
+}]),
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 6,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 16,
+&"type": &"dot"
+}, {
+&"i": 17,
+&"type": &"variable",
+&"value": "player_focus_name"
+}])
+},
+&"id": "36",
+&"next_id": "37",
+&"next_id_after": "92",
+&"type": "match"
+},
+"38": {
+&"character": "Bertha",
+&"id": "38",
+&"next_id": "39",
+&"text": "Do you want me to use my psychic abilities to sense the stress level of the suspect?",
+&"type": "dialogue"
+},
+"39": {
+&"id": "39",
+&"next_id": "40",
+&"responses": PackedStringArray("39", "42"),
+&"text": "[[Go for it.|Yes, do it.|Make it so.|Absolutely.]]",
+&"type": "response"
+},
 "4": {
 &"id": "4",
 &"mutation": {
@@ -696,6 +3951,223 @@ lines = {
 },
 &"next_id": "9",
 &"type": "mutation"
+},
+"40": {
+&"id": "40",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"variable",
+&"value": "use_special"
+}, {
+&"i": 25,
+&"type": &"dot"
+}, {
+&"function": "emit",
+&"i": 26,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 31,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "41",
+&"type": "mutation"
+},
+"41": {
+&"character": "Bertha",
+&"id": "41",
+&"next_id": "92",
+&"text": "Okay, here goes ... [wave]mmmmmmmmm[/wave] ... I sense {{GlobalVars.sus_name}} is {{GlobalVars.sus_duress_level}}. I hope that helps.",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 68,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 78,
+&"type": &"dot"
+}, {
+&"i": 79,
+&"type": &"variable",
+&"value": "sus_name"
+}]),
+&"value_in_text": "{{GlobalVars.sus_name}}"
+}, {
+&"expression": Array[Dictionary]([{
+&"i": 95,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 105,
+&"type": &"dot"
+}, {
+&"i": 106,
+&"type": &"variable",
+&"value": "sus_duress_level"
+}]),
+&"value_in_text": "{{GlobalVars.sus_duress_level}}"
+}]),
+&"type": "dialogue"
+},
+"42": {
+&"id": "42",
+&"next_id": "92",
+&"text": "No, never mind.",
+&"type": "response"
+},
+"44": {
+&"character": "Cristobal",
+&"id": "44",
+&"next_id": "45",
+&"text": "Do you want me to plant a listening device at location {{GlobalVars.agent_location[GlobalVars.player_focus]}}? It will detect if the suspect can reach this location in one move.",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 70,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 80,
+&"type": &"dot"
+}, {
+&"i": 81,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 96,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 106,
+&"type": &"dot"
+}, {
+&"i": 107,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 119,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_location"
+}]),
+&"value_in_text": "{{GlobalVars.agent_location[GlobalVars.player_focus]}}"
+}]),
+&"type": "dialogue"
+},
+"45": {
+&"id": "45",
+&"next_id": "46",
+&"responses": PackedStringArray("45", "50"),
+&"text": "[[Go for it.|Yes, do it.|Make it so.|Absolutely.]]",
+&"type": "response"
+},
+"46": {
+&"id": "46",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 14,
+&"type": &"dot"
+}, {
+&"i": 15,
+&"type": &"variable",
+&"value": "listening_device"
+}, {
+&"i": 31,
+&"type": &"dot"
+}, {
+&"function": "append",
+&"i": 32,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 39,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 49,
+&"type": &"dot"
+}, {
+&"i": 50,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 65,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 75,
+&"type": &"dot"
+}, {
+&"i": 76,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 88,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_location"
+}, {
+&"i": 89,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "48",
+&"type": "mutation"
+},
+"47": {
+&"id": "47",
+&"next_id": "48",
+&"type": ""
+},
+"48": {
+&"id": "48",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"variable",
+&"value": "use_special"
+}, {
+&"i": 25,
+&"type": &"dot"
+}, {
+&"function": "emit",
+&"i": 26,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 31,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "49",
+&"type": "mutation"
+},
+"49": {
+&"character": "Cristobal",
+&"id": "49",
+&"next_id": "92",
+&"text": "The device is set and in position.",
+&"type": "dialogue"
 },
 "5": {
 &"condition": {
@@ -756,6 +4228,162 @@ lines = {
 }]),
 &"type": "response"
 },
+"50": {
+&"id": "50",
+&"next_id": "92",
+&"text": "No, never mind.",
+&"type": "response"
+},
+"52": {
+&"character": "Dolly",
+&"id": "52",
+&"next_id": "53",
+&"text": "Do you want me to establish a blockade at this location? It will prevent the suspect from entering here.",
+&"type": "dialogue"
+},
+"53": {
+&"id": "53",
+&"next_id": "54",
+&"responses": PackedStringArray("53", "58"),
+&"text": "[[Go for it.|Yes, do it.|Make it so.|Absolutely.]]",
+&"type": "response"
+},
+"54": {
+&"id": "54",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 14,
+&"type": &"dot"
+}, {
+&"i": 15,
+&"type": &"variable",
+&"value": "blocked_location"
+}, {
+&"i": 31,
+&"type": &"dot"
+}, {
+&"function": "append",
+&"i": 32,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 39,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 49,
+&"type": &"dot"
+}, {
+&"i": 50,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 65,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 75,
+&"type": &"dot"
+}, {
+&"i": 76,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 88,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_location"
+}, {
+&"i": 89,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "56",
+&"type": "mutation"
+},
+"55": {
+&"id": "55",
+&"next_id": "56",
+&"type": ""
+},
+"56": {
+&"id": "56",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"variable",
+&"value": "blockade"
+}, {
+&"i": 22,
+&"type": &"dot"
+}, {
+&"function": "emit",
+&"i": 23,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 28,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "57",
+&"type": "mutation"
+},
+"57": {
+&"character": "Dolly",
+&"id": "57",
+&"next_id": "92",
+&"text": "Location {{GlobalVars.agent_location[GlobalVars.player_focus]}} is now blocked.",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 21,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 31,
+&"type": &"dot"
+}, {
+&"i": 32,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 47,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 57,
+&"type": &"dot"
+}, {
+&"i": 58,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 70,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_location"
+}]),
+&"value_in_text": "{{GlobalVars.agent_location[GlobalVars.player_focus]}}"
+}]),
+&"type": "dialogue"
+},
+"58": {
+&"id": "58",
+&"next_id": "92",
+&"text": "No, never mind.",
+&"type": "response"
+},
 "6": {
 &"id": "6",
 &"mutation": {
@@ -783,6 +4411,216 @@ lines = {
 },
 &"next_id": "9",
 &"type": "mutation"
+},
+"60": {
+&"character": "Edouard",
+&"id": "60",
+&"next_id": "61",
+&"text": "Do you want me to use my psychic abilities to sense which agent is closest to the suspect?",
+&"type": "dialogue"
+},
+"61": {
+&"id": "61",
+&"next_id": "62",
+&"responses": PackedStringArray("61", "69"),
+&"text": "[[Go for it.|Yes, do it.|Make it so.|Absolutely.]]",
+&"type": "response"
+},
+"62": {
+&"id": "62",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"variable",
+&"value": "use_special"
+}, {
+&"i": 25,
+&"type": &"dot"
+}, {
+&"function": "emit",
+&"i": 26,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 31,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "63",
+&"type": "mutation"
+},
+"63": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 6,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 16,
+&"type": &"dot"
+}, {
+&"i": 17,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 28,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 38,
+&"type": &"dot"
+}, {
+&"i": 39,
+&"type": &"variable",
+&"value": "closest_agent"
+}, {
+&"i": 52,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}, {
+&"i": 54,
+&"type": &"comparison",
+&"value": "=="
+}, {
+&"i": 57,
+&"type": &"string",
+&"value": "Edouard"
+}])
+},
+&"id": "63",
+&"next_id": "64",
+&"next_id_after": "67",
+&"next_sibling_id": "65",
+&"type": "condition"
+},
+"64": {
+&"character": "Edouard",
+&"id": "64",
+&"next_id": "67",
+&"text": "Okay, here goes ... [wave]mmmmmmmmm[/wave] ... I sense I am the closest agent to {{GlobalVars.sus_name}}.",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 96,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 106,
+&"type": &"dot"
+}, {
+&"i": 107,
+&"type": &"variable",
+&"value": "sus_name"
+}]),
+&"value_in_text": "{{GlobalVars.sus_name}}"
+}]),
+&"type": "dialogue"
+},
+"65": {
+&"condition": {},
+&"id": "65",
+&"next_id": "66",
+&"next_id_after": "67",
+&"type": "condition"
+},
+"66": {
+&"character": "Edouard",
+&"id": "66",
+&"next_id": "67",
+&"text": "Okay, here goes ... [wave]mmmmmmmmm[/wave] ... I sense {{GlobalVars.agent_name[GlobalVars.closest_agent]}} the closest agent to {{GlobalVars.sus_name}}.",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 70,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 80,
+&"type": &"dot"
+}, {
+&"i": 81,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 92,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 102,
+&"type": &"dot"
+}, {
+&"i": 103,
+&"type": &"variable",
+&"value": "closest_agent"
+}, {
+&"i": 116,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.closest_agent]}}"
+}, {
+&"expression": Array[Dictionary]([{
+&"i": 143,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 153,
+&"type": &"dot"
+}, {
+&"i": 154,
+&"type": &"variable",
+&"value": "sus_name"
+}]),
+&"value_in_text": "{{GlobalVars.sus_name}}"
+}]),
+&"type": "dialogue"
+},
+"67": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 6,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 16,
+&"type": &"dot"
+}, {
+&"i": 17,
+&"type": &"variable",
+&"value": "closest_distance"
+}, {
+&"i": 34,
+&"type": &"comparison",
+&"value": "<"
+}, {
+&"i": 36,
+&"type": &"number",
+&"value": 500
+}])
+},
+&"id": "67",
+&"next_id": "68",
+&"next_id_after": "92",
+&"type": "condition"
+},
+"68": {
+&"character": "Edouard",
+&"id": "68",
+&"next_id": "92",
+&"text": "And I believe it's quite close.",
+&"type": "dialogue"
+},
+"69": {
+&"id": "69",
+&"next_id": "92",
+&"text": "No, never mind.",
+&"type": "response"
 },
 "7": {
 &"condition": {
@@ -843,6 +4681,134 @@ lines = {
 }]),
 &"type": "response"
 },
+"71": {
+&"character": "Hanna",
+&"id": "71",
+&"next_id": "72",
+&"text": "Do you want me to check with one of my informants to see if we can get a possible location for the suspect?",
+&"type": "dialogue"
+},
+"72": {
+&"id": "72",
+&"next_id": "73",
+&"responses": PackedStringArray("72", "90"),
+&"text": "[[Go for it.|Yes, do it.|Make it so.|Absolutely.]]",
+&"type": "response"
+},
+"73": {
+&"id": "73",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"i": 14,
+&"type": &"variable",
+&"value": "use_special"
+}, {
+&"i": 25,
+&"type": &"dot"
+}, {
+&"function": "emit",
+&"i": 26,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 31,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "74",
+&"type": "mutation"
+},
+"74": {
+&"id": "74",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 13,
+&"type": &"dot"
+}, {
+&"function": "_sus_section_informant",
+&"i": 14,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 37,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "75",
+&"type": "mutation"
+},
+"75": {
+&"character": "Hanna",
+&"id": "75",
+&"next_id": "76",
+&"text": "Ok, let me check, hold on ...",
+&"type": "dialogue"
+},
+"76": {
+&"character": "Hanna",
+&"id": "76",
+&"next_id": "78",
+&"text": "[i]Hi, it's me. Can you talk?[/i]",
+&"type": "dialogue"
+},
+"77": {
+&"id": "77",
+&"next_id": "78",
+&"type": ""
+},
+"78": {
+&"character": "Hanna",
+&"id": "78",
+&"next_id": "81",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "78",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "79",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "80",
+&"weight": 1.0
+}]),
+&"text": "[i]Yes, everyone's doing well, thanks. Listen, I ...[/i]",
+&"type": "dialogue"
+},
+"79": {
+&"character": "Hanna",
+&"id": "79",
+&"next_id": "81",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "78",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "79",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "80",
+&"weight": 1.0
+}]),
+&"text": "[i]I know it's been a while, but I need a favor.[/i]",
+&"type": "dialogue"
+},
 "8": {
 &"id": "8",
 &"mutation": {
@@ -870,6 +4836,154 @@ lines = {
 },
 &"next_id": "9",
 &"type": "mutation"
+},
+"80": {
+&"character": "Hanna",
+&"id": "80",
+&"next_id": "81",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "78",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "79",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "80",
+&"weight": 1.0
+}]),
+&"text": "[i]No, it's not about that. I need your ...[/i]",
+&"type": "dialogue"
+},
+"81": {
+&"id": "81",
+&"next_id": "82",
+&"type": ""
+},
+"82": {
+&"character": "Hanna",
+&"id": "82",
+&"next_id": "85",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "82",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "83",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "84",
+&"weight": 1.0
+}]),
+&"text": "[i]Thanks, I appreciate that, but ...[/i]",
+&"type": "dialogue"
+},
+"83": {
+&"character": "Hanna",
+&"id": "83",
+&"next_id": "85",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "82",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "83",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "84",
+&"weight": 1.0
+}]),
+&"text": "[i]Look, I haven't forgotten. I've been busy. Right now I need ...[/i]",
+&"type": "dialogue"
+},
+"84": {
+&"character": "Hanna",
+&"id": "84",
+&"next_id": "85",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "82",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "83",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "84",
+&"weight": 1.0
+}]),
+&"text": "[i]I know, we need to get together ...[/i]",
+&"type": "dialogue"
+},
+"85": {
+&"id": "85",
+&"next_id": "86",
+&"type": ""
+},
+"86": {
+&"character": "Hanna",
+&"id": "86",
+&"next_id": "87",
+&"text": "[i]Please, I don't have a lot of time. Do you know where I can find {{GlobalVars.sus_name}}?[/i]",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 80,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 90,
+&"type": &"dot"
+}, {
+&"i": 91,
+&"type": &"variable",
+&"value": "sus_name"
+}]),
+&"value_in_text": "{{GlobalVars.sus_name}}"
+}]),
+&"type": "dialogue"
+},
+"87": {
+&"character": "Hanna",
+&"id": "87",
+&"next_id": "88",
+&"text": "[i]Uh huh ... okay ... How sure are you?[/i]",
+&"type": "dialogue"
+},
+"88": {
+&"character": "Hanna",
+&"id": "88",
+&"next_id": "89",
+&"text": "[i]Great. Thanks, buddy. I owe you one.[/i]",
+&"type": "dialogue"
+},
+"89": {
+&"character": "Hanna",
+&"id": "89",
+&"next_id": "92",
+&"text": "I'm back. My informant says the suspect is somewhere in the {{GlobalVars.sus_section_response}} section of town. I would say that, while not one hundred percent certain, this information is very trustworthy.",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 72,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 82,
+&"type": &"dot"
+}, {
+&"i": 83,
+&"type": &"variable",
+&"value": "sus_section_response"
+}]),
+&"value_in_text": "{{GlobalVars.sus_section_response}}"
+}]),
+&"type": "dialogue"
 },
 "9": {
 &"id": "9",
@@ -912,6 +5026,135 @@ lines = {
 },
 &"next_id": "10",
 &"type": "mutation"
+},
+"90": {
+&"id": "90",
+&"next_id": "92",
+&"text": "No, never mind.",
+&"type": "response"
+},
+"91": {
+&"id": "91",
+&"next_id": "92",
+&"type": ""
+},
+"92": {
+&"id": "92",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"93": {
+&"id": "93",
+&"next_id": "94",
+&"type": ""
+},
+"94": {
+&"id": "94",
+&"next_id": "95",
+&"type": "title"
+},
+"95": {
+&"character": "Cristobal",
+&"id": "95",
+&"next_id": "96",
+&"text": "Hey! My listening device at location {{GlobalVars.sus_location[0]}} has detected that the suspect is within range of that device.",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 50,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 60,
+&"type": &"dot"
+}, {
+&"i": 61,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 74,
+&"type": &"number",
+&"value": 0
+}, {
+&"i": 75,
+&"type": &"bracket_close"
+}]),
+&"variable": "sus_location"
+}]),
+&"value_in_text": "{{GlobalVars.sus_location[0]}}"
+}]),
+&"type": "dialogue"
+},
+"96": {
+&"id": "96",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"97": {
+&"id": "97",
+&"next_id": "98",
+&"type": ""
+},
+"98": {
+&"id": "98",
+&"next_id": "99",
+&"type": "title"
+},
+"99": {
+&"character": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}",
+&"character_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 2,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 12,
+&"type": &"dot"
+}, {
+&"i": 13,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 24,
+&"type": &"variable",
+&"value": "GlobalVars"
+}, {
+&"i": 34,
+&"type": &"dot"
+}, {
+&"i": 35,
+&"type": &"variable",
+&"value": "player_focus"
+}, {
+&"i": 47,
+&"type": &"bracket_close"
+}]),
+&"variable": "agent_name"
+}]),
+&"value_in_text": "{{GlobalVars.agent_name[GlobalVars.player_focus]}}"
+}]),
+&"id": "99",
+&"next_id": "110",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "99",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "100",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "104",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "105",
+&"weight": 1.0
+}]),
+&"text": "There's a bear in this section of town, right? No problem; I'm trained to handle this. ... [shake rate=20 level=10]I can handle this.[/shake]",
+&"type": "dialogue"
 }
 }
 raw_text = "~ travelmode
@@ -935,5 +5178,316 @@ do GlobalVars.unhide_moves.emit()
 % {{GlobalVars.agent_name[GlobalVars.player_focus]}}: I'm hungry.
 % {{GlobalVars.agent_name[GlobalVars.player_focus]}}: I love Sparta.
 % {{GlobalVars.agent_name[GlobalVars.player_focus]}}: Select a location for me to start.
-=> END"
+=> END
+
+~ location
+{{GlobalVars.agent_name[GlobalVars.player_focus]}}: My location is {{GlobalVars.loc_name}} in the {{GlobalVars.loc_section}} section, at the {{GlobalVars.loc_description}}
+=> END
+
+~ outofmoves
+set GlobalVars.dialogue_active = true
+{{GlobalVars.agent_name[GlobalVars.player_focus]}}: Sorry, boss. I'm stuck here. I'm afraid you'll have to go on without me.
+Dispatcher: Agent {{GlobalVars.agent_name[GlobalVars.player_focus]}} is unable to move and thus out of the game.
+set GlobalVars.dialogue_active = false
+do GlobalVars.out_of_moves_check.emit()
+=> END
+
+~ special
+match GlobalVars.player_focus_name
+	when \"Bertha\"
+		Bertha: Do you want me to use my psychic abilities to sense the stress level of the suspect?
+		- [[Go for it.|Yes, do it.|Make it so.|Absolutely.]]
+			do GlobalVars.use_special.emit()
+			Bertha: Okay, here goes ... [wave]mmmmmmmmm[/wave] ... I sense {{GlobalVars.sus_name}} is {{GlobalVars.sus_duress_level}}. I hope that helps.
+		- No, never mind.
+	when \"Cristobal\"
+		Cristobal: Do you want me to plant a listening device at location {{GlobalVars.agent_location[GlobalVars.player_focus]}}? It will detect if the suspect can reach this location in one move.
+		- [[Go for it.|Yes, do it.|Make it so.|Absolutely.]]
+			set GlobalVars.listening_device.append(GlobalVars.agent_location[GlobalVars.player_focus])
+			#set GlobalVars.listening_device.append(98) # FOR TESTING
+			do GlobalVars.use_special.emit()
+			Cristobal: The device is set and in position.
+		- No, never mind.
+	when \"Dolly\"
+		Dolly: Do you want me to establish a blockade at this location? It will prevent the suspect from entering here.
+		- [[Go for it.|Yes, do it.|Make it so.|Absolutely.]]
+			set GlobalVars.blocked_location.append(GlobalVars.agent_location[GlobalVars.player_focus])
+			#set GlobalVars.blocked_location.append(99) # FOR TESTING
+			do GlobalVars.blockade.emit()
+			Dolly: Location {{GlobalVars.agent_location[GlobalVars.player_focus]}} is now blocked.
+		- No, never mind.
+	when \"Edouard\"
+		Edouard: Do you want me to use my psychic abilities to sense which agent is closest to the suspect?
+		- [[Go for it.|Yes, do it.|Make it so.|Absolutely.]]
+			do GlobalVars.use_special.emit()
+			if GlobalVars.agent_name[GlobalVars.closest_agent] == \"Edouard\"
+				Edouard: Okay, here goes ... [wave]mmmmmmmmm[/wave] ... I sense I am the closest agent to {{GlobalVars.sus_name}}.
+			else
+				Edouard: Okay, here goes ... [wave]mmmmmmmmm[/wave] ... I sense {{GlobalVars.agent_name[GlobalVars.closest_agent]}} the closest agent to {{GlobalVars.sus_name}}.
+			if GlobalVars.closest_distance < 500
+				Edouard: And I believe it's quite close.
+		- No, never mind.
+	when \"Hanna\"
+		Hanna: Do you want me to check with one of my informants to see if we can get a possible location for the suspect?
+		- [[Go for it.|Yes, do it.|Make it so.|Absolutely.]]
+			do GlobalVars.use_special.emit()
+			do GlobalVars._sus_section_informant()
+			Hanna: Ok, let me check, hold on ...
+			Hanna: [i]Hi, it's me. Can you talk?[/i]
+			
+			% Hanna: [i]Yes, everyone's doing well, thanks. Listen, I ...[/i]
+			% Hanna: [i]I know it's been a while, but I need a favor.[/i]
+			% Hanna: [i]No, it's not about that. I need your ...[/i]
+			
+			% Hanna: [i]Thanks, I appreciate that, but ...[/i]
+			% Hanna: [i]Look, I haven't forgotten. I've been busy. Right now I need ...[/i]
+			% Hanna: [i]I know, we need to get together ...[/i]
+			
+			Hanna: [i]Please, I don't have a lot of time. Do you know where I can find {{GlobalVars.sus_name}}?[/i]
+			Hanna: [i]Uh huh ... okay ... How sure are you?[/i]
+			Hanna: [i]Great. Thanks, buddy. I owe you one.[/i]
+			Hanna: I'm back. My informant says the suspect is somewhere in the {{GlobalVars.sus_section_response}} section of town. I would say that, while not one hundred percent certain, this information is very trustworthy.
+		- No, never mind.
+		
+=> END
+
+~ listening_device
+Cristobal: Hey! My listening device at location {{GlobalVars.sus_location[0]}} has detected that the suspect is within range of that device.
+=> END
+
+~ wild_animal_nervous
+% {{GlobalVars.agent_name[GlobalVars.player_focus]}}: There's a bear in this section of town, right? No problem; I'm trained to handle this. ... [shake rate=20 level=10]I can handle this.[/shake]
+%
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: There's a bear around here? Great, bring it on! Here, bear! Come and get me.
+	Dispatcher: Agent {{GlobalVars.agent_name[GlobalVars.player_focus]}}, bears are no joke. Handle bear encounters professionally.
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: You're right, sorry.
+% {{GlobalVars.agent_name[GlobalVars.player_focus]}}: I understand there's a bear spotted in this part of town. I'll be careful.
+%
+	if  GlobalVars.agent_name[GlobalVars.player_focus] != \"Arthur\"
+		{{GlobalVars.agent_name[GlobalVars.player_focus]}}: I'm not afraid of a big, hairy animal. Have you seen Arthur without a shirt on? I can handle that.
+		Arthur: I heard that!
+		{{GlobalVars.agent_name[GlobalVars.player_focus]}}: Just messin' with you, buddy.
+=> END
+
+~ wild_animal_encounter
+%
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: There is a bear at this location, but he has wandered off.
+	Dispatcher: Noted. Thanks.
+%
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: Um ... uh ... There's a bear staring right at me.
+	Dispatcher: Stay, calm. Remember your training.
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: Right. ... Okay, it's moved away. Thanks.
+%
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: Oh, look. A bear! Not to worry, it's wandering away.
+	Dispatcher: Thanks for letting me know.
+=> END
+
+~ wild_animal_at_location_choice
+% {{GlobalVars.agent_name[GlobalVars.player_focus]}}: You want me to go there? But there's a bear there. I can see it.
+% {{GlobalVars.agent_name[GlobalVars.player_focus]}}: Are you sure? There's black bear at that location.
+
+Dispatcher: Yes, that was your assignment, agent {{GlobalVars.agent_name[GlobalVars.player_focus]}}. Is there a problem?
+{{GlobalVars.agent_name[GlobalVars.player_focus]}}: Can I just wait for the bear to move away?
+- Sure, wait for the bear to move.
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: Great. Thanks.
+	Dispatcher: While you're waiting, brush up on your training for bear encounters.
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: Will do.
+	do GlobalVars.skip_turn_wild_animal.emit()
+- Proceed to that location. You've had your training - use it.
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: [[I understand.|Right, got it.]] Here I go. It's moving away now.
+	do GlobalVars.no_skip_turn_wild_animal.emit()
+=> END
+
+~ wild_animal_at_location_choice_again
+% {{GlobalVars.agent_name[GlobalVars.player_focus]}}: You want me to go there? But there's a bear there. I can see it.
+% {{GlobalVars.agent_name[GlobalVars.player_focus]}}: Are you sure? There's black bear at that location.
+
+Dispatcher: Yes, that was your assignment, agent {{GlobalVars.agent_name[GlobalVars.player_focus]}}. We already went over this. What's the problem, now?
+
+%
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: I know, but this bear is looking at me funny.
+	Dispatcher: What does that even mean?
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: It mean ... I dunno. Just funny.
+%
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: This one is different. He's ... or she's ... um ... hungry.
+	Dispatcher: The bear is hungry. Are you serious?
+%
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: This one doesn't look happy.
+	Dispatcher: What exactly does a happy bear look like?
+
+{{GlobalVars.agent_name[GlobalVars.player_focus]}}: Can I wait here until the bear moves away?
+- Sure, wait for the bear to move.
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: Great. Thanks.
+	Dispatcher: While you're waiting, brush up on your training for bear encounters.
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: Will do.
+	do GlobalVars.skip_turn_wild_animal.emit()
+- Proceed to that location. You've had your training - use it.
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: [[I understand.|Right, got it.]] Here I go.
+	do GlobalVars.no_skip_turn_wild_animal.emit()
+=> END
+
+~ misbehavior_arthur
+Dispatcher: Arthur, did you get your assignment?
+Arthur: [wave]Splash ... Splash[/wave]
+Dispatcher: Arthur, please respond.
+Arthur: [wave]Splash ... Splash[/wave]
+Dispatcher: Arthur!
+Arthur: Oh, um ... hang on ... Yes. Yes, I'm here. ... Hi!
+Dispatcher: You were asked to move to a new location. What were you doing?
+Arthur: Nothing. ... Well, I was, um ... going for a quick swim. I saw the water and couldn't resist.
+Dispatcher: You were going for a swim? Are you serious?
+Arthur: No. ... I mean, yes.
+Dispatcher: That's private property. Wait, did you actually bring a bathing suit with you? Never mind; I don't want to know.
+Arthur: Uh, some things are better left unsaid.
+Dispatcher: Wow. Okay, dry off and wait for your next assignment. And don't let this happen again.
+Arthur: Yes, sir.
+=> END
+
+~ misbehavior_arthur_2
+Dispatcher: Arthur, did you get your assignment?
+Arthur: [wave]Splash ... Splash[/wave]
+Dispatcher: No. No. Don't tell me. [shake freq=20.0 amp=5.0]Arthur![/shake]
+Arthur: Yes. Hang on. ... Um ... Hi!
+Dispatcher: Enough! Get changed and be ready next time!
+Arthur: Okay. Sorry.
+=> END
+
+~ misbehavior_bertha
+%
+	Dispatcher: Bertha, where are you going? You were asked to move to loation {{GlobalVars.original_location_name}}
+	Bertha: I got a good feeling about this!
+	Dispatcher: No one asked for your feelings. Going forward, follow your orders.
+	Bertha: Yes, sir.
+%
+	Bertha: Wait, I'm getting something ... [wave]mmmmmmmmm[/wave] ... I got it!
+	Dispatcher: Bertha, your objective is to move to {{GlobalVars.original_location_name}}. Where are you going?
+	Bertha: The universe is telling me to go to location {{GlobalVars.agent_location[1]}}!
+	Dispatcher: You're not paid to listen to the universe. Next time, please follow your instructions.
+	Bertha: Okay.
+=> END
+
+~ misbehavior_bertha_2
+Bertha: [wave]mmmmmmmmm[/wave] ... I know where I need to go!
+Dispatcher: You need to go to {{GlobalVars.original_location_name}} as you were instructed!
+Bertha: But I ...
+Dispatcher: We've been over this!
+Bertha: Yes, sir.
+=> END
+
+~ misbehavior_cristobal
+Cristobal: [i]@#$% ![/i]
+{{GlobalVars.agent_closest_to_cristobal}}: [i]&%@# ![/i]
+Dispatcher: Cristobal, {{GlobalVars.agent_closest_to_cristobal}}, what's going on?
+Cristobal: This is my territory.
+{{GlobalVars.agent_closest_to_cristobal}}: What are you talking about? I was asigned this location!
+Cristobal: I work alone!
+Dispatcher: [shake freq=20.0 amp=5.0]Enough![/shake]
+{{GlobalVars.agent_closest_to_cristobal}}: He started it.
+Cristobal: Yeah, I started it. This is my space.
+Dispatcher: Alright, Cristobal. That's enough. You stay there and cool down.
+Cristobal: Hmmph. Fine.
+=> END
+
+~ misbehavior_cristobal_2
+Cristobal: [i]@#$% ![/i]
+{{GlobalVars.agent_closest_to_cristobal}}: [i]&%@# ![/i]
+Dispatcher: Cristobal, again??
+Cristobal: Well ... okay, I'm sorry. It's just ...
+Dispatcher: It's just nothing. Do your job. For now, just remain where you are.
+Cristobal: Yes, sir.
+=> END
+
+~ misbehavior_dolly
+Dolly: Can you send me to a different location?
+Dispatcher: Is there a problem at {{GlobalVars.original_location_name}}?
+Dolly: The ground is wet.
+Dispatcher: Did I understand you correctly ... that the ground is wet?
+Dolly: I'm wearning heals, and ...
+Dispatcher: You may be doing a lot of walking today, and yes, it may be muddy. Put on some comfortable shoes now.
+Dolly: Yes, sir.
+=> END
+
+~ misbehavior_dolly_2
+Dolly: That path doesn't look well maintained.
+Dispatcher: Excuse me?
+Dolly: My knit sweater is definitely going to get snagged on branches along that path.
+Dispatcher: Your knit sweater? Are you also concerned about getting stains on your chinos?
+Dolly: Now that you mention it ...
+Dispatcher: Look, Dolly, next time dress appropriately for the assignment. Get yourself ready to move next turn.
+Dolly: I understand.
+=> END
+
+~ misbehavior_edouard
+Dispatcher: Edouard, you were asked to move to location {{GlobalVars.original_location_name}}.
+Edouard: I tried. I seem to have gotten lost on the path somewhere, and now I think I'm back where I started from.
+Dispatcher: You got lost? ... Okay, just stay there and familiarize yourself with the area so it doesn't happen again.
+Edouard: Yes, sir.
+=> END
+
+~ misbehavior_edouard_2
+Dispatcher: Edouard, you're still in the same location. Don't tell me you got lost again.
+Edouard: Wow, you're right. I [i]am[/i] back to where I started. How funny is that?
+Dispatcher: Yeah, that's really funny. Now please, be more carful when you're given an assignment, okay?
+Edouard: I will. I just find it so disorienting. I'm not a 'walk in the woods' guy.
+=> END
+
+~ misbehavior_fay
+Fay: Hoo. Right. Huff. I've been walking all day. Can I stop here and take a break?
+Dispatcher: Are you saying you can't get to that location?
+Fay: I can. ... I mean, I can't. I need to rest for a few minutes. Is that okay?
+Dispatcher: We are working as a team to close in on our suspect. But if you are unable to move at this time, then go ahead and rest.
+Fay: Thanks. I'll be ready to go in a few minutes.
+=> END
+
+~ misbehavior_fay_2
+Fay: Oh, boy. We're going already? Wouldn't it be better if I just waited here?
+Dispatcher: You believe that if you wait there that {{GlobalVars.sus_name}} will just walk right up to you?
+Fay: Well, if you put it that way, no. I just need to rest.
+Dispatcher: You need to rest again? ... Fine.
+=> END
+
+~ misbehavior_gonzalo
+Dispatcher: Gonzalo, did you get your assignment?
+Arthur: [wave]munch ... munch ... munch[/wave]
+Dispatcher: Gonzalo, please respond.
+Arthur: [wave]mlum ... mlum ... gulp[/wave]
+Dispatcher: Gonzalo!
+Gonzalo: Yesh ... I mean, I'm here.
+Dispatcher: What were you doing?
+Gonzalo: I just stopped for a bite to eat. Did I miss something?
+Dispatcher: Yes, you missed your assignemnt. Next time, please pay attention.
+Gonzalo: Yes, sir.
+=> END
+
+~ misbehavior_gonzalo_2
+Dispatcher: Gonzalo, are you there.
+Gonzalo: [wave]munch ... munch ... munch[/wave]
+Dispatcher: Not again, [shake freq=20.0 amp=5.0]Gonzalo![/shake]
+Gonzalo: [i]Cough! Cough![/i] Uh, hello.
+Dispatcher: Don't tell me you stopped again for more food?
+Gonzalo: Well, I was already stopped, and the place here had some really tasty looking ...
+Dispatcher: Look, bring some granola bars with you, or an apple, or something you can eat while on assignment, okay?
+Gonzalo: Okay. Sorry.
+=> END
+
+~ misbehavior_hanna
+Dispatcher: Agent Hanna, did you get your assignment?
+Hanna: [i]OMG! I'm in Sparta, and it's like the cutest town![/i]
+Dispatcher: Hanna, who are you talking to.
+Hanna: Oh ... right ... hi! I mean, this is Hanna.
+Dispatcher: Are you posting videos on social media?
+Hanna: Well, you see, I'm always looking for new content, and ...
+Dispatcher: and you are revealing to the suspect you're trying to track down exactly where you are.
+Hanna: Right. I understand. Sorry.
+=> END
+
+~ misbehavior_hanna_2
+Dispatcher: Hanna, why are you still there?
+Hanna: [i]Hey guys! You won't believe this, but I just saw the most adorable fox! I was like, so close ...[/i]
+Dispatcher: Don't tell me you're posting stuff again?
+Hanna: Oh, yeah, no, I was just ... talking ... to my mom. Yeah, my mom. You see ...
+Dispatcher: Tell your [i]mom[/i] that you're working and that you'll talk to her later.
+Hanna: Got it.
+=> END
+"
 metadata/dialogue_manager_version = "3.10.4"

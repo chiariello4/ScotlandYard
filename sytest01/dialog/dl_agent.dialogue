@@ -20,3 +20,313 @@ do GlobalVars.unhide_moves.emit()
 % {{GlobalVars.agent_name[GlobalVars.player_focus]}}: I love Sparta.
 % {{GlobalVars.agent_name[GlobalVars.player_focus]}}: Select a location for me to start.
 => END
+
+~ location
+{{GlobalVars.agent_name[GlobalVars.player_focus]}}: My location is {{GlobalVars.loc_name}} in the {{GlobalVars.loc_section}} section, at the {{GlobalVars.loc_description}}
+=> END
+
+~ outofmoves
+set GlobalVars.dialogue_active = true
+{{GlobalVars.agent_name[GlobalVars.player_focus]}}: Sorry, boss. I'm stuck here. I'm afraid you'll have to go on without me.
+Dispatcher: Agent {{GlobalVars.agent_name[GlobalVars.player_focus]}} is unable to move and thus out of the game.
+set GlobalVars.dialogue_active = false
+do GlobalVars.out_of_moves_check.emit()
+=> END
+
+~ special
+match GlobalVars.player_focus_name
+	when "Bertha"
+		Bertha: Do you want me to use my psychic abilities to sense the stress level of the suspect?
+		- [[Go for it.|Yes, do it.|Make it so.|Absolutely.]]
+			do GlobalVars.use_special.emit()
+			Bertha: Okay, here goes ... [wave]mmmmmmmmm[/wave] ... I sense {{GlobalVars.sus_name}} is {{GlobalVars.sus_duress_level}}. I hope that helps.
+		- No, never mind.
+	when "Cristobal"
+		Cristobal: Do you want me to plant a listening device at location {{GlobalVars.agent_location[GlobalVars.player_focus]}}? It will detect if the suspect can reach this location in one move.
+		- [[Go for it.|Yes, do it.|Make it so.|Absolutely.]]
+			set GlobalVars.listening_device.append(GlobalVars.agent_location[GlobalVars.player_focus])
+			#set GlobalVars.listening_device.append(98) # FOR TESTING
+			do GlobalVars.use_special.emit()
+			Cristobal: The device is set and in position.
+		- No, never mind.
+	when "Dolly"
+		Dolly: Do you want me to establish a blockade at this location? It will prevent the suspect from entering here.
+		- [[Go for it.|Yes, do it.|Make it so.|Absolutely.]]
+			set GlobalVars.blocked_location.append(GlobalVars.agent_location[GlobalVars.player_focus])
+			#set GlobalVars.blocked_location.append(99) # FOR TESTING
+			do GlobalVars.blockade.emit()
+			Dolly: Location {{GlobalVars.agent_location[GlobalVars.player_focus]}} is now blocked.
+		- No, never mind.
+	when "Edouard"
+		Edouard: Do you want me to use my psychic abilities to sense which agent is closest to the suspect?
+		- [[Go for it.|Yes, do it.|Make it so.|Absolutely.]]
+			do GlobalVars.use_special.emit()
+			if GlobalVars.agent_name[GlobalVars.closest_agent] == "Edouard"
+				Edouard: Okay, here goes ... [wave]mmmmmmmmm[/wave] ... I sense I am the closest agent to {{GlobalVars.sus_name}}.
+			else
+				Edouard: Okay, here goes ... [wave]mmmmmmmmm[/wave] ... I sense {{GlobalVars.agent_name[GlobalVars.closest_agent]}} the closest agent to {{GlobalVars.sus_name}}.
+			if GlobalVars.closest_distance < 500
+				Edouard: And I believe it's quite close.
+		- No, never mind.
+	when "Hanna"
+		Hanna: Do you want me to check with one of my informants to see if we can get a possible location for the suspect?
+		- [[Go for it.|Yes, do it.|Make it so.|Absolutely.]]
+			do GlobalVars.use_special.emit()
+			do GlobalVars._sus_section_informant()
+			Hanna: Ok, let me check, hold on ...
+			Hanna: [i]Hi, it's me. Can you talk?[/i]
+			
+			% Hanna: [i]Yes, everyone's doing well, thanks. Listen, I ...[/i]
+			% Hanna: [i]I know it's been a while, but I need a favor.[/i]
+			% Hanna: [i]No, it's not about that. I need your ...[/i]
+			
+			% Hanna: [i]Thanks, I appreciate that, but ...[/i]
+			% Hanna: [i]Look, I haven't forgotten. I've been busy. Right now I need ...[/i]
+			% Hanna: [i]I know, we need to get together ...[/i]
+			
+			Hanna: [i]Please, I don't have a lot of time. Do you know where I can find {{GlobalVars.sus_name}}?[/i]
+			Hanna: [i]Uh huh ... okay ... How sure are you?[/i]
+			Hanna: [i]Great. Thanks, buddy. I owe you one.[/i]
+			Hanna: I'm back. My informant says the suspect is somewhere in the {{GlobalVars.sus_section_response}} section of town. I would say that, while not one hundred percent certain, this information is very trustworthy.
+		- No, never mind.
+		
+=> END
+
+~ listening_device
+Cristobal: Hey! My listening device at location {{GlobalVars.sus_location[0]}} has detected that the suspect is within range of that device.
+=> END
+
+~ wild_animal_nervous
+% {{GlobalVars.agent_name[GlobalVars.player_focus]}}: There's a bear in this section of town, right? No problem; I'm trained to handle this. ... [shake rate=20 level=10]I can handle this.[/shake]
+%
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: There's a bear around here? Great, bring it on! Here, bear! Come and get me.
+	Dispatcher: Agent {{GlobalVars.agent_name[GlobalVars.player_focus]}}, bears are no joke. Handle bear encounters professionally.
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: You're right, sorry.
+% {{GlobalVars.agent_name[GlobalVars.player_focus]}}: I understand there's a bear spotted in this part of town. I'll be careful.
+%
+	if  GlobalVars.agent_name[GlobalVars.player_focus] != "Arthur"
+		{{GlobalVars.agent_name[GlobalVars.player_focus]}}: I'm not afraid of a big, hairy animal. Have you seen Arthur without a shirt on? I can handle that.
+		Arthur: I heard that!
+		{{GlobalVars.agent_name[GlobalVars.player_focus]}}: Just messin' with you, buddy.
+=> END
+
+~ wild_animal_encounter
+%
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: There is a bear at this location, but he has wandered off.
+	Dispatcher: Noted. Thanks.
+%
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: Um ... uh ... There's a bear staring right at me.
+	Dispatcher: Stay, calm. Remember your training.
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: Right. ... Okay, it's moved away. Thanks.
+%
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: Oh, look. A bear! Not to worry, it's wandering away.
+	Dispatcher: Thanks for letting me know.
+=> END
+
+~ wild_animal_at_location_choice
+% {{GlobalVars.agent_name[GlobalVars.player_focus]}}: You want me to go there? But there's a bear there. I can see it.
+% {{GlobalVars.agent_name[GlobalVars.player_focus]}}: Are you sure? There's black bear at that location.
+
+Dispatcher: Yes, that was your assignment, agent {{GlobalVars.agent_name[GlobalVars.player_focus]}}. Is there a problem?
+{{GlobalVars.agent_name[GlobalVars.player_focus]}}: Can I just wait for the bear to move away?
+- Sure, wait for the bear to move.
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: Great. Thanks.
+	Dispatcher: While you're waiting, brush up on your training for bear encounters.
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: Will do.
+	do GlobalVars.skip_turn_wild_animal.emit()
+- Proceed to that location. You've had your training - use it.
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: [[I understand.|Right, got it.]] Here I go. It's moving away now.
+	do GlobalVars.no_skip_turn_wild_animal.emit()
+=> END
+
+~ wild_animal_at_location_choice_again
+% {{GlobalVars.agent_name[GlobalVars.player_focus]}}: You want me to go there? But there's a bear there. I can see it.
+% {{GlobalVars.agent_name[GlobalVars.player_focus]}}: Are you sure? There's black bear at that location.
+
+Dispatcher: Yes, that was your assignment, agent {{GlobalVars.agent_name[GlobalVars.player_focus]}}. We already went over this. What's the problem, now?
+
+%
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: I know, but this bear is looking at me funny.
+	Dispatcher: What does that even mean?
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: It mean ... I dunno. Just funny.
+%
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: This one is different. He's ... or she's ... um ... hungry.
+	Dispatcher: The bear is hungry. Are you serious?
+%
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: This one doesn't look happy.
+	Dispatcher: What exactly does a happy bear look like?
+
+{{GlobalVars.agent_name[GlobalVars.player_focus]}}: Can I wait here until the bear moves away?
+- Sure, wait for the bear to move.
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: Great. Thanks.
+	Dispatcher: While you're waiting, brush up on your training for bear encounters.
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: Will do.
+	do GlobalVars.skip_turn_wild_animal.emit()
+- Proceed to that location. You've had your training - use it.
+	{{GlobalVars.agent_name[GlobalVars.player_focus]}}: [[I understand.|Right, got it.]] Here I go.
+	do GlobalVars.no_skip_turn_wild_animal.emit()
+=> END
+
+~ misbehavior_arthur
+Dispatcher: Arthur, did you get your assignment?
+Arthur: [wave]Splash ... Splash[/wave]
+Dispatcher: Arthur, please respond.
+Arthur: [wave]Splash ... Splash[/wave]
+Dispatcher: Arthur!
+Arthur: Oh, um ... hang on ... Yes. Yes, I'm here. ... Hi!
+Dispatcher: You were asked to move to a new location. What were you doing?
+Arthur: Nothing. ... Well, I was, um ... going for a quick swim. I saw the water and couldn't resist.
+Dispatcher: You were going for a swim? Are you serious?
+Arthur: No. ... I mean, yes.
+Dispatcher: That's private property. Wait, did you actually bring a bathing suit with you? Never mind; I don't want to know.
+Arthur: Uh, some things are better left unsaid.
+Dispatcher: Wow. Okay, dry off and wait for your next assignment. And don't let this happen again.
+Arthur: Yes, sir.
+=> END
+
+~ misbehavior_arthur_2
+Dispatcher: Arthur, did you get your assignment?
+Arthur: [wave]Splash ... Splash[/wave]
+Dispatcher: No. No. Don't tell me. [shake freq=20.0 amp=5.0]Arthur![/shake]
+Arthur: Yes. Hang on. ... Um ... Hi!
+Dispatcher: Enough! Get changed and be ready next time!
+Arthur: Okay. Sorry.
+=> END
+
+~ misbehavior_bertha
+%
+	Dispatcher: Bertha, where are you going? You were asked to move to loation {{GlobalVars.original_location_name}}
+	Bertha: I got a good feeling about this!
+	Dispatcher: No one asked for your feelings. Going forward, follow your orders.
+	Bertha: Yes, sir.
+%
+	Bertha: Wait, I'm getting something ... [wave]mmmmmmmmm[/wave] ... I got it!
+	Dispatcher: Bertha, your objective is to move to {{GlobalVars.original_location_name}}. Where are you going?
+	Bertha: The universe is telling me to go to location {{GlobalVars.agent_location[1]}}!
+	Dispatcher: You're not paid to listen to the universe. Next time, please follow your instructions.
+	Bertha: Okay.
+=> END
+
+~ misbehavior_bertha_2
+Bertha: [wave]mmmmmmmmm[/wave] ... I know where I need to go!
+Dispatcher: You need to go to {{GlobalVars.original_location_name}} as you were instructed!
+Bertha: But I ...
+Dispatcher: We've been over this!
+Bertha: Yes, sir.
+=> END
+
+~ misbehavior_cristobal
+Cristobal: [i]@#$% ![/i]
+{{GlobalVars.agent_closest_to_cristobal}}: [i]&%@# ![/i]
+Dispatcher: Cristobal, {{GlobalVars.agent_closest_to_cristobal}}, what's going on?
+Cristobal: This is my territory.
+{{GlobalVars.agent_closest_to_cristobal}}: What are you talking about? I was asigned this location!
+Cristobal: I work alone!
+Dispatcher: [shake freq=20.0 amp=5.0]Enough![/shake]
+{{GlobalVars.agent_closest_to_cristobal}}: He started it.
+Cristobal: Yeah, I started it. This is my space.
+Dispatcher: Alright, Cristobal. That's enough. You stay there and cool down.
+Cristobal: Hmmph. Fine.
+=> END
+
+~ misbehavior_cristobal_2
+Cristobal: [i]@#$% ![/i]
+{{GlobalVars.agent_closest_to_cristobal}}: [i]&%@# ![/i]
+Dispatcher: Cristobal, again??
+Cristobal: Well ... okay, I'm sorry. It's just ...
+Dispatcher: It's just nothing. Do your job. For now, just remain where you are.
+Cristobal: Yes, sir.
+=> END
+
+~ misbehavior_dolly
+Dolly: Can you send me to a different location?
+Dispatcher: Is there a problem at {{GlobalVars.original_location_name}}?
+Dolly: The ground is wet.
+Dispatcher: Did I understand you correctly ... that the ground is wet?
+Dolly: I'm wearning heals, and ...
+Dispatcher: You may be doing a lot of walking today, and yes, it may be muddy. Put on some comfortable shoes now.
+Dolly: Yes, sir.
+=> END
+
+~ misbehavior_dolly_2
+Dolly: That path doesn't look well maintained.
+Dispatcher: Excuse me?
+Dolly: My knit sweater is definitely going to get snagged on branches along that path.
+Dispatcher: Your knit sweater? Are you also concerned about getting stains on your chinos?
+Dolly: Now that you mention it ...
+Dispatcher: Look, Dolly, next time dress appropriately for the assignment. Get yourself ready to move next turn.
+Dolly: I understand.
+=> END
+
+~ misbehavior_edouard
+Dispatcher: Edouard, you were asked to move to location {{GlobalVars.original_location_name}}.
+Edouard: I tried. I seem to have gotten lost on the path somewhere, and now I think I'm back where I started from.
+Dispatcher: You got lost? ... Okay, just stay there and familiarize yourself with the area so it doesn't happen again.
+Edouard: Yes, sir.
+=> END
+
+~ misbehavior_edouard_2
+Dispatcher: Edouard, you're still in the same location. Don't tell me you got lost again.
+Edouard: Wow, you're right. I [i]am[/i] back to where I started. How funny is that?
+Dispatcher: Yeah, that's really funny. Now please, be more carful when you're given an assignment, okay?
+Edouard: I will. I just find it so disorienting. I'm not a 'walk in the woods' guy.
+=> END
+
+~ misbehavior_fay
+Fay: Hoo. Right. Huff. I've been walking all day. Can I stop here and take a break?
+Dispatcher: Are you saying you can't get to that location?
+Fay: I can. ... I mean, I can't. I need to rest for a few minutes. Is that okay?
+Dispatcher: We are working as a team to close in on our suspect. But if you are unable to move at this time, then go ahead and rest.
+Fay: Thanks. I'll be ready to go in a few minutes.
+=> END
+
+~ misbehavior_fay_2
+Fay: Oh, boy. We're going already? Wouldn't it be better if I just waited here?
+Dispatcher: You believe that if you wait there that {{GlobalVars.sus_name}} will just walk right up to you?
+Fay: Well, if you put it that way, no. I just need to rest.
+Dispatcher: You need to rest again? ... Fine.
+=> END
+
+~ misbehavior_gonzalo
+Dispatcher: Gonzalo, did you get your assignment?
+Arthur: [wave]munch ... munch ... munch[/wave]
+Dispatcher: Gonzalo, please respond.
+Arthur: [wave]mlum ... mlum ... gulp[/wave]
+Dispatcher: Gonzalo!
+Gonzalo: Yesh ... I mean, I'm here.
+Dispatcher: What were you doing?
+Gonzalo: I just stopped for a bite to eat. Did I miss something?
+Dispatcher: Yes, you missed your assignemnt. Next time, please pay attention.
+Gonzalo: Yes, sir.
+=> END
+
+~ misbehavior_gonzalo_2
+Dispatcher: Gonzalo, are you there.
+Gonzalo: [wave]munch ... munch ... munch[/wave]
+Dispatcher: Not again, [shake freq=20.0 amp=5.0]Gonzalo![/shake]
+Gonzalo: [i]Cough! Cough![/i] Uh, hello.
+Dispatcher: Don't tell me you stopped again for more food?
+Gonzalo: Well, I was already stopped, and the place here had some really tasty looking ...
+Dispatcher: Look, bring some granola bars with you, or an apple, or something you can eat while on assignment, okay?
+Gonzalo: Okay. Sorry.
+=> END
+
+~ misbehavior_hanna
+Dispatcher: Agent Hanna, did you get your assignment?
+Hanna: [i]OMG! I'm in Sparta, and it's like the cutest town![/i]
+Dispatcher: Hanna, who are you talking to.
+Hanna: Oh ... right ... hi! I mean, this is Hanna.
+Dispatcher: Are you posting videos on social media?
+Hanna: Well, you see, I'm always looking for new content, and ...
+Dispatcher: and you are revealing to the suspect you're trying to track down exactly where you are.
+Hanna: Right. I understand. Sorry.
+=> END
+
+~ misbehavior_hanna_2
+Dispatcher: Hanna, why are you still there?
+Hanna: [i]Hey guys! You won't believe this, but I just saw the most adorable fox! I was like, so close ...[/i]
+Dispatcher: Don't tell me you're posting stuff again?
+Hanna: Oh, yeah, no, I was just ... talking ... to my mom. Yeah, my mom. You see ...
+Dispatcher: Tell your [i]mom[/i] that you're working and that you'll talk to her later.
+Hanna: Got it.
+=> END

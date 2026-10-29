@@ -12,27 +12,24 @@ Chief: Okay. Here is a list of suspects that we need to catch. Let me know which
 	Keith: Keith should be easy to catch. He's not too bright and doesn't have any particular skills.
 	- Pick Keith
 		Chief: He shouldn't give you much of a problem. Good luck bringing Keith in.
-		# Set the suspect threat level
+		# Set the suspect behavioral variables
 		set GlobalVars.sus_name = "Keith"
-		set GlobalVars.sus_threat_profile = GlobalVars.threat_profile_a
 	- Pick someone else
 		=> SuspectList
 - Patti (medium)
 	Patti: Patti is a bit tricky. She is good at avoiding capture but she does take risks. She has a few tricks up her sleave.
 	- Pick Patti
 		Chief: Patti will give you a challenge. Good luck bringing in Patti.
-		# Set the suspect threat level
+		# Set the suspect behavioral variables
 		set GlobalVars.sus_name = "Patti"
-		set GlobalVars.sus_threat_profile = GlobalVars.threat_profile_b
 	- Pick someone else
 		=> SuspectList
 - Mo (hard)
 	Mo: Capturing Mo won't be easy. He is very cautious and has a few skills that will make him hard to capture.
 	- Pick Mo
 		Chief: He will be tough. Good luck bringing in Mo.
-		# Set the suspect threat level
+		# Set the suspect behavioral variables
 		set GlobalVars.sus_name = "Mo"
-		set GlobalVars.sus_threat_profile = GlobalVars.threat_profile_c
 	- Pick someone else
 		=> SuspectList
 - I changed my mind. I have better things to do.
@@ -41,7 +38,10 @@ Chief: Okay. Here is a list of suspects that we need to catch. Let me know which
 	=> END
 
 ~ AgentListIntro
-Chief: Now you need to assemble your team. We work in teams of five. Select five agents from this list. Each agent has a unique skill that will be useful for you in your mission.
+if GlobalVars.restart == false
+	Chief: Now you need to assemble your team. We work in teams of five. Select five agents from this list. Each agent has a unique skill that will be useful for you in your mission.
+else
+	Chief: You may keep the same team or make swap out any of your five agents.
 ~ AgentList
 # List the names of those already selected if any are selected
 match GlobalVars.agent_name.size()
@@ -57,10 +57,12 @@ match GlobalVars.agent_name.size()
 		Chief: So far we have {{GlobalVars.agent_name[0]}}, {{GlobalVars.agent_name[1]}}, {{GlobalVars.agent_name[2]}}, and {{GlobalVars.agent_name[3]}}. Almost there. Pick one more.
 	when 5
 		Chief: We have our team: {{GlobalVars.agent_name[0]}}, {{GlobalVars.agent_name[1]}}, {{GlobalVars.agent_name[2]}}, {{GlobalVars.agent_name[3]}}, and {{GlobalVars.agent_name[4]}}. If you're satisfied we can start deploying them, or you can go back and keep editing the list.
+	else
+		Chief: Here is the list:
 # List the selected names
 - Arthur
-	Arthur: Arthur is able to use the water pathways. [if not GlobalVars.agent_name.has("Arthur")]Would you like to add Arthur to the team?[/if] [if GlobalVars.agent_name.has("Arthur")]Arthur is already selected. Would you like remove Arthur?[/if]
-	- Pick Arthur [if not GlobalVars.agent_name.has("Arthur")]
+	Arthur: Arthur is comfortable around water, and is able to use the water pathways. He really enjoys swimming, and often can't resist an opportunity to get in the water. [if not GlobalVars.agent_name.has("Arthur") and GlobalVars.agent_name.size() < 5]Would you like to add Arthur to the team?[/if] [if not GlobalVars.agent_name.has("Arthur") and GlobalVars.agent_name.size() == 5]Your team is full. If you want to add Arthur you must first remove someone.[/if] [if GlobalVars.agent_name.has("Arthur")]Arthur is already selected. Would you like remove Arthur?[/if]
+	- Pick Arthur [if not GlobalVars.agent_name.has("Arthur") and GlobalVars.agent_name.size() < 5]
 		Chief: We'll add Arthur to the team.
 		set GlobalVars.agent_name.append("Arthur")
 		=> AgentList
@@ -68,11 +70,11 @@ match GlobalVars.agent_name.size()
 		Chief: We'll remove Arthur from the team.
 		set GlobalVars.agent_name.erase("Arthur")
 		=> AgentList
-	- Let me see the list again
+	- Let me see the list again.
 		=> AgentList
 - Bertha
-	Bertha: Bertha has some psychic abilities and is able to sense the suspect's tension. [if not GlobalVars.agent_name.has("Bertha")]Would you like to add Bertha to the team?[/if] [if GlobalVars.agent_name.has("Bertha")]Bertha is already selected. Would you like remove Bertha?[/if]
-	- Pick Bertha [if not GlobalVars.agent_name.has("Bertha")]
+	Bertha: Bertha has some psychic abilities and is able to sense the suspect's tension. She has a tendency to get carried away with her psychic powers. [if not GlobalVars.agent_name.has("Bertha") and GlobalVars.agent_name.size() < 5]Would you like to add Bertha to the team?[/if] [if not GlobalVars.agent_name.has("Bertha") and GlobalVars.agent_name.size() == 5]Your team is full. If you want to add Bertha you must first remove someone.[/if] [if GlobalVars.agent_name.has("Bertha")]Bertha is already selected. Would you like remove Bertha?[/if]
+	- Pick Bertha [if not GlobalVars.agent_name.has("Bertha") and GlobalVars.agent_name.size() < 5]
 		Chief: We'll add Bertha to the team.
 		set GlobalVars.agent_name.append("Bertha")
 		=> AgentList
@@ -80,11 +82,11 @@ match GlobalVars.agent_name.size()
 		Chief: We'll remove Bertha from the team.
 		set GlobalVars.agent_name.erase("Bertha")
 		=> AgentList
-	- Let me see the list again
+	- Let me see the list again.
 		=> AgentList
 - Cristobal
-	Cristobal: Cristobal is able to plant a listening device at an intersection. [if not GlobalVars.agent_name.has("Cristobal")]Would you like to add Cristobal to the team?[/if] [if GlobalVars.agent_name.has("Cristobal")]Cristobal is already selected. Would you like remove Cristobal?[/if]
-	- Pick Cristobal [if not GlobalVars.agent_name.has("Cristobal")]
+	Cristobal: Cristobal is an electronics wiz and is able to plant a listening device at an intersection. However, many of his co-workers feel that he's not the friendliest character in the group and can be hard to get along with. [if not GlobalVars.agent_name.has("Cristobal") and GlobalVars.agent_name.size() < 5]Would you like to add Cristobal to the team?[/if] [if not GlobalVars.agent_name.has("Cristobal") and GlobalVars.agent_name.size() == 5]Your team is full. If you want to add Cristobal you must first remove someone.[/if] [if GlobalVars.agent_name.has("Cristobal")]Cristobal is already selected. Would you like remove Cristobal?[/if]
+	- Pick Cristobal [if not GlobalVars.agent_name.has("Cristobal") and GlobalVars.agent_name.size() < 5]
 		Chief: We'll add Cristobal to the team.
 		set GlobalVars.agent_name.append("Cristobal")
 		=> AgentList
@@ -92,11 +94,11 @@ match GlobalVars.agent_name.size()
 		Chief: We'll remove Cristobal from the team.
 		set GlobalVars.agent_name.erase("Cristobal")
 		=> AgentList
-	- Let me see the list again
+	- Let me see the list again.
 		=> AgentList
 - Dolly
-	Dolly: Dolly is able to place a blockade on an intersection. [if not GlobalVars.agent_name.has("Dolly")]Would you like to add Dolly to the team?[/if] [if GlobalVars.agent_name.has("Dolly")]Dolly is already selected. Would you like remove Dolly?[/if]
-	- Pick Dolly [if not GlobalVars.agent_name.has("Dolly")]
+	Dolly: Dolly is able to place a blockade on an intersection. She's the best dressed agent you've god. [if not GlobalVars.agent_name.has("Dolly") and GlobalVars.agent_name.size() < 5]Would you like to add Dolly to the team?[/if] [if not GlobalVars.agent_name.has("Dolly") and GlobalVars.agent_name.size() == 5]Your team is full. If you want to add Dolly you must first remove someone.[/if] [if GlobalVars.agent_name.has("Dolly")]Dolly is already selected. Would you like remove Dolly?[/if]
+	- Pick Dolly [if not GlobalVars.agent_name.has("Dolly") and GlobalVars.agent_name.size() < 5]
 		Chief: We'll add Dolly to the team.
 		set GlobalVars.agent_name.append("Dolly")
 		=> AgentList
@@ -104,11 +106,11 @@ match GlobalVars.agent_name.size()
 		Chief: We'll remove Dolly from the team.
 		set GlobalVars.agent_name.erase("Dolly")
 		=> AgentList
-	- Let me see the list again
+	- Let me see the list again.
 		=> AgentList
 - Edouard
-	Edouard: Edouard's special ability is unknown. [if not GlobalVars.agent_name.has("Edouard")]Would you like to add Edouard to the team?[/if] [if GlobalVars.agent_name.has("Edouard")]Edouard is already selected. Would you like remove Edouard?[/if]
-	- Pick Edouard [if not GlobalVars.agent_name.has("Edouard")]
+	Edouard: Edouard's has some psychic abilities and is able to sense which agent is closest to the suspect. However, his own sense of direction is, shall we say, lacking. [if not GlobalVars.agent_name.has("Edouard") and GlobalVars.agent_name.size() < 5]Would you like to add Edouard to the team?[/if] [if not GlobalVars.agent_name.has("Edouard") and GlobalVars.agent_name.size() == 5]Your team is full. If you want to add Edouard you must first remove someone.[/if] [if GlobalVars.agent_name.has("Edouard")]Edouard is already selected. Would you like remove Edouard?[/if]
+	- Pick Edouard [if not GlobalVars.agent_name.has("Edouard") and GlobalVars.agent_name.size() < 5]
 		Chief: We'll add Edouard to the team.
 		set GlobalVars.agent_name.append("Edouard")
 		=> AgentList
@@ -116,11 +118,11 @@ match GlobalVars.agent_name.size()
 		Chief: We'll remove Edouard from the team.
 		set GlobalVars.agent_name.erase("Edouard")
 		=> AgentList
-	- Let me see the list again
+	- Let me see the list again.
 		=> AgentList
 - Fay
-	Fay: Fay's special ability is unknown. [if not GlobalVars.agent_name.has("Fay")]Would you like to add Fay to the team?[/if] [if GlobalVars.agent_name.has("Fay")]Fay is already selected. Would you like remove Fay?[/if]
-	- Pick Fay [if not GlobalVars.agent_name.has("Fay")]
+	Fay: Fay is most comfortable traveling on foot. However, it took her five tries to pass the physical test and I feel that she may be more suited to a desk job than being out in the field. [if not GlobalVars.agent_name.has("Fay") and GlobalVars.agent_name.size() < 5]Would you like to add Fay to the team?[/if] [if not GlobalVars.agent_name.has("Fay") and GlobalVars.agent_name.size() == 5]Your team is full. If you want to add Fay you must first remove someone.[/if] [if GlobalVars.agent_name.has("Fay")]Fay is already selected. Would you like remove Fay?[/if]
+	- Pick Fay [if not GlobalVars.agent_name.has("Fay") and GlobalVars.agent_name.size() < 5]
 		Chief: We'll add Fay to the team.
 		set GlobalVars.agent_name.append("Fay")
 		=> AgentList
@@ -128,11 +130,11 @@ match GlobalVars.agent_name.size()
 		Chief: We'll remove Fay from the team.
 		set GlobalVars.agent_name.erase("Fay")
 		=> AgentList
-	- Let me see the list again
+	- Let me see the list again.
 		=> AgentList
 - Gonzalo
-	Gonzalo: Gonzalo's special ability is unknown. [if not GlobalVars.agent_name.has("Gonzalo")]Would you like to add Gonzalo to the team?[/if] [if GlobalVars.agent_name.has("Gonzalo")]Gonzalo is already selected. Would you like remove Gonzalo?[/if]
-	- Pick Gonzalo [if not GlobalVars.agent_name.has("Gonzalo")]
+	Gonzalo: Gonzalo is most comfortable traveling by taxi or shuttle. He's always on the looking for a new place to eat. [if not GlobalVars.agent_name.has("Gonzalo")]Would you like to add Gonzalo to the team?[/if] [if GlobalVars.agent_name.has("Gonzalo")]Gonzalo is already selected. Would you like remove Gonzalo?[/if]
+	- Pick Gonzalo [if not GlobalVars.agent_name.has("Gonzalo") and GlobalVars.agent_name.size() < 5]
 		Chief: We'll add Gonzalo to the team.
 		set GlobalVars.agent_name.append("Gonzalo")
 		=> AgentList
@@ -140,10 +142,10 @@ match GlobalVars.agent_name.size()
 		Chief: We'll remove Gonzalo from the team.
 		set GlobalVars.agent_name.erase("Gonzalo")
 		=> AgentList
-	- Let me see the list again
+	- Let me see the list again.
 		=> AgentList
 - Hanna
-	Hanna: Hanna is able to summon a sixth agent to help. [if not GlobalVars.agent_name.has("Hanna")]Would you like to add Hanna to the team?[/if] [if GlobalVars.agent_name.has("Hanna")]Hanna is already selected. Would you like remove Hanna?[/if]
+	Hanna: Hanna has a network of informants in who may be able to provide a clue as to the whereabouts of the suspect. She says her informants are quite reliable, and can be trusted about 90% of the time. Unfortunately, her popularity has led to some uncontrollable social media habbits. [if not GlobalVars.agent_name.has("Hanna")]Would you like to add Hanna to the team?[/if] [if GlobalVars.agent_name.has("Hanna")]Hanna is already selected. Would you like remove Hanna?[/if]
 	- Pick Hanna [if not GlobalVars.agent_name.has("Hanna")]
 		Chief: We'll add Hanna to the team.
 		set GlobalVars.agent_name.append("Hanna")
@@ -154,14 +156,24 @@ match GlobalVars.agent_name.size()
 		=> AgentList
 	- Let me see the list again.
 		=> AgentList
-- My team is complete. Let's get started!  [if GlobalVars.agent_name.size() == 5]
+- Choose five agents at random.
+	Chief: Do you want me to select five agents at random? [if GlobalVars.agent_name.size() > 0]Any agents you've already selected will be removed.[/if]
+	- Yes, just pick any five.
+		do GlobalVars.random_team.emit()
+		=> AgentList
+	- Let me see the list again.
+		=> AgentList
+- My team is complete. Let's get started!  [if GlobalVars.agent_name.size() >= 5]
 - I changed my mind. I have better things to do.
 	Chief: [[I understand. See ya around.|Cupcake|Fine, we didn't need your help anyway.]]
 	do GlobalVars.quit.emit()
 	=> END
 
 ~ StartGame
-Chief: Now that the team is in place, you must deploy them around Sparta. You can place them on a few key intersections around town. After all five agents are in place we can start our pursuit.
-do GlobalVars.agent_name.insert(0,"IGNORE")
+if GlobalVars.restart == false
+	Chief: Now that the team is in place, you must deploy them around Sparta. You can place them on a few key intersections around town. After all five agents are in place we can start our pursuit.
+	do GlobalVars.agent_name.insert(0,"IGNORE")
+else
+	Chief: You may now re-deploy your agents around Sparta. After all five agents are in place we can start our pursuit.
 do GlobalVars.team_selected_from_dialogue.emit()
 => END

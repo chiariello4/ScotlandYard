@@ -10,15 +10,60 @@ Dispatcher: I am sure we will get the suspect's location from time to time. When
 => END
 
 ~ susmove
-Dispatcher: [[The suspect has moved|{{GlobalVars.sus_name}} is on the move]], traveling by {{GlobalVars.sus_last_move_type}}.
+if GlobalVars.sus_last_move_type == "special"
+	Dispatcher: [[The suspect has moved|{{GlobalVars.sus_name}} is on the move]]. However, we can't determine the mode of travel.
+else
+	Dispatcher: [[The suspect has moved|{{GlobalVars.sus_name}} is on the move]], traveling by {{GlobalVars.sus_last_move_type}}.
 => END
 
 ~ susreveal
 Dispatcher: [[We have located {{GlobalVars.sus_name}}.|{{GlobalVars.sus_name}} has been spotted.|We have the suspect's location.]]  [[Move your agents in quickly to intercept.|We won't have {{GlobalVars.sus_name}} in our sights for long.]]
-#do GlobalVars.sub_viewport_container.visible = false
-#do GlobalVars.button_view_close.visible = false
 => END
 
 ~ suslost
 Dispatcher: [[The suspect has vanished.|{{GlobalVars.sus_name}} has slipped away.|We lost track of {{GlobalVars.sus_name}}.]]
+=> END
+
+~ footmoves2
+Dispatcher: Be careful, {{GlobalVars.agent_name[GlobalVars.player_focus]}}. You are running low on moves by foot.  If you run out of foot moves, you may no longer be able to participate in this mission.
+=> END
+
+~ footmoves1
+Dispatcher: You have only one remaining move by foot, {{GlobalVars.agent_name[GlobalVars.player_focus]}}. If you run out of foot moves, you may no longer be able to participate in this mission.
+=> END
+
+~ doublemove
+Dispatcher: We just got word that the suspect is on the move [wave]again![/wave]
+=> END
+
+~ setuphelp
+Dispatcher: Deploy your agents around Sparta to create the best chance of capturing the suspect.
+- Got it.
+- I changed my mind. I have better things to do.
+	Dispatcher: [[You're quitting now? We're just getting started. Well, okay.|Okay, but the Chief isn't going to be happy.|I understand. Police work is hard.]]
+	do GlobalVars.quit.emit()
+=> END
+
+~ gamehelp
+%3 Dispatcher: What do you need?
+%3 Dispatcher: How can I help?
+% Dispatcher: Yes, I'd like one large pepperoni, an antipasto for two, and ... oh, wait, sorry, wrong line. It's you. [wave]Ahem[/wave] ... How can I help?
+- What is the status of the suspect?
+	if GlobalVars.sus_reveal_turn.has(GlobalVars.turn_number) :
+		Dispatcher: The suspect is spotted at {{GlobalVars.sus_last_location_description}}.
+	else :
+		Dispatcher: We don't yet have a location for {{GlobalVars.sus_name}}. [if GlobalVars.sus_last_location_description == ""]The suspect has not yet been spotted anywhere in Sparta.[/if] [if GlobalVars.sus_last_location_description != ""]The suspect was last seen at location {{GlobalVars.sus_last_location_description}}.[/if] Since then, we have tracked movements by {{GlobalVars.sus_mode_since_reveal}}.
+- Has there been any recent wild animal sighting?
+	if GlobalVars.wild_animal_last_turn_spotted == 0
+		%3 Dispatcher: No, I have not heard any reports of wild animal sightings.
+		% Dispatcher: Well, it depends on your definition of "wild". I see a rabbit out the window, and a few birds, but if you're talking about bears, then no.
+	else
+		Dispatcher: The last bear sighting we received was on move {{GlobalVars.wild_animal_last_turn_spotted}} in the {{GlobalVars.wild_animal_last_section_spotted}} section of town.
+- I need to quit.
+	Dispatcher: [[You're quitting now? We're just getting started. Well, okay.|Okay, but the Chief isn't going to be happy.|I understand. Police work is hard.]]
+	do GlobalVars.quit.emit()
+=> END
+
+~ wild_animal_spotted
+% Dispatcher: A bear has been spotted in the {{GlobalVars.wild_animal_section}} section.
 => END

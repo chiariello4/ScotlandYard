@@ -1,6 +1,6 @@
 extends Node
 
-var json_path = "res://json_files/json_location_file_v12sm.txt"
+var json_path = "res://json_files/json_location_file_v18sm.txt"
 var location_variables = {}
 
 func _ready() -> void:

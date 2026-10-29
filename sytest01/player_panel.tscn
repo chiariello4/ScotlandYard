@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bmn38mukktuxr"]
+[gd_scene format=3 uid="uid://bmn38mukktuxr"]
 
 [ext_resource type="Theme" uid="uid://bjowy0ujxwwvw" path="res://themes/default_theme.tres" id="1_4mj0i"]
 [ext_resource type="Script" uid="uid://dcth4qnfh1qj2" path="res://player_panel.gd" id="1_86pc1"]
 [ext_resource type="FontFile" uid="uid://bijiwbc6t0nur" path="res://art/arial.ttf" id="2_dvush"]
 [ext_resource type="Texture2D" uid="uid://padk2qo63rtk" path="res://art/player_sprites/select32.png" id="3_eepqy"]
+[ext_resource type="Texture2D" uid="uid://dpit25hfsaq8h" path="res://art/player_sprites/dispatchsprite.png" id="5_3pp13"]
 [ext_resource type="Texture2D" uid="uid://cctpap1adnavh" path="res://art/player_sprites/white32.png" id="5_5803t"]
 
 [sub_resource type="Theme" id="Theme_86pc1"]
@@ -16,669 +17,662 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_5803t"]
 thickness = 2
 
-[node name="PlayerPanel" type="Control" node_paths=PackedStringArray("button_icon", "agent_label", "button_start_agent", "button_move_agent")]
-custom_minimum_size = Vector2(150, 10)
+[node name="PlayerPanel" type="Control" unique_id=1843808042]
+custom_minimum_size = Vector2(130, 10)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 150.0
-offset_bottom = 512.0
+offset_right = 140.0
+offset_bottom = 500.0
 size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_86pc1")
-button_icon = [NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/ButtonIcon_Agent01"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/ButtonIcon_Agent01"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/ButtonIcon_Agent02"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/ButtonIcon_Agent03"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/ButtonIcon_Agent04"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/ButtonIcon_Agent05")]
-agent_label = [NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/MarginContainer_LabelAgent01/Label_Agent01"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/MarginContainer_LabelAgent01/Label_Agent01"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/MarginContainer_LabelAgent02/Label_Agent02"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/MarginContainer_LabelAgent03/Label_Agent03"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/MarginContainer_LabelAgent04/Label_Agent04"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/MarginContainer_LabelAgent05/Label_Agent05")]
-button_start_agent = [NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/ButtonStart_Agent01"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/ButtonStart_Agent01"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/ButtonStart_Agent02"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/ButtonStart_Agent03"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/ButtonStart_Agent04"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/ButtonStart_Agent05")]
-button_move_agent = [NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/ButtonMove_Agent01"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/ButtonMove_Agent01"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/ButtonMove_Agent02"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/ButtonMove_Agent03"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/ButtonMove_Agent04"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/ButtonMove_Agent05")]
-player_location_ready = Array[bool]([true, false, false, false, false, false])
+button_icon_path = Array[NodePath]([NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/ButtonIcon_Agent01"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/ButtonIcon_Agent01"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/ButtonIcon_Agent02"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/ButtonIcon_Agent03"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/ButtonIcon_Agent04"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/ButtonIcon_Agent05")])
+agent_label_path = Array[NodePath]([NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/MarginContainer_LabelAgent01/Label_Agent01"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/MarginContainer_LabelAgent01/Label_Agent01"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/MarginContainer_LabelAgent02/Label_Agent02"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/MarginContainer_LabelAgent03/Label_Agent03"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/MarginContainer_LabelAgent04/Label_Agent04"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/MarginContainer_LabelAgent05/Label_Agent05")])
+button_start_agent_path = Array[NodePath]([NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/ButtonStart_Agent01"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/ButtonStart_Agent01"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/ButtonStart_Agent02"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/ButtonStart_Agent03"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/ButtonStart_Agent04"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/ButtonStart_Agent05")])
+button_move_agent_path = Array[NodePath]([NodePath("PanelContainer/VBoxContainer/MarginContainer_Title/ButtonMove_Agent00"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/ButtonMove_Agent01"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/ButtonMove_Agent02"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/ButtonMove_Agent03"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/ButtonMove_Agent04"), NodePath("PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/ButtonMove_Agent05")])
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(150, 160)
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1622156288]
+custom_minimum_size = Vector2(130, 160)
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -252.0
-offset_bottom = 252.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 150.0
+offset_bottom = 504.0
 theme = ExtResource("1_4mj0i")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=760479663]
 layout_mode = 2
 
-[node name="MarginContainer_Title" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+[node name="MarginContainer_Title" type="MarginContainer" parent="PanelContainer/VBoxContainer" unique_id=2108834635]
 layout_mode = 2
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="LabelPlayerTitle" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Title"]
+[node name="LabelPlayerTitle" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Title" unique_id=178426791]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Agents"
 horizontal_alignment = 1
 
-[node name="MarginContainer_Turn" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+[node name="ButtonMove_Agent00" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Title" unique_id=1283714920]
 visible = false
 layout_mode = 2
-theme_override_constants/margin_top = 15
+disabled = true
+
+[node name="MarginContainer_Turn" type="MarginContainer" parent="PanelContainer/VBoxContainer" unique_id=454566539]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_top = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Turn"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Turn" unique_id=380470551]
 layout_mode = 2
 
-[node name="Label_Turn" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Turn/HBoxContainer"]
+[node name="Label_Turn" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Turn/HBoxContainer" unique_id=939704698]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "Turn Number"
 horizontal_alignment = 1
 
-[node name="Label_Turn_Count" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Turn/HBoxContainer"]
+[node name="Label_Turn_Count" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Turn/HBoxContainer" unique_id=719446229]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 
-[node name="MarginContainer_Agents" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+[node name="MarginContainer_Agents" type="MarginContainer" parent="PanelContainer/VBoxContainer" unique_id=109493770]
 layout_mode = 2
 theme = SubResource("Theme_86pc1")
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 0
 
-[node name="VBoxContainer_Agents" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents"]
+[node name="VBoxContainer_Agents" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents" unique_id=1898248946]
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="MarginContainer_LabelAgent01" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents"]
+[node name="MarginContainer_LabelAgent01" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents" unique_id=1189772639]
 layout_mode = 2
 theme_override_constants/margin_top = 2
-theme_override_constants/margin_bottom = 5
 
-[node name="Label_Agent01" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/MarginContainer_LabelAgent01"]
+[node name="Label_Agent01" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/MarginContainer_LabelAgent01" unique_id=416623180]
 layout_mode = 2
 text = "Agent 1"
 label_settings = SubResource("LabelSettings_dvush")
 horizontal_alignment = 1
 vertical_alignment = 3
 
-[node name="HBoxContainer_Agent01" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents"]
+[node name="HBoxContainer_Agent01" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents" unique_id=1229604348]
 layout_mode = 2
-theme_override_constants/separation = 5
+theme_override_constants/separation = 2
 
-[node name="ButtonIcon_Agent01" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01"]
+[node name="ButtonIcon_Agent01" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01" unique_id=1098066861]
 layout_mode = 2
 icon = ExtResource("3_eepqy")
 
-[node name="TextureRect_Agent01" type="TextureRect" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/ButtonIcon_Agent01"]
+[node name="TextureRect_Agent01" type="TextureRect" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/ButtonIcon_Agent01" unique_id=1348786825]
 visible = false
-layout_mode = 2
+layout_mode = 0
 offset_right = 32.0
 offset_bottom = 32.0
 texture = ExtResource("3_eepqy")
 
-[node name="ButtonStart_Agent01" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01"]
+[node name="ButtonStart_Agent01" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01" unique_id=1530760287]
 layout_mode = 2
 theme = ExtResource("1_4mj0i")
 theme_override_font_sizes/font_size = 12
 text = "Select Start"
 
-[node name="ButtonMove_Agent01" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01"]
+[node name="ButtonMove_Agent01" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01" unique_id=1453396559]
 visible = false
 layout_mode = 2
 text = "Move"
 
-[node name="MarginContainer_tickets_01" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01"]
+[node name="MarginContainer_tickets_01" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01" unique_id=1848556477]
 visible = false
 layout_mode = 2
 
-[node name="VBoxContainer_tickest_01" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01"]
+[node name="VBoxContainer_tickest_01" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01" unique_id=1157024162]
 layout_mode = 2
 
-[node name="MarginContainer_01_mode0" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01"]
+[node name="MarginContainer_01_mode0" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01" unique_id=1338541325]
 layout_mode = 2
 
-[node name="HBoxContainer_01_mode0" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01/MarginContainer_01_mode0"]
+[node name="HBoxContainer_01_mode0" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01/MarginContainer_01_mode0" unique_id=359104614]
 layout_mode = 2
 
-[node name="Label_Title_01_mode0" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01/MarginContainer_01_mode0/HBoxContainer_01_mode0"]
+[node name="Label_Title_01_mode0" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01/MarginContainer_01_mode0/HBoxContainer_01_mode0" unique_id=906993043]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Mode 0"
 
-[node name="Label_Amt_01_mode0" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01/MarginContainer_01_mode0/HBoxContainer_01_mode0"]
+[node name="Label_Amt_01_mode0" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01/MarginContainer_01_mode0/HBoxContainer_01_mode0" unique_id=455453079]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "99"
 
-[node name="MarginContainer_01_mode1" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01"]
+[node name="MarginContainer_01_mode1" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01" unique_id=979486124]
 layout_mode = 2
 
-[node name="HBoxContainer_01_mode1" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01/MarginContainer_01_mode1"]
+[node name="HBoxContainer_01_mode1" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01/MarginContainer_01_mode1" unique_id=438575467]
 layout_mode = 2
 
-[node name="Label_Title_01_mode1" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01/MarginContainer_01_mode1/HBoxContainer_01_mode1"]
+[node name="Label_Title_01_mode1" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01/MarginContainer_01_mode1/HBoxContainer_01_mode1" unique_id=795058162]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Mode 1"
 
-[node name="Label_Amt_01_mode1" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01/MarginContainer_01_mode1/HBoxContainer_01_mode1"]
+[node name="Label_Amt_01_mode1" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01/MarginContainer_01_mode1/HBoxContainer_01_mode1" unique_id=81709493]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "99"
 
-[node name="MarginContainer_01_mode2" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01"]
+[node name="MarginContainer_01_mode2" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01" unique_id=73409888]
 layout_mode = 2
 
-[node name="HBoxContainer_01_mode2" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01/MarginContainer_01_mode2"]
+[node name="HBoxContainer_01_mode2" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01/MarginContainer_01_mode2" unique_id=632737009]
 layout_mode = 2
 
-[node name="Label_Title_01_mode2" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01/MarginContainer_01_mode2/HBoxContainer_01_mode2"]
+[node name="Label_Title_01_mode2" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01/MarginContainer_01_mode2/HBoxContainer_01_mode2" unique_id=286370547]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Mode 1"
 
-[node name="Label_Amt_01_mode2" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01/MarginContainer_01_mode2/HBoxContainer_01_mode2"]
+[node name="Label_Amt_01_mode2" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01/MarginContainer_01_mode2/HBoxContainer_01_mode2" unique_id=1549133917]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "99"
 
-[node name="MarginContainer_01_mode3" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01"]
+[node name="MarginContainer_01_mode3" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01" unique_id=1961047251]
 layout_mode = 2
 
-[node name="HBoxContainer_01_mode3" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01/MarginContainer_01_mode3"]
+[node name="HBoxContainer_01_mode3" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01/MarginContainer_01_mode3" unique_id=145221519]
 layout_mode = 2
 
-[node name="Label_Title_01_mode3" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01/MarginContainer_01_mode3/HBoxContainer_01_mode3"]
+[node name="Label_Title_01_mode3" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01/MarginContainer_01_mode3/HBoxContainer_01_mode3" unique_id=459006800]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Mode 1"
 
-[node name="Label_Amt_01_mode3" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01/MarginContainer_01_mode3/HBoxContainer_01_mode3"]
+[node name="Label_Amt_01_mode3" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/MarginContainer_tickets_01/VBoxContainer_tickest_01/MarginContainer_01_mode3/HBoxContainer_01_mode3" unique_id=1981054178]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "99"
 
-[node name="MarginContainer_LabelAgent02" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents"]
+[node name="MarginContainer_LabelAgent02" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents" unique_id=1529262938]
 layout_mode = 2
 theme_override_constants/margin_top = 2
-theme_override_constants/margin_bottom = 5
 
-[node name="Label_Agent02" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/MarginContainer_LabelAgent02"]
+[node name="Label_Agent02" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/MarginContainer_LabelAgent02" unique_id=1531987711]
 layout_mode = 2
 text = "Agent 2"
 label_settings = SubResource("LabelSettings_dvush")
 horizontal_alignment = 1
 vertical_alignment = 3
 
-[node name="HBoxContainer_Agent02" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents"]
+[node name="HBoxContainer_Agent02" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents" unique_id=844142101]
 layout_mode = 2
-theme_override_constants/separation = 5
+theme_override_constants/separation = 2
 
-[node name="ButtonIcon_Agent02" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02"]
+[node name="ButtonIcon_Agent02" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02" unique_id=1521835941]
 layout_mode = 2
 icon = ExtResource("3_eepqy")
 
-[node name="TextureRect_Agent02" type="TextureRect" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/ButtonIcon_Agent02"]
+[node name="TextureRect_Agent02" type="TextureRect" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/ButtonIcon_Agent02" unique_id=178285488]
 visible = false
-layout_mode = 2
+layout_mode = 0
 offset_left = 9.0
 offset_right = 41.0
 offset_bottom = 32.0
 texture = ExtResource("3_eepqy")
 
-[node name="ButtonStart_Agent02" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02"]
+[node name="ButtonStart_Agent02" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02" unique_id=2096288814]
 layout_mode = 2
 theme = ExtResource("1_4mj0i")
 theme_override_font_sizes/font_size = 12
 text = "Select Start"
 
-[node name="ButtonMove_Agent02" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02"]
+[node name="ButtonMove_Agent02" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02" unique_id=1325795831]
 visible = false
 layout_mode = 2
 text = "Move"
 
-[node name="MarginContainer_tickets_02" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02"]
+[node name="MarginContainer_tickets_02" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02" unique_id=1141979420]
 visible = false
 layout_mode = 2
 
-[node name="VBoxContainer_tickest_02" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02"]
+[node name="VBoxContainer_tickest_02" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02" unique_id=1717220807]
 layout_mode = 2
 
-[node name="MarginContainer_02_mode0" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02"]
+[node name="MarginContainer_02_mode0" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02" unique_id=675064791]
 layout_mode = 2
 
-[node name="HBoxContainer_02_mode0" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02/MarginContainer_02_mode0"]
+[node name="HBoxContainer_02_mode0" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02/MarginContainer_02_mode0" unique_id=1809972533]
 layout_mode = 2
 
-[node name="Label_Title_02_mode0" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02/MarginContainer_02_mode0/HBoxContainer_02_mode0"]
+[node name="Label_Title_02_mode0" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02/MarginContainer_02_mode0/HBoxContainer_02_mode0" unique_id=1020429731]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Mode 0"
 
-[node name="Label_Amt_02_mode0" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02/MarginContainer_02_mode0/HBoxContainer_02_mode0"]
+[node name="Label_Amt_02_mode0" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02/MarginContainer_02_mode0/HBoxContainer_02_mode0" unique_id=334486896]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "99"
 
-[node name="MarginContainer_02_mode1" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02"]
+[node name="MarginContainer_02_mode1" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02" unique_id=694147881]
 layout_mode = 2
 
-[node name="HBoxContainer_02_mode1" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02/MarginContainer_02_mode1"]
+[node name="HBoxContainer_02_mode1" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02/MarginContainer_02_mode1" unique_id=2074147865]
 layout_mode = 2
 
-[node name="Label_Title_02_mode1" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02/MarginContainer_02_mode1/HBoxContainer_02_mode1"]
+[node name="Label_Title_02_mode1" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02/MarginContainer_02_mode1/HBoxContainer_02_mode1" unique_id=2146509604]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Mode 1"
 
-[node name="Label_Amt_02_mode1" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02/MarginContainer_02_mode1/HBoxContainer_02_mode1"]
+[node name="Label_Amt_02_mode1" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02/MarginContainer_02_mode1/HBoxContainer_02_mode1" unique_id=1068940927]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "99"
 
-[node name="MarginContainer_02_mode2" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02"]
+[node name="MarginContainer_02_mode2" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02" unique_id=1562272166]
 layout_mode = 2
 
-[node name="HBoxContainer_02_mode2" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02/MarginContainer_02_mode2"]
+[node name="HBoxContainer_02_mode2" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02/MarginContainer_02_mode2" unique_id=264878122]
 layout_mode = 2
 
-[node name="Label_Title_02_mode2" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02/MarginContainer_02_mode2/HBoxContainer_02_mode2"]
+[node name="Label_Title_02_mode2" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02/MarginContainer_02_mode2/HBoxContainer_02_mode2" unique_id=1803750262]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Mode 1"
 
-[node name="Label_Amt_02_mode2" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02/MarginContainer_02_mode2/HBoxContainer_02_mode2"]
+[node name="Label_Amt_02_mode2" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02/MarginContainer_02_mode2/HBoxContainer_02_mode2" unique_id=372438657]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "99"
 
-[node name="MarginContainer_02_mode3" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02"]
+[node name="MarginContainer_02_mode3" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02" unique_id=1698551256]
 layout_mode = 2
 
-[node name="HBoxContainer_02_mode3" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02/MarginContainer_02_mode3"]
+[node name="HBoxContainer_02_mode3" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02/MarginContainer_02_mode3" unique_id=1217521891]
 layout_mode = 2
 
-[node name="Label_Title_02_mode3" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02/MarginContainer_02_mode3/HBoxContainer_02_mode3"]
+[node name="Label_Title_02_mode3" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02/MarginContainer_02_mode3/HBoxContainer_02_mode3" unique_id=1083513664]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Mode 1"
 
-[node name="Label_Amt_02_mode3" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02/MarginContainer_02_mode3/HBoxContainer_02_mode3"]
+[node name="Label_Amt_02_mode3" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent02/MarginContainer_tickets_02/VBoxContainer_tickest_02/MarginContainer_02_mode3/HBoxContainer_02_mode3" unique_id=1828506328]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "99"
 
-[node name="MarginContainer_LabelAgent03" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents"]
+[node name="MarginContainer_LabelAgent03" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents" unique_id=1732129452]
 layout_mode = 2
 theme_override_constants/margin_top = 2
-theme_override_constants/margin_bottom = 5
 
-[node name="Label_Agent03" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/MarginContainer_LabelAgent03"]
+[node name="Label_Agent03" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/MarginContainer_LabelAgent03" unique_id=47974790]
 layout_mode = 2
 text = "Agent 3"
 label_settings = SubResource("LabelSettings_dvush")
 horizontal_alignment = 1
 vertical_alignment = 3
 
-[node name="HBoxContainer_Agent03" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents"]
+[node name="HBoxContainer_Agent03" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents" unique_id=1728916911]
 layout_mode = 2
-theme_override_constants/separation = 5
+theme_override_constants/separation = 2
 
-[node name="ButtonIcon_Agent03" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03"]
+[node name="ButtonIcon_Agent03" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03" unique_id=2011405832]
 layout_mode = 2
 icon = ExtResource("3_eepqy")
 
-[node name="TextureRect_Agent03" type="TextureRect" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/ButtonIcon_Agent03"]
+[node name="TextureRect_Agent03" type="TextureRect" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/ButtonIcon_Agent03" unique_id=2004556346]
 visible = false
-layout_mode = 2
+layout_mode = 0
 offset_left = 9.0
 offset_right = 41.0
 offset_bottom = 32.0
 texture = ExtResource("3_eepqy")
 
-[node name="ButtonStart_Agent03" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03"]
+[node name="ButtonStart_Agent03" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03" unique_id=222319162]
 layout_mode = 2
 theme = ExtResource("1_4mj0i")
 theme_override_font_sizes/font_size = 12
 text = "Select Start"
 
-[node name="ButtonMove_Agent03" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03"]
+[node name="ButtonMove_Agent03" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03" unique_id=1541207337]
 visible = false
 layout_mode = 2
 text = "Move"
 
-[node name="MarginContainer_tickets_03" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03"]
+[node name="MarginContainer_tickets_03" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03" unique_id=88590704]
 visible = false
 layout_mode = 2
 
-[node name="VBoxContainer_tickest_03" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03"]
+[node name="VBoxContainer_tickest_03" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03" unique_id=332990903]
 layout_mode = 2
 
-[node name="MarginContainer_03_mode0" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03"]
+[node name="MarginContainer_03_mode0" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03" unique_id=1233936650]
 layout_mode = 2
 
-[node name="HBoxContainer_03_mode0" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03/MarginContainer_03_mode0"]
+[node name="HBoxContainer_03_mode0" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03/MarginContainer_03_mode0" unique_id=349042076]
 layout_mode = 2
 
-[node name="Label_Title_03_mode0" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03/MarginContainer_03_mode0/HBoxContainer_03_mode0"]
+[node name="Label_Title_03_mode0" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03/MarginContainer_03_mode0/HBoxContainer_03_mode0" unique_id=806759125]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Mode 0"
 
-[node name="Label_Amt_03_mode0" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03/MarginContainer_03_mode0/HBoxContainer_03_mode0"]
+[node name="Label_Amt_03_mode0" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03/MarginContainer_03_mode0/HBoxContainer_03_mode0" unique_id=1932068574]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "99"
 
-[node name="MarginContainer_03_mode1" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03"]
+[node name="MarginContainer_03_mode1" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03" unique_id=341383478]
 layout_mode = 2
 
-[node name="HBoxContainer_03_mode1" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03/MarginContainer_03_mode1"]
+[node name="HBoxContainer_03_mode1" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03/MarginContainer_03_mode1" unique_id=1098211281]
 layout_mode = 2
 
-[node name="Label_Title_03_mode1" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03/MarginContainer_03_mode1/HBoxContainer_03_mode1"]
+[node name="Label_Title_03_mode1" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03/MarginContainer_03_mode1/HBoxContainer_03_mode1" unique_id=1568343498]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Mode 1"
 
-[node name="Label_Amt_03_mode1" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03/MarginContainer_03_mode1/HBoxContainer_03_mode1"]
+[node name="Label_Amt_03_mode1" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03/MarginContainer_03_mode1/HBoxContainer_03_mode1" unique_id=1362157597]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "99"
 
-[node name="MarginContainer_03_mode2" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03"]
+[node name="MarginContainer_03_mode2" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03" unique_id=1377929896]
 layout_mode = 2
 
-[node name="HBoxContainer_03_mode2" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03/MarginContainer_03_mode2"]
+[node name="HBoxContainer_03_mode2" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03/MarginContainer_03_mode2" unique_id=412212295]
 layout_mode = 2
 
-[node name="Label_Title_03_mode2" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03/MarginContainer_03_mode2/HBoxContainer_03_mode2"]
+[node name="Label_Title_03_mode2" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03/MarginContainer_03_mode2/HBoxContainer_03_mode2" unique_id=549386063]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Mode 1"
 
-[node name="Label_Amt_03_mode2" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03/MarginContainer_03_mode2/HBoxContainer_03_mode2"]
+[node name="Label_Amt_03_mode2" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03/MarginContainer_03_mode2/HBoxContainer_03_mode2" unique_id=417422055]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "99"
 
-[node name="MarginContainer_03_mode3" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03"]
+[node name="MarginContainer_03_mode3" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03" unique_id=231727422]
 layout_mode = 2
 
-[node name="HBoxContainer_03_mode3" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03/MarginContainer_03_mode3"]
+[node name="HBoxContainer_03_mode3" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03/MarginContainer_03_mode3" unique_id=792786204]
 layout_mode = 2
 
-[node name="Label_Title_03_mode3" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03/MarginContainer_03_mode3/HBoxContainer_03_mode3"]
+[node name="Label_Title_03_mode3" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03/MarginContainer_03_mode3/HBoxContainer_03_mode3" unique_id=294857041]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Mode 1"
 
-[node name="Label_Amt_03_mode3" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03/MarginContainer_03_mode3/HBoxContainer_03_mode3"]
+[node name="Label_Amt_03_mode3" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent03/MarginContainer_tickets_03/VBoxContainer_tickest_03/MarginContainer_03_mode3/HBoxContainer_03_mode3" unique_id=1590712965]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "99"
 
-[node name="MarginContainer_LabelAgent04" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents"]
+[node name="MarginContainer_LabelAgent04" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents" unique_id=21886521]
 layout_mode = 2
 theme_override_constants/margin_top = 2
-theme_override_constants/margin_bottom = 5
 
-[node name="Label_Agent04" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/MarginContainer_LabelAgent04"]
+[node name="Label_Agent04" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/MarginContainer_LabelAgent04" unique_id=414249791]
 layout_mode = 2
 text = "Agent 4"
 label_settings = SubResource("LabelSettings_dvush")
 horizontal_alignment = 1
 vertical_alignment = 3
 
-[node name="HBoxContainer_Agent04" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents"]
+[node name="HBoxContainer_Agent04" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents" unique_id=51979044]
 layout_mode = 2
-theme_override_constants/separation = 5
+theme_override_constants/separation = 2
 
-[node name="ButtonIcon_Agent04" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04"]
+[node name="ButtonIcon_Agent04" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04" unique_id=1301873379]
 layout_mode = 2
 icon = ExtResource("3_eepqy")
 
-[node name="TextureRect_Agent04" type="TextureRect" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/ButtonIcon_Agent04"]
+[node name="TextureRect_Agent04" type="TextureRect" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/ButtonIcon_Agent04" unique_id=663996058]
 visible = false
-layout_mode = 2
+layout_mode = 0
 offset_left = 9.0
 offset_right = 41.0
 offset_bottom = 32.0
 texture = ExtResource("3_eepqy")
 
-[node name="ButtonStart_Agent04" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04"]
+[node name="ButtonStart_Agent04" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04" unique_id=1511049669]
 layout_mode = 2
 theme = ExtResource("1_4mj0i")
 theme_override_font_sizes/font_size = 12
 text = "Select Start"
 
-[node name="ButtonMove_Agent04" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04"]
+[node name="ButtonMove_Agent04" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04" unique_id=1483966116]
 visible = false
 layout_mode = 2
 text = "Move"
 
-[node name="MarginContainer_tickets_04" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04"]
+[node name="MarginContainer_tickets_04" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04" unique_id=1286650144]
 visible = false
 layout_mode = 2
 
-[node name="VBoxContainer_tickest_04" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04"]
+[node name="VBoxContainer_tickest_04" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04" unique_id=746171666]
 layout_mode = 2
 
-[node name="MarginContainer_04_mode0" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04"]
+[node name="MarginContainer_04_mode0" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04" unique_id=1157257226]
 layout_mode = 2
 
-[node name="HBoxContainer_04_mode0" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04/MarginContainer_04_mode0"]
+[node name="HBoxContainer_04_mode0" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04/MarginContainer_04_mode0" unique_id=700592630]
 layout_mode = 2
 
-[node name="Label_Title_04_mode0" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04/MarginContainer_04_mode0/HBoxContainer_04_mode0"]
+[node name="Label_Title_04_mode0" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04/MarginContainer_04_mode0/HBoxContainer_04_mode0" unique_id=408015016]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Mode 0"
 
-[node name="Label_Amt_04_mode0" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04/MarginContainer_04_mode0/HBoxContainer_04_mode0"]
+[node name="Label_Amt_04_mode0" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04/MarginContainer_04_mode0/HBoxContainer_04_mode0" unique_id=2053219874]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "99"
 
-[node name="MarginContainer_04_mode1" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04"]
+[node name="MarginContainer_04_mode1" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04" unique_id=388852179]
 layout_mode = 2
 
-[node name="HBoxContainer_04_mode1" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04/MarginContainer_04_mode1"]
+[node name="HBoxContainer_04_mode1" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04/MarginContainer_04_mode1" unique_id=771720878]
 layout_mode = 2
 
-[node name="Label_Title_04_mode1" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04/MarginContainer_04_mode1/HBoxContainer_04_mode1"]
+[node name="Label_Title_04_mode1" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04/MarginContainer_04_mode1/HBoxContainer_04_mode1" unique_id=554877847]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Mode 1"
 
-[node name="Label_Amt_04_mode1" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04/MarginContainer_04_mode1/HBoxContainer_04_mode1"]
+[node name="Label_Amt_04_mode1" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04/MarginContainer_04_mode1/HBoxContainer_04_mode1" unique_id=1360278866]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "99"
 
-[node name="MarginContainer_04_mode2" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04"]
+[node name="MarginContainer_04_mode2" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04" unique_id=1473737180]
 layout_mode = 2
 
-[node name="HBoxContainer_04_mode2" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04/MarginContainer_04_mode2"]
+[node name="HBoxContainer_04_mode2" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04/MarginContainer_04_mode2" unique_id=934911248]
 layout_mode = 2
 
-[node name="Label_Title_04_mode2" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04/MarginContainer_04_mode2/HBoxContainer_04_mode2"]
+[node name="Label_Title_04_mode2" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04/MarginContainer_04_mode2/HBoxContainer_04_mode2" unique_id=1981401305]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Mode 1"
 
-[node name="Label_Amt_04_mode2" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04/MarginContainer_04_mode2/HBoxContainer_04_mode2"]
+[node name="Label_Amt_04_mode2" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04/MarginContainer_04_mode2/HBoxContainer_04_mode2" unique_id=796922314]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "99"
 
-[node name="MarginContainer_04_mode3" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04"]
+[node name="MarginContainer_04_mode3" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04" unique_id=2511730]
 layout_mode = 2
 
-[node name="HBoxContainer_04_mode3" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04/MarginContainer_04_mode3"]
+[node name="HBoxContainer_04_mode3" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04/MarginContainer_04_mode3" unique_id=984412508]
 layout_mode = 2
 
-[node name="Label_Title_04_mode3" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04/MarginContainer_04_mode3/HBoxContainer_04_mode3"]
+[node name="Label_Title_04_mode3" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04/MarginContainer_04_mode3/HBoxContainer_04_mode3" unique_id=1140364155]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Mode 1"
 
-[node name="Label_Amt_04_mode3" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04/MarginContainer_04_mode3/HBoxContainer_04_mode3"]
+[node name="Label_Amt_04_mode3" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent04/MarginContainer_tickets_04/VBoxContainer_tickest_04/MarginContainer_04_mode3/HBoxContainer_04_mode3" unique_id=793197757]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "99"
 
-[node name="MarginContainer_LabelAgent05" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents"]
+[node name="MarginContainer_LabelAgent05" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents" unique_id=1002920956]
 layout_mode = 2
 theme_override_constants/margin_top = 2
-theme_override_constants/margin_bottom = 5
 
-[node name="Label_Agent05" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/MarginContainer_LabelAgent05"]
+[node name="Label_Agent05" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/MarginContainer_LabelAgent05" unique_id=1217165842]
 layout_mode = 2
 text = "Agent 5"
 label_settings = SubResource("LabelSettings_dvush")
 horizontal_alignment = 1
 vertical_alignment = 3
 
-[node name="HBoxContainer_Agent05" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents"]
+[node name="HBoxContainer_Agent05" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents" unique_id=1425074124]
 layout_mode = 2
-theme_override_constants/separation = 5
+theme_override_constants/separation = 2
 
-[node name="ButtonIcon_Agent05" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05"]
+[node name="ButtonIcon_Agent05" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05" unique_id=1349354291]
 layout_mode = 2
 icon = ExtResource("3_eepqy")
 
-[node name="TextureRect_Agent05" type="TextureRect" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/ButtonIcon_Agent05"]
+[node name="TextureRect_Agent05" type="TextureRect" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/ButtonIcon_Agent05" unique_id=367727632]
 visible = false
-layout_mode = 2
+layout_mode = 0
 offset_left = 9.0
 offset_right = 41.0
 offset_bottom = 32.0
 texture = ExtResource("3_eepqy")
 
-[node name="ButtonStart_Agent05" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05"]
+[node name="ButtonStart_Agent05" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05" unique_id=1305004056]
 layout_mode = 2
 theme = ExtResource("1_4mj0i")
 theme_override_font_sizes/font_size = 12
 text = "Select Start"
 
-[node name="ButtonMove_Agent05" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05"]
+[node name="ButtonMove_Agent05" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05" unique_id=335197259]
 visible = false
 layout_mode = 2
 text = "Move"
 
-[node name="MarginContainer_tickets_05" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05"]
+[node name="MarginContainer_tickets_05" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05" unique_id=1736663952]
 visible = false
 layout_mode = 2
 
-[node name="VBoxContainer_tickest_05" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05"]
+[node name="VBoxContainer_tickest_05" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05" unique_id=2041080873]
 layout_mode = 2
 
-[node name="MarginContainer_05_mode0" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05"]
+[node name="MarginContainer_05_mode0" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05" unique_id=1783432569]
 layout_mode = 2
 
-[node name="HBoxContainer_05_mode0" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05/MarginContainer_05_mode0"]
+[node name="HBoxContainer_05_mode0" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05/MarginContainer_05_mode0" unique_id=1762414171]
 layout_mode = 2
 
-[node name="Label_Title_05_mode0" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05/MarginContainer_05_mode0/HBoxContainer_05_mode0"]
+[node name="Label_Title_05_mode0" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05/MarginContainer_05_mode0/HBoxContainer_05_mode0" unique_id=597149939]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Mode 0"
 
-[node name="Label_Amt_05_mode0" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05/MarginContainer_05_mode0/HBoxContainer_05_mode0"]
+[node name="Label_Amt_05_mode0" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05/MarginContainer_05_mode0/HBoxContainer_05_mode0" unique_id=287479918]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "99"
 
-[node name="MarginContainer_05_mode1" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05"]
+[node name="MarginContainer_05_mode1" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05" unique_id=2114956613]
 layout_mode = 2
 
-[node name="HBoxContainer_05_mode1" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05/MarginContainer_05_mode1"]
+[node name="HBoxContainer_05_mode1" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05/MarginContainer_05_mode1" unique_id=1917077208]
 layout_mode = 2
 
-[node name="Label_Title_05_mode1" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05/MarginContainer_05_mode1/HBoxContainer_05_mode1"]
+[node name="Label_Title_05_mode1" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05/MarginContainer_05_mode1/HBoxContainer_05_mode1" unique_id=765916041]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Mode 1"
 
-[node name="Label_Amt_05_mode1" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05/MarginContainer_05_mode1/HBoxContainer_05_mode1"]
+[node name="Label_Amt_05_mode1" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05/MarginContainer_05_mode1/HBoxContainer_05_mode1" unique_id=175747758]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "99"
 
-[node name="MarginContainer_05_mode2" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05"]
+[node name="MarginContainer_05_mode2" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05" unique_id=427735806]
 layout_mode = 2
 
-[node name="HBoxContainer_05_mode2" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05/MarginContainer_05_mode2"]
+[node name="HBoxContainer_05_mode2" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05/MarginContainer_05_mode2" unique_id=329430098]
 layout_mode = 2
 
-[node name="Label_Title_05_mode2" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05/MarginContainer_05_mode2/HBoxContainer_05_mode2"]
+[node name="Label_Title_05_mode2" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05/MarginContainer_05_mode2/HBoxContainer_05_mode2" unique_id=1174776825]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Mode 2"
 
-[node name="Label_Amt_05_mode2" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05/MarginContainer_05_mode2/HBoxContainer_05_mode2"]
+[node name="Label_Amt_05_mode2" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05/MarginContainer_05_mode2/HBoxContainer_05_mode2" unique_id=1282353852]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "99"
 
-[node name="MarginContainer_05_mode3" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05"]
+[node name="MarginContainer_05_mode3" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05" unique_id=1971090408]
 layout_mode = 2
 
-[node name="HBoxContainer_05_mode3" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05/MarginContainer_05_mode3"]
+[node name="HBoxContainer_05_mode3" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05/MarginContainer_05_mode3" unique_id=1683919044]
 layout_mode = 2
 
-[node name="Label_Title_05_mode3" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05/MarginContainer_05_mode3/HBoxContainer_05_mode3"]
+[node name="Label_Title_05_mode3" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05/MarginContainer_05_mode3/HBoxContainer_05_mode3" unique_id=302476398]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Mode 3"
 
-[node name="Label_Amt_05_mode3" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05/MarginContainer_05_mode3/HBoxContainer_05_mode3"]
+[node name="Label_Amt_05_mode3" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/MarginContainer_tickets_05/VBoxContainer_tickest_05/MarginContainer_05_mode3/HBoxContainer_05_mode3" unique_id=402650349]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "99"
 
-[node name="MarginContainer_Done" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+[node name="MarginContainer_Done" type="MarginContainer" parent="PanelContainer/VBoxContainer" unique_id=1257261977]
 layout_mode = 2
-theme_override_constants/margin_top = 8
+theme_override_constants/margin_top = 5
 
-[node name="Button_Done" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Done"]
+[node name="Button_Done" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Done" unique_id=1396730867]
 layout_mode = 2
 disabled = true
 text = "Complete Setup"
 
-[node name="MarginContainer_Title_Sus" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+[node name="MarginContainer_Title_Sus" type="MarginContainer" parent="PanelContainer/VBoxContainer" unique_id=1817673330]
 layout_mode = 2
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_bottom = 5
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_bottom = 1
 
-[node name="HBoxContainer_Title_Sus" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Title_Sus"]
+[node name="HBoxContainer_Title_Sus" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Title_Sus" unique_id=227676423]
 layout_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer/MarginContainer_Title_Sus/HBoxContainer_Title_Sus"]
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer/MarginContainer_Title_Sus/HBoxContainer_Title_Sus" unique_id=196783446]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_5803t")
 
-[node name="LabelsusTitle" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Title_Sus/HBoxContainer_Title_Sus"]
+[node name="LabelsusTitle" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Title_Sus/HBoxContainer_Title_Sus" unique_id=898061749]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Suspect"
 horizontal_alignment = 1
 
-[node name="MarginContainer_Sus" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+[node name="MarginContainer_Sus" type="MarginContainer" parent="PanelContainer/VBoxContainer" unique_id=239098130]
 layout_mode = 2
-theme_override_constants/margin_top = 5
+theme_override_constants/margin_top = 3
 
-[node name="VBoxContainer_Sus" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Sus"]
+[node name="VBoxContainer_Sus" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Sus" unique_id=457749882]
 layout_mode = 2
-theme_override_constants/separation = 5
 
-[node name="MarginContainer_LabelSus00" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus"]
+[node name="MarginContainer_LabelSus00" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus" unique_id=2095744131]
 layout_mode = 2
 theme_override_constants/margin_top = 2
 theme_override_constants/margin_bottom = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/MarginContainer_LabelSus00"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/MarginContainer_LabelSus00" unique_id=138812506]
 layout_mode = 2
 
-[node name="Label_Sus00" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/MarginContainer_LabelSus00/VBoxContainer"]
+[node name="Label_Sus00" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/MarginContainer_LabelSus00/VBoxContainer" unique_id=378248672]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Suspect"
@@ -686,103 +680,117 @@ label_settings = SubResource("LabelSettings_dvush")
 horizontal_alignment = 1
 vertical_alignment = 3
 
-[node name="Label_Sus00_mode_used" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/MarginContainer_LabelSus00/VBoxContainer"]
-visible = false
+[node name="HBoxContainer_Sus00" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus" unique_id=1817554452]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_dvush")
-theme_override_font_sizes/font_size = 10
-text = "Start Location Set"
-horizontal_alignment = 1
-uppercase = true
+theme_override_constants/separation = 3
 
-[node name="HBoxContainer_Sus00" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus"]
-layout_mode = 2
-theme_override_constants/separation = 5
-
-[node name="Button_Sus00" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00"]
+[node name="Button_Sus00" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00" unique_id=1226245451]
 layout_mode = 2
 icon = ExtResource("5_5803t")
 
-[node name="TextureRect_Sus00" type="TextureRect" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/Button_Sus00"]
+[node name="TextureRect_Sus00" type="TextureRect" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/Button_Sus00" unique_id=539907406]
 visible = false
-layout_mode = 2
+layout_mode = 0
 offset_left = 9.0
 offset_right = 41.0
 offset_bottom = 32.0
 texture = ExtResource("5_5803t")
 stretch_mode = 3
 
-[node name="MarginContainer_tickets_S00" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00"]
+[node name="MarginContainer_tickets_S00" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00" unique_id=88727801]
 layout_mode = 2
 
-[node name="VBoxContainer_tickest_S00" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00"]
+[node name="VBoxContainer_tickest_S00" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00" unique_id=380470806]
 visible = false
 layout_mode = 2
 
-[node name="MarginContainer_S00_mode0" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00"]
+[node name="MarginContainer_S00_mode0" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00" unique_id=226871962]
 layout_mode = 2
 
-[node name="HBoxContainer_S00_mode0" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00/MarginContainer_S00_mode0"]
+[node name="HBoxContainer_S00_mode0" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00/MarginContainer_S00_mode0" unique_id=918451244]
 layout_mode = 2
 
-[node name="Label_Title_S00_mode0" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00/MarginContainer_S00_mode0/HBoxContainer_S00_mode0"]
+[node name="Label_Title_S00_mode0" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00/MarginContainer_S00_mode0/HBoxContainer_S00_mode0" unique_id=1568141780]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Mode 0"
 
-[node name="Label_Amt_S00_mode0" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00/MarginContainer_S00_mode0/HBoxContainer_S00_mode0"]
+[node name="Label_Amt_S00_mode0" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00/MarginContainer_S00_mode0/HBoxContainer_S00_mode0" unique_id=285790617]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "99"
 
-[node name="MarginContainer_S00_mode1" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00"]
+[node name="MarginContainer_S00_mode1" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00" unique_id=1681468566]
 layout_mode = 2
 
-[node name="HBoxContainer_S00_mode1" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00/MarginContainer_S00_mode1"]
+[node name="HBoxContainer_S00_mode1" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00/MarginContainer_S00_mode1" unique_id=38044669]
 layout_mode = 2
 
-[node name="Label_Title_S00_mode1" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00/MarginContainer_S00_mode1/HBoxContainer_S00_mode1"]
+[node name="Label_Title_S00_mode1" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00/MarginContainer_S00_mode1/HBoxContainer_S00_mode1" unique_id=1020649152]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Mode 1"
 
-[node name="Label_Amt_S00_mode1" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00/MarginContainer_S00_mode1/HBoxContainer_S00_mode1"]
+[node name="Label_Amt_S00_mode1" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00/MarginContainer_S00_mode1/HBoxContainer_S00_mode1" unique_id=738640089]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "99"
 
-[node name="MarginContainer_S00_mode2" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00"]
+[node name="MarginContainer_S00_mode2" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00" unique_id=356584790]
 layout_mode = 2
 
-[node name="HBoxContainer_S00_mode2" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00/MarginContainer_S00_mode2"]
+[node name="HBoxContainer_S00_mode2" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00/MarginContainer_S00_mode2" unique_id=1044467944]
 layout_mode = 2
 
-[node name="Label_Title_S00_mode2" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00/MarginContainer_S00_mode2/HBoxContainer_S00_mode2"]
+[node name="Label_Title_S00_mode2" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00/MarginContainer_S00_mode2/HBoxContainer_S00_mode2" unique_id=838118558]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Mode 1"
 
-[node name="Label_Amt_S00_mode2" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00/MarginContainer_S00_mode2/HBoxContainer_S00_mode2"]
+[node name="Label_Amt_S00_mode2" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00/MarginContainer_S00_mode2/HBoxContainer_S00_mode2" unique_id=137805373]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "99"
 
-[node name="MarginContainer_S00_mode3" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00"]
+[node name="MarginContainer_S00_mode3" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00" unique_id=1689897608]
 layout_mode = 2
 
-[node name="HBoxContainer_S00_mode3" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00/MarginContainer_S00_mode3"]
+[node name="HBoxContainer_S00_mode3" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00/MarginContainer_S00_mode3" unique_id=429560807]
 layout_mode = 2
 
-[node name="Label_Title_S00_mode3" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00/MarginContainer_S00_mode3/HBoxContainer_S00_mode3"]
+[node name="Label_Title_S00_mode3" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00/MarginContainer_S00_mode3/HBoxContainer_S00_mode3" unique_id=1637045685]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Mode 1"
 
-[node name="Label_Amt_S00_mode3" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00/MarginContainer_S00_mode3/HBoxContainer_S00_mode3"]
+[node name="Label_Amt_S00_mode3" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/MarginContainer_tickets_S00/VBoxContainer_tickest_S00/MarginContainer_S00_mode3/HBoxContainer_S00_mode3" unique_id=721738109]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "99"
+
+[node name="MarginContainer_Dispatcher" type="MarginContainer" parent="PanelContainer/VBoxContainer" unique_id=1306984898]
+layout_mode = 2
+theme_override_constants/margin_top = 5
+
+[node name="VBoxContainer_Dispatcher" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Dispatcher" unique_id=472409017]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer/MarginContainer_Dispatcher/VBoxContainer_Dispatcher" unique_id=936947273]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_5803t")
+
+[node name="HBoxContainer_Dispatcher" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer_Dispatcher/VBoxContainer_Dispatcher" unique_id=1328796296]
+layout_mode = 2
+
+[node name="ButtonIcon_Dispatcher" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer_Dispatcher/VBoxContainer_Dispatcher/HBoxContainer_Dispatcher" unique_id=351434269]
+layout_mode = 2
+icon = ExtResource("5_3pp13")
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer_Dispatcher/VBoxContainer_Dispatcher/HBoxContainer_Dispatcher" unique_id=1052892009]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Contact Dispatch"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/ButtonIcon_Agent01" to="." method="_on_button_icon_agent_pressed" binds= [1]]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent01/ButtonStart_Agent01" to="." method="_on_button_start_agent_pressed" binds= [1]]
@@ -801,3 +809,4 @@ text = "99"
 [connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer_Agents/VBoxContainer_Agents/HBoxContainer_Agent05/ButtonMove_Agent05" to="." method="_on_button_move_agent_pressed" binds= [5]]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer_Done/Button_Done" to="." method="_on_button_done_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer_Sus/VBoxContainer_Sus/HBoxContainer_Sus00/Button_Sus00" to="." method="_on_button_sus_00_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer_Dispatcher/VBoxContainer_Dispatcher/HBoxContainer_Dispatcher/ButtonIcon_Dispatcher" to="." method="_on_button_icon_dispatcher_pressed"]

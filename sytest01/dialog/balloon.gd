@@ -116,10 +116,12 @@ func apply_dialogue_line() -> void:
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
 
-	# CUSTOM > Set the portrait
+	# CUSTOMIZED > Set the portrait
 	var portrait_path: String = "res://art/portraits/%s.jpg" % dialogue_line.character.to_lower()
-	#if FileAccess.file_exists(portrait_path): # REMOVED as it would not run in itch.io
 	dialog_portrait.texture = load(portrait_path)
+	# This does not work on the web
+	#if FileAccess.file_exists(portrait_path):
+		#dialog_portrait.texture = load(portrait_path)
 	#else:
 		#dialog_portrait.texture = null
 

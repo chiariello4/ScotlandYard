@@ -8,8 +8,8 @@ Chief: Your team did well to bring in our suspect. Give agent {{GlobalVars.agent
 	do GlobalVars.play_again.emit()
 - Quit
 	Chief: [[I understand. Thanks, again.|Fine, I'm sure you have a lot of important stuff to do, like play video games.|You were a big help today. Maybe next time.]]
+	do GlobalVars.quit.emit()
 	=> END
-# TO DO: END GAME AFTER QUIT
 => END
 
 ~ surrounded
@@ -22,6 +22,7 @@ Chief: Your team did well to bring in our suspect. If you have time, we could us
 	Chief: Great!
 - Quit
 	Chief: [[I understand. Thanks, again.|Fine, I'm sure you have a lot of important stuff to do, like play video games.|You were a big help today. Maybe next time.]]
+	do GlobalVars.quit.emit()
 	=> END
 # TO DO: END GAME AFTER QUIT
 => END
@@ -29,12 +30,25 @@ Chief: Your team did well to bring in our suspect. If you have time, we could us
 ~ suswins
 {{GlobalVars.sus_name}}: Fools! I knew you couldn't catch me.
 Dispatcher: I have reports the suspect has fled Sparta.
-Chief: I'm afraid we're going to have to call it quits here. Your team was just no match for {{GlobalVars.sus_name}}
+Chief: I'm afraid we're going to have to call it quits here. Your team was just no match for {{GlobalVars.sus_name}}.
 Chief: Would you like to try again?
 - Yes, what can I do? (Play again)
 	do GlobalVars.play_again.emit()
 	Chief: Great!
 - Quit
 	Chief: [[I understand. Thanks, again.|Fine, I'm sure you have a lot of important stuff to do, like play video games.|You were a big help today. Maybe next time.]]
+	do GlobalVars.quit.emit()
 	=> END
+=> END
+
+~ incapacitated
+Dispatcher: All of your agents are incapacitated, and no longer able to pursue the suspect.
+Chief: I'm afraid we're going to have to call it quits here. Your team was just no match for {{GlobalVars.sus_name}}.
+Chief: Would you like to try again?
+- Yes, what can I do? (Play again)
+	do GlobalVars.play_again.emit()
+	Chief: Great!
+- Quit
+	Chief: [[I understand. Thanks, again.|Fine, I'm sure you have a lot of important stuff to do, like play video games.|You were a big help today. Maybe next time.]]
+	do GlobalVars.quit.emit()
 => END

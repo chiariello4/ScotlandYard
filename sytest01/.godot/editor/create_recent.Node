@@ -1,14 +1,4 @@
-Button
 Sprite2D
 VBoxContainer
-HBoxContainer
-HSeparator
 Label
-TextureRect
-AspectRatioContainer
-GridContainer
-RichTextLabel
-MarginContainer
-Panel
-Control
-PanelContainer
+Button

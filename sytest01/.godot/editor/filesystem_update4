@@ -1,13 +1,4 @@
 res://main.tscn
-res://themes/DefaultTheme.tres
-res://themes/LocButtonTheme.tres
-res://dialog/balloon.tscn
-res://player_panel.tscn
-res://game_message.tscn
-res://singleton/global_vars.gd
-res://singleton/globlal_enums.gd
-res://singleton/json_handler.gd
+res://themes/default_theme.tres
 res://themes/loc_button_theme.tres
-res://main.gd
-res://sub_viewport.gd
-res://player_panel.gd
+res://singleton/global_vars.gd

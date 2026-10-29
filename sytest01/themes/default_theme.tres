@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://bjowy0ujxwwvw"]
+[gd_resource type="Theme" format=3 uid="uid://bjowy0ujxwwvw"]
 
 [ext_resource type="FontFile" uid="uid://bijiwbc6t0nur" path="res://art/arial.ttf" id="1_ihngy"]
 [ext_resource type="Texture2D" uid="uid://bjhfw3y6qbpy3" path="res://art/sy_theme_1.jpg" id="1_jnd74"]
@@ -67,7 +67,6 @@ default_font = ExtResource("1_ihngy")
 default_font_size = 14
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_disabled_color = Color(0.537011, 0.537011, 0.537011, 1)
-Button/colors/font_focus_color = Color(0.780684, 7.75386e-05, 4.17775e-05, 1)
 Button/colors/font_hover_color = Color(0, 0, 0, 1)
 Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 Button/colors/font_outline_color = Color(0, 0, 0, 1)

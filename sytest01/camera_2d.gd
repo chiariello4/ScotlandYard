@@ -10,7 +10,7 @@ var zoom_weight : float = 0.5
 # These are used for the panning
 var edge_margin : int = 50
 var camera_speed : float = 400.0
-#var unzoomed_viewport_size : Vector2 = Vector2(1280,720)
+var unzoomed_viewport_size : Vector2 = Vector2(1280,720)
 
 # Zoom
 func _input(event: InputEvent) -> void:
@@ -23,12 +23,14 @@ func _input(event: InputEvent) -> void:
 			zoom_target = get_zoom() - Vector2(zoom_gradiient,zoom_gradiient)
 			zoom = zoom.slerp(zoom_target,zoom_weight)
 
-# Pan
 func _process(delta):
+	_camera_pan_mouse(delta)
+	_camera_pan_direction(delta)
+
+func _camera_pan_mouse(delta):
+	var move_vector = Vector2.ZERO # hold the camera's movement direction
 	# Get the current mouse posiition
 	var mouse_position = get_viewport().get_mouse_position()
-	# Initialize a vector to hold the camera's movement direction
-	var move_vector = Vector2.ZERO
 	# check if the mouse is near the left or right edge
 	if mouse_position.x <= edge_margin:
 		move_vector.x = -camera_speed * delta
@@ -38,7 +40,21 @@ func _process(delta):
 	# check if the mouse is near the top or bottom edge
 	if mouse_position.y <= edge_margin:
 		move_vector.y = -camera_speed * delta
+	#elif mouse_position.y >= unzoomed_viewport_size.y - edge_margin:
 	elif mouse_position.y >= get_viewport().size.y - edge_margin:
 		move_vector.y = camera_speed * delta
 	# apply the move vector to the position
 	position += move_vector
+
+func _camera_pan_direction(delta):
+	var move_vector_direction = Vector2.ZERO # hold the camera's movement direction
+	if Input.is_action_pressed("camera_pan_right"):
+		move_vector_direction.x += 1
+	if Input.is_action_pressed("camera_pan_left"):
+		move_vector_direction.x -= 1
+	if Input.is_action_pressed("camera_pan_up"):
+		move_vector_direction.y -= 1
+	if Input.is_action_pressed("camera_pan_down"):
+		move_vector_direction.y += 1
+	move_vector_direction = move_vector_direction.normalized()
+	position += move_vector_direction * delta * camera_speed * (1/zoom.x)
